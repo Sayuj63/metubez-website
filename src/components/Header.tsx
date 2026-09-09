@@ -25,7 +25,7 @@ export default function Header() {
             className="rounded-md"
             priority
           />
-          <span className="text-[18px] font-black tracking-tight text-[#2ecc40]">
+          <span className="text-[18px] font-black tracking-tight text-[#57a554]">
             MeTubez
           </span>
         </Link>
@@ -35,7 +35,7 @@ export default function Header() {
             <Link
               key={item.href}
               href={item.href}
-              className="text-[14px] font-medium text-[#333] hover:text-[#2ecc40] transition-colors"
+              className="text-[14px] font-medium text-[#333] hover:text-[#57a554] transition-colors"
             >
               {item.label}
             </Link>
@@ -45,7 +45,7 @@ export default function Header() {
         <div className="hidden md:block">
           <Link
             href="/metubers"
-            className="inline-flex items-center gap-2 bg-[#2ecc40] hover:bg-[#26b336] text-white text-[13px] font-bold px-5 py-2.5 rounded-md transition-colors whitespace-nowrap"
+            className="inline-flex items-center gap-2 bg-[#57a554] hover:bg-[#4a9346] text-white text-[13px] font-bold px-5 py-2.5 rounded-md transition-colors whitespace-nowrap"
           >
             Become a Metuber
           </Link>
@@ -83,7 +83,7 @@ export default function Header() {
             <Link
               href="/metubers"
               onClick={() => setOpen(false)}
-              className="mt-2 inline-flex items-center justify-center bg-[#2ecc40] text-white text-[14px] font-bold px-5 py-3 rounded-md"
+              className="mt-2 inline-flex items-center justify-center bg-[#57a554] text-white text-[14px] font-bold px-5 py-3 rounded-md"
             >
               Become a Metuber
             </Link>

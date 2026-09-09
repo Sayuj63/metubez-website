@@ -39,3 +39,11 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# raw client-shared source assets (kept locally, not committed)
+WhatsApp Image*.jpeg
+WhatsApp Image*.jpg
+.playwright-mcp/
+*.png
+!public/**/*.png
+!metubez-logo.png

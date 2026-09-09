@@ -5,24 +5,24 @@ import Footer from "@/components/Footer";
 
 const features = [
   {
-    n: "1",
-    title: "Landscape-first",
-    desc: "Cinema-style horizontal viewing, no cramped vertical scroll.",
+    n: "01",
+    title: "Scroll horizontally",
+    desc: "Wide-screen video. Same easy scroll.",
   },
   {
-    n: "2",
-    title: "Earn from Day 1",
-    desc: "Monetise from your first video. No 1,000 subscriber wait.",
+    n: "02",
+    title: "Earn from ₹100",
+    desc: "Your first video can be your first step toward earning.",
   },
   {
-    n: "3",
-    title: "6+ languages",
-    desc: "Hindi, Bhojpuri, Marathi, Tamil, Telugu, Bengali and more.",
+    n: "03",
+    title: "India speaks. We listen.",
+    desc: "26+ languages. Regional creators. One platform.",
   },
   {
-    n: "4",
-    title: "Made in India",
-    desc: "Built in Bharat, for Bharat. Data stays home.",
+    n: "04",
+    title: "Made here. Built everywhere.",
+    desc: "Made in India, designed for the world.",
   },
 ];
 
@@ -79,6 +79,41 @@ const testimonials = [
     role: "Comedy creator, Indore",
     initial: "A",
   },
+  {
+    quote:
+      "Ek hafte mein Silver tier unlock ho gaya. Payout bhi seedha UPI pe.",
+    name: "Neha Kulkarni",
+    role: "Dance creator, Pune",
+    initial: "N",
+  },
+  {
+    quote:
+      "Bhojpuri content ke liye MeTubez sabse best platform hai — sahi audience milti hai.",
+    name: "Vikas Prasad",
+    role: "Music creator, Varanasi",
+    initial: "V",
+  },
+  {
+    quote:
+      "Landscape videos kaise banate hain, seedha tutorial dekhne ko mila. Very helpful.",
+    name: "Anjali Thakur",
+    role: "Vlogger, Dehradun",
+    initial: "A",
+  },
+  {
+    quote:
+      "First-time creator hoon, aur pehle mahine mein hi ₹1,200 kama liye. Amazing feeling.",
+    name: "Ravi Kumar",
+    role: "Comedy creator, Lucknow",
+    initial: "R",
+  },
+  {
+    quote:
+      "Ads bhi seamlessly integrate hote hain, viewer experience never breaks.",
+    name: "Sneha Iyer",
+    role: "Viewer, Chennai",
+    initial: "S",
+  },
 ];
 
 export default function Home() {
@@ -90,26 +125,25 @@ export default function Home() {
         <section className="max-w-[1240px] mx-auto px-5 md:px-8 pt-16 md:pt-24 pb-16 md:pb-20">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-[#f0fbf1] text-[#2ecc40] text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#2ecc40]" />
+              <div className="inline-flex items-center gap-2 bg-[#eaf4e8] text-[#57a554] text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#57a554]" />
                 India&apos;s creator platform
               </div>
-              <h1 className="text-[38px] md:text-[54px] leading-[1.05] font-black text-[#111] tracking-tight mb-6">
-                The way the new India is meant to watch and create.
+              <h1 className="text-[46px] md:text-[68px] leading-[1] font-black text-[#111] tracking-tight mb-6">
+                Create. Share. Monetize.
               </h1>
-              <p className="text-[16px] md:text-[17px] text-[#555] leading-relaxed max-w-[520px]">
-                India&apos;s landscape-first video platform. Watch, create and
-                earn — all in one place, built for Bharat.
+              <p className="text-[17px] md:text-[19px] text-[#555] leading-relaxed max-w-[520px]">
+                World&apos;s first horizontal scrollable video platform.
               </p>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] md:aspect-[5/4] rounded-2xl bg-gradient-to-br from-[#f0fbf1] via-white to-[#e6f9e8] border border-[#e5f2e6] p-6 md:p-10 flex items-center justify-center overflow-hidden">
+              <div className="aspect-[4/3] md:aspect-[5/4] rounded-2xl bg-gradient-to-br from-[#eaf4e8] via-white to-[#d9ecd6] border border-[#cfe5cc] p-6 md:p-10 flex items-center justify-center overflow-hidden">
                 <div className="relative w-full h-full flex items-center justify-center">
                   <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(46,204,64,0.12),transparent_65%)]" />
-                  <div className="relative w-[220px] md:w-[260px] aspect-[9/19] rounded-[32px] bg-[#111] p-2 shadow-2xl shadow-[#2ecc40]/20">
+                  <div className="relative w-[220px] md:w-[260px] aspect-[9/19] rounded-[32px] bg-[#111] p-2 shadow-2xl shadow-[#57a554]/20">
                     <div className="w-full h-full rounded-[26px] bg-white overflow-hidden flex flex-col">
                       <div className="h-6 bg-[#111]" />
-                      <div className="flex-1 bg-gradient-to-br from-[#2ecc40] to-[#26b336] flex items-center justify-center p-4">
+                      <div className="flex-1 bg-gradient-to-br from-[#57a554] to-[#4a9346] flex items-center justify-center p-4">
                         <Image
                           src="/metubez-logo.png"
                           alt="MeTubez app"
@@ -122,7 +156,7 @@ export default function Home() {
                         <div className="h-2 rounded-full bg-[#eee] w-4/5" />
                         <div className="h-2 rounded-full bg-[#eee] w-3/5" />
                         <div className="flex gap-1.5 pt-1">
-                          <div className="h-6 flex-1 rounded bg-[#2ecc40]" />
+                          <div className="h-6 flex-1 rounded bg-[#57a554]" />
                           <div className="h-6 flex-1 rounded bg-[#eee]" />
                         </div>
                       </div>
@@ -137,24 +171,21 @@ export default function Home() {
         {/* Why MeTubez — 4-column features (kept same) */}
         <section className="border-t border-[#eee]">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
-            <div className="text-center max-w-[720px] mx-auto mb-12">
-              <h2 className="text-[28px] md:text-[38px] font-black text-[#111] leading-tight mb-3">
+            <div className="text-center max-w-[1200px] mx-auto mb-12">
+              <h2 className="text-[24px] md:text-[36px] font-black text-[#111] leading-tight md:whitespace-nowrap">
                 Content ka experience, ab landscape mein.
               </h2>
-              <p className="text-[15px] md:text-[16px] text-[#666]">
-                The way India is meant to watch and create.
-              </p>
             </div>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
               {features.map((f) => (
                 <div
                   key={f.n}
-                  className="bg-white border border-[#eee] hover:border-[#2ecc40] hover:shadow-lg hover:shadow-[#2ecc40]/5 rounded-xl p-6 md:p-7 transition-all"
+                  className="bg-white border border-[#eee] hover:border-[#57a554] hover:shadow-lg hover:shadow-[#57a554]/5 rounded-xl p-6 md:p-7 transition-all"
                 >
-                  <div className="w-10 h-10 rounded-lg bg-[#f0fbf1] flex items-center justify-center text-[#2ecc40] font-black text-[15px] mb-4">
+                  <div className="inline-flex items-center h-8 px-2.5 rounded-md bg-[#eaf4e8] text-[#57a554] font-black text-[13px] tracking-wider mb-4">
                     {f.n}
                   </div>
-                  <h3 className="text-[16px] md:text-[17px] font-black text-[#111] mb-2">
+                  <h3 className="text-[16px] md:text-[17px] font-black text-[#111] mb-2 leading-tight">
                     {f.title}
                   </h3>
                   <p className="text-[13px] md:text-[14px] text-[#666] leading-relaxed">
@@ -181,7 +212,7 @@ export default function Home() {
               {[...categories, ...categories].map((c, i) => (
                 <span
                   key={`${c}-${i}`}
-                  className="inline-flex items-center whitespace-nowrap bg-[#2ecc40] text-black text-[14px] md:text-[15px] font-bold px-6 py-3 rounded-full"
+                  className="inline-flex items-center whitespace-nowrap bg-[#57a554] text-black text-[14px] md:text-[15px] font-bold px-6 py-3 rounded-full"
                 >
                   {c}
                 </span>
@@ -236,7 +267,7 @@ export default function Home() {
                 </p>
                 <Link
                   href="/metubers"
-                  className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#2ecc40] text-white text-[14px] font-bold px-6 py-3 rounded-md transition-colors whitespace-nowrap"
+                  className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#57a554] text-white text-[14px] font-bold px-6 py-3 rounded-md transition-colors whitespace-nowrap"
                 >
                   Explore MeTubers program
                   <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
@@ -251,7 +282,7 @@ export default function Home() {
                 </Link>
               </div>
               <div className="bg-[#111] text-white rounded-2xl p-8 md:p-10">
-                <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#2ecc40] mb-3">
+                <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#57a554] mb-3">
                   For brands
                 </p>
                 <h3 className="text-[26px] md:text-[30px] font-black mb-3 leading-tight">
@@ -263,7 +294,7 @@ export default function Home() {
                 </p>
                 <Link
                   href="/brands"
-                  className="inline-flex items-center gap-2 bg-[#2ecc40] hover:bg-[#26b336] text-black text-[14px] font-bold px-6 py-3 rounded-md transition-colors whitespace-nowrap"
+                  className="inline-flex items-center gap-2 bg-[#57a554] hover:bg-[#4a9346] text-black text-[14px] font-bold px-6 py-3 rounded-md transition-colors whitespace-nowrap"
                 >
                   Advertise with us
                   <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
@@ -281,9 +312,9 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Testimonials */}
+        {/* Testimonials — auto-scroll marquee */}
         <section className="border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 pt-16 md:pt-20 pb-6">
             <div className="text-center max-w-[720px] mx-auto mb-12">
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
                 Creator testimonials
@@ -292,17 +323,19 @@ export default function Home() {
                 Loved by Bharat&apos;s creators.
               </h2>
             </div>
-            <div className="grid md:grid-cols-3 gap-5 md:gap-6">
-              {testimonials.map((t) => (
+          </div>
+          <div className="pb-16 md:pb-20 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_5%,black_95%,transparent)]">
+            <div className="reviews-track flex gap-5 w-max">
+              {[...testimonials, ...testimonials].map((t, i) => (
                 <div
-                  key={t.name}
-                  className="bg-white border border-[#eee] rounded-xl p-6 md:p-7"
+                  key={`${t.name}-${i}`}
+                  className="w-[320px] md:w-[360px] shrink-0 bg-white border border-[#eee] rounded-xl p-6 md:p-7"
                 >
                   <p className="text-[14px] md:text-[15px] text-[#333] leading-relaxed italic mb-6">
                     &ldquo;{t.quote}&rdquo;
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-[#2ecc40] text-white flex items-center justify-center font-black text-[14px]">
+                    <div className="w-10 h-10 rounded-full bg-[#57a554] text-white flex items-center justify-center font-black text-[14px]">
                       {t.initial}
                     </div>
                     <div>

@@ -5,8 +5,9 @@
   --foreground: #111111;
   --muted: #666666;
   --border: #e5e5e5;
-  --brand-green: #2ecc40;
-  --brand-green-hover: #26b336;
+  --brand-green: #57a554;
+  --brand-green-hover: #4a9346;
+  --brand-green-soft: #eaf4e8;
   --brand-black: #111111;
 }
 
@@ -62,6 +63,23 @@
 }
 
 .marquee-track:hover {
+  animation-play-state: paused;
+}
+
+@keyframes reviews-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.reviews-track {
+  animation: reviews-scroll 50s linear infinite;
+}
+
+.reviews-track:hover {
   animation-play-state: paused;
 }
 

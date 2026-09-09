@@ -1,10 +1,11 @@
+import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
 const stats = [
   { num: "10K+", label: "Active MeTubers" },
   { num: "₹100", label: "Minimum payout" },
-  { num: "6+", label: "Languages supported" },
+  { num: "13+", label: "Languages supported" },
   { num: "Day 1", label: "Monetisation starts" },
 ];
 
@@ -44,24 +45,49 @@ const benefits = [
 const tiers = [
   {
     name: "Bronze",
-    req: "All new MeTubers",
-    perks: ["Earn from Day 1", "Base per-view rate", "Payout at ₹100"],
+    tagline: "All new MeTubers",
+    coin: "/coin-bronze.jpg",
+    req: "Sign up + upload 1 video",
+    perks: [
+      "Earn from Day 1",
+      "Base per-view rate",
+      "Payout at ₹100",
+      "Instant onboarding (no waiting)",
+    ],
   },
   {
     name: "Silver",
-    req: "Complete 10 videos",
-    perks: ["1.3× base rate", "Priority support", "Weekly leaderboard"],
+    tagline: "Growing creator",
+    coin: "/coin-silver.jpg",
+    req: "10 videos published + 5,000 total views",
+    perks: [
+      "1.3× base earning rate",
+      "Priority creator support",
+      "Weekly leaderboard visibility",
+    ],
   },
   {
     name: "Gold",
-    req: "Reach 1K subscribers",
-    perks: ["1.7× base rate", "Verified badge", "Brand deal eligibility"],
+    tagline: "Established creator",
+    coin: "/coin-gold.jpg",
+    req: "500 subscribers + 50,000 total views",
+    perks: [
+      "1.7× base earning rate",
+      "Verified MeTuber badge",
+      "Brand deal eligibility",
+    ],
     highlight: true,
   },
   {
     name: "Platinum",
-    req: "Top performers",
-    perks: ["2.5× base rate", "Dedicated manager", "Exclusive campaigns"],
+    tagline: "Elite MeTuber",
+    coin: "/coin-platinum.jpg",
+    req: "Top 5% of creators (invite only)",
+    perks: [
+      "2.5× base earning rate",
+      "Dedicated creator manager",
+      "Exclusive brand campaigns",
+    ],
   },
 ];
 
@@ -91,27 +117,31 @@ const startSteps = [
 const faqs = [
   {
     q: "How much can I earn on MeTubez?",
-    a: "Your earnings depend on views, engagement quality, and your tier. Bronze creators earn our base per-view rate, and this multiplies at Silver (1.3×), Gold (1.7×), and Platinum (2.5×). Top MeTubers earn ₹50,000+ per month.",
+    a: "Your earnings depend on how many valid views your content gets, your tier, and content format (Meshorts vs Videos). Bronze creators start at the base per-view rate. Rates multiply as you progress: Silver (1.3×), Gold (1.7×), Platinum (2.5×). Videos over 30 seconds earn 2-3× more per view than Meshorts because ad attention is deeper. Consistent uploaders can reach ₹100 payout in their first 2-4 weeks.",
   },
   {
     q: "When do I get paid?",
-    a: "Once your balance reaches ₹100, you can withdraw to your bank account within 24-48 hours. There's no waiting period once you hit the payout threshold.",
+    a: "You can request a payout the moment your balance hits ₹100. Our team processes payments via UPI or bank transfer within 3-5 working days of your request. There's no upper limit on how much you can withdraw at once, and no cap on how often you can request payouts.",
   },
   {
     q: "Do I need a minimum subscriber count?",
-    a: "No. Unlike other platforms, MeTubez has zero subscriber requirements to start monetising. You earn from your very first video, view number one.",
+    a: "No. Unlike other platforms, MeTubez has zero subscriber requirement to start earning. You earn from view 1 of your very first video. Subscriber counts only matter for tier progression (500 subs unlocks Gold tier, for example), but not for basic monetisation.",
   },
   {
     q: "What languages does MeTubez support?",
-    a: "We currently support Hindi, Bhojpuri, Marathi, Tamil, Telugu, Bengali, Gujarati, Kannada, Punjabi, and English — with more Indian languages coming soon.",
+    a: "MeTubez supports Hindi, Bhojpuri, Marathi, Tamil, Telugu, Bengali, Gujarati, Kannada, Punjabi, Malayalam, Odia, Assamese, and English — with more Indian languages coming soon. Upload in the language your audience speaks. Content is discovered by language preference, so regional creators reach the right audiences.",
   },
   {
     q: "How is the tier system calculated?",
-    a: "Tiers are based on your total videos, subscribers, and consistent quality metrics. You automatically progress as you meet each tier's criteria. No manual application needed.",
+    a: "Tier progression is automatic. Bronze is where every MeTuber starts. Silver unlocks after 10 videos published + 5,000 total views. Gold unlocks at 500 subscribers + 50,000 total views. Platinum is invite-only for our top 5% of performers based on consistent uploads, quality metrics, and audience engagement. No manual application needed for Bronze, Silver, or Gold — you progress automatically as you meet each tier's criteria.",
   },
   {
     q: "Can I use my existing YouTube content?",
-    a: "Yes — you fully own your content. You can re-upload your existing videos to MeTubez. We recommend uploading in landscape 16:9 for the best viewing experience.",
+    a: "Yes — you fully own your content and can re-upload anywhere. To get the best MeTubez experience, we recommend uploading in landscape 16:9 format because our platform is the world's first horizontal-scrollable video experience. Vertical videos will play but with letterboxing on the sides. If your YouTube content is already landscape, it's a perfect fit for MeTubez.",
+  },
+  {
+    q: "What counts as a valid view?",
+    a: "For Meshorts (up to 30 seconds), a valid view means someone watched at least 3 seconds or 50% of your video — whichever is shorter. For Videos (over 30 seconds), a valid view means someone watched at least 30 seconds or 25% of your video — whichever is shorter. Same user max 2 views per video per 24 hours. Views from your own account don't count. These rules ensure your earnings reflect real, engaged viewers.",
   },
 ];
 
@@ -122,7 +152,7 @@ export default function MeTubersPage() {
       <main className="flex-1 bg-white">
         {/* Program Hero */}
         <section className="max-w-[1240px] mx-auto px-5 md:px-8 pt-16 md:pt-24 pb-14 md:pb-16 text-center">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#2ecc40] mb-4">
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#57a554] mb-4">
             MeTubers · Creator program
           </p>
           <h1 className="text-[40px] md:text-[60px] leading-[1.05] font-black text-[#111] tracking-tight mb-5 max-w-[820px] mx-auto">
@@ -137,7 +167,7 @@ export default function MeTubersPage() {
           <div className="flex justify-center">
             <a
               href="#apply"
-              className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#2ecc40] text-white text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-md transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#57a554] text-white text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-md transition-colors whitespace-nowrap"
             >
               Start your journey
               <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
@@ -190,10 +220,10 @@ export default function MeTubersPage() {
               {benefits.map((b) => (
                 <div
                   key={b.title}
-                  className="bg-white border border-[#eee] hover:border-[#2ecc40] hover:shadow-lg hover:shadow-[#2ecc40]/5 rounded-xl p-6 md:p-7 transition-all"
+                  className="bg-white border border-[#eee] hover:border-[#57a554] hover:shadow-lg hover:shadow-[#57a554]/5 rounded-xl p-6 md:p-7 transition-all"
                 >
-                  <div className="w-11 h-11 rounded-lg bg-[#f0fbf1] flex items-center justify-center text-[18px] mb-4">
-                    <span className="text-[#2ecc40] font-black">{b.icon}</span>
+                  <div className="w-11 h-11 rounded-lg bg-[#eaf4e8] flex items-center justify-center text-[18px] mb-4">
+                    <span className="text-[#57a554] font-black">{b.icon}</span>
                   </div>
                   <h3 className="text-[16px] md:text-[17px] font-black text-[#111] mb-2">
                     {b.title}
@@ -221,29 +251,55 @@ export default function MeTubersPage() {
                 Progress through 4 tiers. Every tier unlocks higher earnings.
               </p>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
               {tiers.map((t) => (
                 <div
                   key={t.name}
-                  className={`rounded-2xl p-6 md:p-7 text-center border ${
+                  className={`rounded-2xl p-6 md:p-7 border transition-all ${
                     t.highlight
-                      ? "bg-[#111] text-white border-[#111]"
-                      : "bg-white text-[#111] border-[#eee]"
+                      ? "bg-[#111] text-white border-[#111] shadow-xl shadow-black/10"
+                      : "bg-white text-[#111] border-[#eee] hover:border-[#57a554] hover:shadow-lg hover:shadow-[#57a554]/5"
                   }`}
                 >
-                  <div
-                    className={`text-[20px] md:text-[22px] font-black mb-1 ${
-                      t.highlight ? "text-[#2ecc40]" : "text-[#111]"
-                    }`}
-                  >
-                    {t.name}
+                  <div className="flex justify-center mb-5">
+                    <div
+                      className={`relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ${
+                        t.highlight
+                          ? "ring-2 ring-[#57a554]"
+                          : "ring-1 ring-[#eee]"
+                      }`}
+                    >
+                      <Image
+                        src={t.coin}
+                        alt={`${t.name} coin`}
+                        fill
+                        sizes="112px"
+                        className="object-cover"
+                      />
+                    </div>
                   </div>
-                  <div
-                    className={`text-[12px] mb-5 ${
-                      t.highlight ? "text-white/60" : "text-[#666]"
-                    }`}
-                  >
-                    {t.req}
+                  <div className="text-center">
+                    <div
+                      className={`text-[20px] md:text-[22px] font-black mb-1 ${
+                        t.highlight ? "text-[#57a554]" : "text-[#111]"
+                      }`}
+                    >
+                      {t.name}
+                    </div>
+                    <div
+                      className={`text-[13px] mb-2 font-bold ${
+                        t.highlight ? "text-white/90" : "text-[#333]"
+                      }`}
+                    >
+                      {t.tagline}
+                    </div>
+                    <div
+                      className={`text-[11.5px] leading-relaxed mb-5 ${
+                        t.highlight ? "text-white/60" : "text-[#777]"
+                      }`}
+                    >
+                      {t.req}
+                    </div>
                   </div>
                   <ul
                     className={`text-left text-[13px] leading-relaxed border-t pt-4 space-y-2 ${
@@ -252,17 +308,86 @@ export default function MeTubersPage() {
                   >
                     {t.perks.map((p) => (
                       <li key={p} className="flex items-start gap-2">
-                        <span
-                          className={`inline-block w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${
-                            t.highlight ? "bg-[#2ecc40]" : "bg-[#2ecc40]"
-                          }`}
-                        />
+                        <span className="inline-block w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-[#57a554]" />
                         <span>{p}</span>
                       </li>
                     ))}
                   </ul>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* How you earn — on Meshorts and Videos */}
+        <section className="border-t border-[#eee] bg-[#fafafa]">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
+            <div className="text-center max-w-[720px] mx-auto mb-12">
+              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
+                How you earn
+              </p>
+              <h2 className="text-[28px] md:text-[38px] font-black text-[#111] leading-tight mb-3">
+                Meshorts and Videos. Same feed, different rates.
+              </h2>
+              <p className="text-[15px] md:text-[16px] text-[#666]">
+                Both content formats live in the same feed. Different lengths,
+                different earnings.
+              </p>
+            </div>
+            <div className="grid md:grid-cols-2 gap-5 md:gap-6 mb-8">
+              <div className="bg-white border border-[#eee] rounded-2xl p-6 md:p-8">
+                <div className="inline-flex items-center gap-2 bg-[#eaf4e8] text-[#57a554] text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4">
+                  Meshorts · up to 30s
+                </div>
+                <h3 className="text-[22px] md:text-[24px] font-black text-[#111] mb-3">
+                  ₹4 – ₹14 per 1,000 views
+                </h3>
+                <p className="text-[14px] text-[#555] leading-relaxed">
+                  Fast, casual content. Ads run natively between Meshorts. Rate
+                  based on your tier.
+                </p>
+              </div>
+              <div className="bg-white border border-[#eee] rounded-2xl p-6 md:p-8">
+                <div className="inline-flex items-center gap-2 bg-[#eaf4e8] text-[#57a554] text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4">
+                  Videos · over 30s
+                </div>
+                <h3 className="text-[22px] md:text-[24px] font-black text-[#111] mb-3">
+                  ₹12 – ₹45 per 1,000 views
+                </h3>
+                <p className="text-[14px] text-[#555] leading-relaxed">
+                  Long-form with pre-roll and mid-roll ads. Higher earning rates
+                  because attention is deeper.
+                </p>
+              </div>
+            </div>
+            <div className="bg-white border border-[#eee] rounded-2xl p-6 md:p-8">
+              <h4 className="text-[13px] font-black uppercase tracking-wider text-[#111] mb-4">
+                What counts as a valid view
+              </h4>
+              <ul className="grid md:grid-cols-2 gap-3 text-[14px] text-[#333]">
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 w-4 h-4 rounded-full bg-[#57a554] text-white flex items-center justify-center text-[9px] font-black shrink-0">
+                    ✓
+                  </span>
+                  <span>
+                    <strong className="font-black">Meshorts:</strong> viewer
+                    watches at least 3 seconds or 50% of the video.
+                  </span>
+                </li>
+                <li className="flex items-start gap-3">
+                  <span className="mt-1 w-4 h-4 rounded-full bg-[#57a554] text-white flex items-center justify-center text-[9px] font-black shrink-0">
+                    ✓
+                  </span>
+                  <span>
+                    <strong className="font-black">Videos:</strong> viewer
+                    watches at least 30 seconds or 25% of the video.
+                  </span>
+                </li>
+              </ul>
+              <p className="text-[13px] text-[#666] italic mt-5 border-t border-[#eee] pt-4">
+                Every view counted, every rupee earned — transparent, real-time,
+                no surprises.
+              </p>
             </div>
           </div>
         </section>
@@ -323,7 +448,7 @@ export default function MeTubersPage() {
                       key={item}
                       className="flex items-start gap-3 text-[14px] md:text-[15px] text-[#333]"
                     >
-                      <span className="mt-0.5 w-5 h-5 rounded-full bg-[#2ecc40] text-white flex items-center justify-center text-[11px] font-black shrink-0">
+                      <span className="mt-0.5 w-5 h-5 rounded-full bg-[#57a554] text-white flex items-center justify-center text-[11px] font-black shrink-0">
                         ✓
                       </span>
                       {item}
@@ -370,7 +495,7 @@ export default function MeTubersPage() {
                 </Select>
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#2ecc40] hover:bg-[#26b336] text-black text-[14px] font-bold px-6 py-3.5 rounded-md transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#57a554] hover:bg-[#4a9346] text-black text-[14px] font-bold px-6 py-3.5 rounded-md transition-colors"
                 >
                   Submit application
                   <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
@@ -406,7 +531,7 @@ export default function MeTubersPage() {
                     <span className="text-[15px] md:text-[16px] font-bold text-[#111] pr-6">
                       {f.q}
                     </span>
-                    <span className="faq-plus text-[22px] text-[#666] group-open:text-[#2ecc40] shrink-0 w-6 text-center leading-none" />
+                    <span className="faq-plus text-[22px] text-[#666] group-open:text-[#57a554] shrink-0 w-6 text-center leading-none" />
                   </summary>
                   <p className="text-[14px] md:text-[15px] text-[#666] leading-relaxed pt-3">
                     {f.a}
@@ -428,7 +553,7 @@ export default function MeTubersPage() {
             </p>
             <a
               href="#apply"
-              className="inline-flex items-center gap-2 bg-[#2ecc40] hover:bg-[#26b336] text-black text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-md transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#57a554] hover:bg-[#4a9346] text-black text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-md transition-colors whitespace-nowrap"
             >
               Become a MeTuber
               <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
@@ -466,7 +591,7 @@ function Field({
       <input
         type={type}
         placeholder={placeholder}
-        className="w-full bg-white border border-[#ddd] rounded-md px-3.5 py-2.5 text-[14px] text-[#111] placeholder:text-[#aaa] focus:outline-none focus:border-[#2ecc40] focus:ring-2 focus:ring-[#2ecc40]/20"
+        className="w-full bg-white border border-[#ddd] rounded-md px-3.5 py-2.5 text-[14px] text-[#111] placeholder:text-[#aaa] focus:outline-none focus:border-[#57a554] focus:ring-2 focus:ring-[#57a554]/20"
       />
     </div>
   );
@@ -485,7 +610,7 @@ function Select({
         {label}
       </label>
       <select
-        className="w-full bg-white border border-[#ddd] rounded-md px-3.5 py-2.5 text-[14px] text-[#111] focus:outline-none focus:border-[#2ecc40] focus:ring-2 focus:ring-[#2ecc40]/20"
+        className="w-full bg-white border border-[#ddd] rounded-md px-3.5 py-2.5 text-[14px] text-[#111] focus:outline-none focus:border-[#57a554] focus:ring-2 focus:ring-[#57a554]/20"
         defaultValue=""
       >
         {children}
