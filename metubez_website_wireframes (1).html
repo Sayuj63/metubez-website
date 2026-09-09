@@ -1,0 +1,810 @@
+
+<h2 class="sr-only">Black and white wireframes for MeTubez website — sitemap, home page, and MeTubers creator program page</h2>
+
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:transparent;color:#111}
+.w{padding:.5rem 0 2rem}
+.eyebrow{font-size:10px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#666;margin-bottom:4px}
+.h1{font-size:22px;font-weight:500;line-height:1.15;margin-bottom:6px;color:#111}
+.hsub{font-size:12px;color:#666;line-height:1.55;max-width:640px;margin-bottom:16px}
+
+.sec-label{font-size:9px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#666;margin:24px 0 8px;padding-bottom:5px;border-bottom:0.5px solid #ccc}
+.sec-label:first-of-type{margin-top:8px}
+
+.pglabel{display:inline-block;font-size:9px;font-weight:600;letter-spacing:.08em;background:#111;color:#fff;padding:3px 8px;border-radius:2px;margin-bottom:6px}
+.pgtitle{font-size:13px;font-weight:500;margin-bottom:2px;color:#111}
+.pgsub{font-size:10.5px;color:#666;margin-bottom:10px}
+
+.wireframe{border:1px solid #111;background:#fff;margin-bottom:16px;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;overflow:hidden}
+.wf-header{background:#f5f5f5;border-bottom:1px solid #111;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.wf-logo{font-size:11px;font-weight:600;letter-spacing:.02em;border:1px dashed #666;padding:4px 10px;border-radius:3px;background:#fff}
+.wf-nav{display:flex;gap:14px}
+.wf-nav-item{font-size:10px;color:#333}
+.wf-cta{font-size:10px;background:#111;color:#fff;padding:5px 12px;border-radius:3px}
+
+.section{padding:14px;border-bottom:1px dashed #ccc}
+.section:last-child{border-bottom:none}
+
+.label-band{font-size:8px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:#666;background:#fafafa;padding:5px 12px;border-bottom:1px dashed #ccc}
+
+.placeholder{background:#f5f5f5;border:1px dashed #999;padding:10px 12px;color:#555;font-size:10px;line-height:1.5}
+.ph-large{min-height:160px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;text-align:center}
+.ph-med{min-height:100px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:6px;text-align:center}
+.ph-sm{min-height:60px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:4px;text-align:center}
+
+.hero-headline{font-size:16px;font-weight:600;color:#111;margin-bottom:4px}
+.hero-sub{font-size:11px;color:#666;margin-bottom:10px;line-height:1.5}
+.hero-ctas{display:flex;gap:8px;flex-wrap:wrap}
+.btn-primary{background:#111;color:#fff;padding:6px 14px;border-radius:3px;font-size:10px}
+.btn-secondary{background:#fff;color:#111;padding:5px 13px;border-radius:3px;font-size:10px;border:1px solid #111}
+.btn-store{background:#fff;color:#111;padding:5px 10px;border-radius:3px;font-size:10px;border:1px dashed #666;display:flex;align-items:center;gap:4px}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.grid6{display:grid;grid-template-columns:repeat(6,1fr);gap:6px}
+
+.feat-card{border:1px dashed #999;background:#fafafa;padding:10px;min-height:90px;display:flex;flex-direction:column;gap:5px}
+.feat-icon{width:20px;height:20px;border:1px solid #666;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:8px;color:#666;margin-bottom:2px}
+.feat-title{font-size:10px;font-weight:600;color:#111}
+.feat-desc{font-size:9px;color:#666;line-height:1.4}
+
+.category-chip{background:#fff;border:1px solid #666;padding:4px 8px;border-radius:12px;font-size:9px;color:#333;text-align:center}
+
+.step-num{width:22px;height:22px;border:1px solid #111;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:600;color:#111}
+.step-title{font-size:10px;font-weight:600;color:#111;margin:4px 0 2px}
+.step-desc{font-size:9px;color:#666;line-height:1.4}
+
+.tier-card{border:1px dashed #999;padding:10px;text-align:center;background:#fafafa}
+.tier-name{font-size:11px;font-weight:600;color:#111;margin-bottom:2px}
+.tier-req{font-size:9px;color:#666;margin-bottom:6px}
+.tier-perk{font-size:9px;color:#333;line-height:1.5;text-align:left;border-top:1px dashed #ccc;padding-top:6px;margin-top:6px}
+
+.tab-row{display:flex;gap:0;border-bottom:1px solid #666;margin-bottom:10px}
+.tab{font-size:10px;padding:6px 12px;color:#666}
+.tab.active{color:#111;font-weight:600;border-bottom:2px solid #111;margin-bottom:-1px}
+
+.faq-item{border-bottom:1px dashed #ccc;padding:8px 0;display:flex;justify-content:space-between;align-items:center}
+.faq-item:last-child{border-bottom:none}
+.faq-q{font-size:10px;font-weight:500;color:#111}
+.faq-toggle{font-size:12px;color:#666}
+
+.footer-cols{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:12px}
+.footer-col{display:flex;flex-direction:column;gap:5px}
+.footer-title{font-size:9px;font-weight:600;color:#111;text-transform:uppercase;letter-spacing:.06em;margin-bottom:4px}
+.footer-link{font-size:9.5px;color:#555}
+
+.sitemap-node{border:1px solid #111;background:#fff;padding:8px 12px;border-radius:3px;font-size:10.5px;font-weight:500;text-align:center}
+.sitemap-node.root{background:#111;color:#fff}
+.sitemap-node.section-node{background:#f5f5f5;font-weight:600}
+.sitemap-line{width:1px;background:#111;height:14px;margin:0 auto}
+.sitemap-hline{height:1px;background:#111;flex:1}
+.sitemap-branch{display:flex;align-items:center;justify-content:center;gap:0;margin:0 -3px}
+.sitemap-branch>*{margin:0 3px}
+
+.form-block{background:#fafafa;border:1px dashed #999;padding:10px;display:flex;flex-direction:column;gap:6px}
+.form-label{font-size:9px;color:#666;font-weight:500}
+.form-input{background:#fff;border:1px solid #999;height:26px;border-radius:3px}
+.form-select{background:#fff;border:1px solid #999;height:26px;border-radius:3px;display:flex;align-items:center;padding:0 8px;font-size:9px;color:#666}
+.form-btn{background:#111;color:#fff;font-size:10px;padding:7px;border-radius:3px;text-align:center;font-weight:500}
+
+.stat-block{border:1px dashed #999;padding:10px;text-align:center;background:#fafafa}
+.stat-num{font-size:18px;font-weight:600;color:#111}
+.stat-label{font-size:9px;color:#666;margin-top:2px}
+
+.testim{border:1px dashed #999;padding:10px;background:#fafafa;display:flex;flex-direction:column;gap:6px}
+.testim-quote{font-size:10px;color:#333;line-height:1.5;font-style:italic}
+.testim-meta{display:flex;align-items:center;gap:6px}
+.testim-avatar{width:22px;height:22px;border-radius:50%;border:1px solid #999;background:#eee;display:flex;align-items:center;justify-content:center;font-size:8px}
+.testim-name{font-size:9px;color:#111;font-weight:600}
+.testim-role{font-size:8.5px;color:#666}
+
+.creator-card{border:1px dashed #999;background:#fafafa;padding:0;overflow:hidden}
+.creator-thumb{background:#e8e8e8;border-bottom:1px dashed #999;min-height:60px;display:flex;align-items:center;justify-content:center;font-size:9px;color:#888;position:relative}
+.creator-meta{padding:6px 8px;display:flex;gap:6px;align-items:center}
+.creator-ava{width:16px;height:16px;border-radius:50%;background:#ddd;flex-shrink:0}
+.creator-info{flex:1;min-width:0}
+.creator-name{font-size:8.5px;font-weight:600;color:#111}
+.creator-stats{font-size:8px;color:#888}
+
+.note-strip{background:#fffbea;border:1px dashed #b88a00;padding:8px 12px;font-size:10px;color:#5a4a00;margin-top:16px;border-radius:3px;line-height:1.5}
+.note-strip strong{color:#3a3000}
+</style>
+
+<div class="w">
+
+<div class="eyebrow">MeTubez website · wireframe pack v1</div>
+<div class="h1">Black &amp; white wireframes — MeTubez.com</div>
+<div class="hsub">Structure first, design later. These wireframes lock the site architecture, page layouts, section hierarchy and content blocks for the MeTubez website and the MeTubers creator program page. No color, no photos, no fonts — just what goes where.</div>
+
+<!-- SITEMAP -->
+<div class="sec-label">01 — Sitemap</div>
+
+<div class="wireframe">
+  <div class="label-band">Site architecture · top-level pages</div>
+  <div class="section" style="padding:20px 14px">
+    <div style="display:flex;justify-content:center">
+      <div class="sitemap-node root">metubez.com</div>
+    </div>
+    <div class="sitemap-line"></div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin-bottom:10px">
+      <div class="sitemap-node section-node">Home</div>
+      <div class="sitemap-node section-node">MeTubers<br><span style="font-size:8px;font-weight:400;color:#666">Creator program</span></div>
+      <div class="sitemap-node section-node">For Brands<br><span style="font-size:8px;font-weight:400;color:#666">Advertise</span></div>
+      <div class="sitemap-node section-node">Company</div>
+      <div class="sitemap-node section-node">Resources</div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:8px;font-size:9px;color:#666;text-align:center">
+      <div style="line-height:1.6">Hero<br>Features<br>Categories<br>Download</div>
+      <div style="line-height:1.6">Program benefits<br>Tiers &amp; rewards<br>How to start<br>Success stories<br>Apply</div>
+      <div style="line-height:1.6">Ad formats<br>Targeting<br>Case studies<br>Book demo</div>
+      <div style="line-height:1.6">About us<br>Team<br>Press<br>Careers<br>Contact</div>
+      <div style="line-height:1.6">Blog<br>Help center<br>Community<br>Trust &amp; safety</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 1 — HOME -->
+<!-- ============================================================ -->
+<div class="sec-label">02 — Home page (metubez.com)</div>
+
+<div class="pglabel">Page 1 of 3</div>
+<div class="pgtitle">Home</div>
+<div class="pgsub">The public-facing brand page. Introduces MeTubez, drives app downloads, and directs creators and brands into their respective portals.</div>
+
+<div class="wireframe">
+  <!-- Global header -->
+  <div class="wf-header">
+    <div style="display:flex;align-items:center;gap:14px">
+      <div class="wf-logo">[Logo] MeTubez</div>
+      <div class="wf-nav">
+        <span class="wf-nav-item">Home</span>
+        <span class="wf-nav-item">MeTubers</span>
+        <span class="wf-nav-item">For Brands</span>
+        <span class="wf-nav-item">Company</span>
+        <span class="wf-nav-item">Blog</span>
+      </div>
+    </div>
+    <div class="wf-cta">Download app</div>
+  </div>
+
+  <!-- Hero -->
+  <div class="section" style="padding:20px 14px">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:10px;border:none;background:transparent;text-align:left">Hero section</div>
+    <div class="grid2">
+      <div>
+        <div class="hero-headline">India ka apna video platform.<br>Create. Share. Monetise.</div>
+        <div class="hero-sub">India's landscape-first video platform. Watch, create and earn — all in one place, built for Bharat.</div>
+        <div class="hero-ctas">
+          <div class="btn-store">▶ Play Store</div>
+          <div class="btn-store">⬇ App Store</div>
+          <div class="btn-secondary">Become a MeTuber →</div>
+        </div>
+      </div>
+      <div class="placeholder ph-large">
+        [App phone mockup]<br><span style="font-size:9px">Product hero image · MeTubez UI shown on device</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Trust bar -->
+  <div class="section" style="padding:10px 14px">
+    <div style="text-align:center;font-size:9px;color:#666;margin-bottom:6px">TRUSTED BY CREATORS ACROSS INDIA</div>
+    <div class="grid6" style="gap:10px">
+      <div class="placeholder ph-sm" style="min-height:36px">Logo 1</div>
+      <div class="placeholder ph-sm" style="min-height:36px">Logo 2</div>
+      <div class="placeholder ph-sm" style="min-height:36px">Logo 3</div>
+      <div class="placeholder ph-sm" style="min-height:36px">Logo 4</div>
+      <div class="placeholder ph-sm" style="min-height:36px">Logo 5</div>
+      <div class="placeholder ph-sm" style="min-height:36px">Logo 6</div>
+    </div>
+  </div>
+
+  <!-- Why MeTubez -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">Why MeTubez · 4-column features</div>
+    <div style="text-align:center;margin-bottom:14px">
+      <div style="font-size:15px;font-weight:600;color:#111">Content ka experience, ab landscape mein.</div>
+      <div style="font-size:10px;color:#666;margin-top:2px">The way India is meant to watch and create.</div>
+    </div>
+    <div class="grid4">
+      <div class="feat-card">
+        <div class="feat-icon">1</div>
+        <div class="feat-title">Landscape-first</div>
+        <div class="feat-desc">Cinema-style horizontal viewing, no cramped vertical scroll.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">2</div>
+        <div class="feat-title">Earn from Day 1</div>
+        <div class="feat-desc">Monetise from your first video. No 1,000 subscriber wait.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">3</div>
+        <div class="feat-title">6+ languages</div>
+        <div class="feat-desc">Hindi, Bhojpuri, Marathi, Tamil, Telugu, Bengali and more.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">4</div>
+        <div class="feat-title">Made in India</div>
+        <div class="feat-desc">Built in Bharat, for Bharat. Data stays home.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Categories -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">Content categories</div>
+    <div style="text-align:center;margin-bottom:12px">
+      <div style="font-size:14px;font-weight:600;color:#111">Explore India, one video at a time.</div>
+    </div>
+    <div style="display:flex;gap:6px;flex-wrap:wrap;justify-content:center">
+      <div class="category-chip">Music</div>
+      <div class="category-chip">Podcasts</div>
+      <div class="category-chip">Cooking</div>
+      <div class="category-chip">Dance</div>
+      <div class="category-chip">Comedy</div>
+      <div class="category-chip">Education</div>
+      <div class="category-chip">Vlogs</div>
+      <div class="category-chip">Technology</div>
+      <div class="category-chip">Religious</div>
+      <div class="category-chip">Sports</div>
+      <div class="category-chip">Entertainment</div>
+      <div class="category-chip">Everyday India</div>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">How MeTubez works · 3 steps</div>
+    <div class="grid3">
+      <div style="text-align:left">
+        <div class="step-num">1</div>
+        <div class="step-title">Download the app</div>
+        <div class="step-desc">Free on Play Store and App Store. Sign up in seconds.</div>
+      </div>
+      <div style="text-align:left">
+        <div class="step-num">2</div>
+        <div class="step-title">Watch or create</div>
+        <div class="step-desc">Discover Indian creators or upload your first video.</div>
+      </div>
+      <div style="text-align:left">
+        <div class="step-num">3</div>
+        <div class="step-title">Earn as you grow</div>
+        <div class="step-desc">Monetisation starts from your first video. No wait.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Split section: For creators + For brands -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">Two audiences · split CTA section</div>
+    <div class="grid2">
+      <div class="placeholder" style="padding:14px;min-height:130px;text-align:left;background:#fafafa">
+        <div style="font-size:9px;color:#666;font-weight:600;letter-spacing:.06em;margin-bottom:4px">FOR CREATORS</div>
+        <div style="font-size:13px;font-weight:600;color:#111;margin-bottom:4px">Become a MeTuber.</div>
+        <div style="font-size:10px;color:#555;line-height:1.5;margin-bottom:10px">Join India's fastest-growing creator platform. Earn from your first video with a fair, transparent structure.</div>
+        <div class="btn-primary" style="display:inline-block">Explore MeTubers program →</div>
+      </div>
+      <div class="placeholder" style="padding:14px;min-height:130px;text-align:left;background:#fafafa">
+        <div style="font-size:9px;color:#666;font-weight:600;letter-spacing:.06em;margin-bottom:4px">FOR BRANDS</div>
+        <div style="font-size:13px;font-weight:600;color:#111;margin-bottom:4px">Reach Bharat with MeTubez Ads.</div>
+        <div style="font-size:10px;color:#555;line-height:1.5;margin-bottom:10px">The only landscape-first video platform in India. Cinematic ad canvas built for real engagement.</div>
+        <div class="btn-primary" style="display:inline-block">Advertise with us →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">Creator testimonials · 3 quotes</div>
+    <div class="grid3">
+      <div class="testim">
+        <div class="testim-quote">"Pehli hi video pe earning shuru ho gayi. MeTubez pe wait nahi karna padta."</div>
+        <div class="testim-meta">
+          <div class="testim-avatar">P</div>
+          <div>
+            <div class="testim-name">Priya Sharma</div>
+            <div class="testim-role">Food creator, Ahmedabad</div>
+          </div>
+        </div>
+      </div>
+      <div class="testim">
+        <div class="testim-quote">"Landscape mein content dekhna feels like watching cinema on phone."</div>
+        <div class="testim-meta">
+          <div class="testim-avatar">R</div>
+          <div>
+            <div class="testim-name">Rahul Verma</div>
+            <div class="testim-role">Viewer, Patna</div>
+          </div>
+        </div>
+      </div>
+      <div class="testim">
+        <div class="testim-quote">"Bharat ke creators ke liye finally kuch India ne banaya."</div>
+        <div class="testim-meta">
+          <div class="testim-avatar">A</div>
+          <div>
+            <div class="testim-name">Aakash Mehta</div>
+            <div class="testim-role">Comedy creator, Indore</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Download banner -->
+  <div class="section" style="background:#f5f5f5">
+    <div style="text-align:center;padding:14px 0">
+      <div style="font-size:15px;font-weight:600;color:#111;margin-bottom:4px">Download MeTubez today.</div>
+      <div style="font-size:10px;color:#666;margin-bottom:12px">Free · Made in India · Available on Android and iOS</div>
+      <div style="display:flex;gap:8px;justify-content:center">
+        <div class="btn-store">▶ Play Store</div>
+        <div class="btn-store">⬇ App Store</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div class="wf-header" style="border-top:1px solid #111;border-bottom:none;background:#fafafa;padding:14px;flex-direction:column;align-items:stretch;gap:12px">
+    <div class="footer-cols">
+      <div class="footer-col">
+        <div class="wf-logo" style="align-self:flex-start;margin-bottom:6px">[Logo] MeTubez</div>
+        <div style="font-size:9px;color:#666;line-height:1.5">India's landscape-first video platform. Create. Share. Monetise.</div>
+        <div style="font-size:8.5px;color:#888;margin-top:4px">A product of Twenties Entertainment Pvt Ltd</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Platform</div>
+        <div class="footer-link">MeTubers program</div>
+        <div class="footer-link">For brands</div>
+        <div class="footer-link">Download app</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Company</div>
+        <div class="footer-link">About us</div>
+        <div class="footer-link">Press</div>
+        <div class="footer-link">Careers</div>
+        <div class="footer-link">Contact</div>
+      </div>
+      <div class="footer-col">
+        <div class="footer-title">Legal</div>
+        <div class="footer-link">Privacy policy</div>
+        <div class="footer-link">Terms of use</div>
+        <div class="footer-link">Community guidelines</div>
+        <div class="footer-link">CSAE standards</div>
+      </div>
+    </div>
+    <div style="border-top:1px dashed #ccc;padding-top:8px;display:flex;justify-content:space-between;align-items:center">
+      <div style="font-size:8.5px;color:#888">© 2026 Twenties Entertainment Pvt Ltd. All rights reserved.</div>
+      <div style="display:flex;gap:6px">
+        <div style="width:20px;height:20px;border:1px solid #999;border-radius:3px"></div>
+        <div style="width:20px;height:20px;border:1px solid #999;border-radius:3px"></div>
+        <div style="width:20px;height:20px;border:1px solid #999;border-radius:3px"></div>
+        <div style="width:20px;height:20px;border:1px solid #999;border-radius:3px"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 2 — METUBERS PROGRAM -->
+<!-- ============================================================ -->
+<div class="sec-label">03 — MeTubers creator program page (metubez.com/creators)</div>
+
+<div class="pglabel">Page 2 of 3</div>
+<div class="pgtitle">MeTubers — creator program</div>
+<div class="pgsub">The dedicated creator destination. Explains the program, tiers, monetisation, and drives creators to sign up. Modeled loosely on Moj for Creators, adapted for MeTubez positioning.</div>
+
+<div class="wireframe">
+  <!-- Header - simplified -->
+  <div class="wf-header">
+    <div style="display:flex;align-items:center;gap:14px">
+      <div class="wf-logo">[Logo] MeTubez / MeTubers</div>
+      <div class="wf-nav">
+        <span class="wf-nav-item">Program</span>
+        <span class="wf-nav-item">Tiers</span>
+        <span class="wf-nav-item">How to start</span>
+        <span class="wf-nav-item">Stories</span>
+        <span class="wf-nav-item">FAQ</span>
+      </div>
+    </div>
+    <div class="wf-cta">Apply now</div>
+  </div>
+
+  <!-- Hero -->
+  <div class="section" style="padding:20px 14px">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:10px;border:none;background:transparent;text-align:left">Program hero · large centered</div>
+    <div style="text-align:center;padding:14px 0">
+      <div style="font-size:9px;color:#666;font-weight:600;letter-spacing:.14em;margin-bottom:6px">METUBERS · CREATOR PROGRAM</div>
+      <div style="font-size:20px;font-weight:600;color:#111;margin-bottom:6px;line-height:1.2">Become a MeTuber.<br>Earn from your first video.</div>
+      <div style="font-size:11px;color:#666;margin-bottom:12px;max-width:420px;margin-left:auto;margin-right:auto;line-height:1.5">Join the fastest-growing creator community in India. Fair monetisation, transparent tiers, real rewards.</div>
+      <div class="hero-ctas" style="justify-content:center">
+        <div class="btn-primary">Start your journey →</div>
+        <div class="btn-secondary">Watch program video</div>
+      </div>
+    </div>
+    <div class="placeholder ph-large" style="margin-top:10px">
+      [Program hero video / animation]<br><span style="font-size:9px">60-second app intro voiceover reel embedded</span>
+    </div>
+  </div>
+
+  <!-- Stats band -->
+  <div class="section" style="padding:14px">
+    <div class="grid4">
+      <div class="stat-block">
+        <div class="stat-num">10K+</div>
+        <div class="stat-label">Active MeTubers</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">₹100</div>
+        <div class="stat-label">Minimum payout</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">6+</div>
+        <div class="stat-label">Languages supported</div>
+      </div>
+      <div class="stat-block">
+        <div class="stat-num">Day 1</div>
+        <div class="stat-label">Monetisation starts</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- What's in it for you -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">What's in it for you · 6-benefit grid</div>
+    <div style="text-align:center;margin-bottom:14px">
+      <div style="font-size:15px;font-weight:600;color:#111">Unlock rewards as you grow.</div>
+      <div style="font-size:10px;color:#666;margin-top:2px">Every MeTuber gets access to these benefits from day one.</div>
+    </div>
+    <div class="grid3" style="gap:10px">
+      <div class="feat-card">
+        <div class="feat-icon">₹</div>
+        <div class="feat-title">Monetisation</div>
+        <div class="feat-desc">Earn from your first video. Fair per-view rate + quality multiplier.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">★</div>
+        <div class="feat-title">Creator badges</div>
+        <div class="feat-desc">Progress from Bronze to Platinum. Higher tiers, higher rewards.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🏆</div>
+        <div class="feat-title">Weekly bonuses</div>
+        <div class="feat-desc">Top-performing MeTubers win extra rewards every week.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">🎯</div>
+        <div class="feat-title">Brand deals</div>
+        <div class="feat-desc">Get discovered by brands looking to work with Indian creators.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📚</div>
+        <div class="feat-title">Learn &amp; grow</div>
+        <div class="feat-desc">Access to creator playbooks, tips, and best practices.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">👥</div>
+        <div class="feat-title">Creator support</div>
+        <div class="feat-desc">Dedicated creator support team for verified MeTubers.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Tier progression -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">Tier progression · 4 tiers</div>
+    <div style="text-align:center;margin-bottom:14px">
+      <div style="font-size:15px;font-weight:600;color:#111">Your MeTuber journey.</div>
+      <div style="font-size:10px;color:#666;margin-top:2px">Progress through 4 tiers. Every tier unlocks higher earnings.</div>
+    </div>
+    <div class="grid4">
+      <div class="tier-card">
+        <div class="tier-name">Bronze</div>
+        <div class="tier-req">All new MeTubers</div>
+        <div class="tier-perk">
+          • Earn from Day 1<br>
+          • Base per-view rate<br>
+          • Payout at ₹100
+        </div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Silver</div>
+        <div class="tier-req">Complete 10 videos</div>
+        <div class="tier-perk">
+          • 1.3× base rate<br>
+          • Priority support<br>
+          • Weekly leaderboard
+        </div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Gold</div>
+        <div class="tier-req">Reach 1K subscribers</div>
+        <div class="tier-perk">
+          • 1.7× base rate<br>
+          • Verified badge<br>
+          • Brand deal eligibility
+        </div>
+      </div>
+      <div class="tier-card">
+        <div class="tier-name">Platinum</div>
+        <div class="tier-req">Top performers</div>
+        <div class="tier-perk">
+          • 2.5× base rate<br>
+          • Dedicated manager<br>
+          • Exclusive campaigns
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- How to start -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">How to start · 4 steps</div>
+    <div style="text-align:center;margin-bottom:14px">
+      <div style="font-size:15px;font-weight:600;color:#111">Start your MeTuber journey.</div>
+      <div style="font-size:10px;color:#666;margin-top:2px">Sign up in minutes. First earnings in your first video.</div>
+    </div>
+    <div class="grid4" style="gap:12px">
+      <div style="text-align:center">
+        <div class="step-num" style="margin:0 auto">1</div>
+        <div class="step-title">Download the app</div>
+        <div class="step-desc">Get MeTubez free on Play Store or App Store.</div>
+      </div>
+      <div style="text-align:center">
+        <div class="step-num" style="margin:0 auto">2</div>
+        <div class="step-title">Create your profile</div>
+        <div class="step-desc">Choose a username, language, and content categories.</div>
+      </div>
+      <div style="text-align:center">
+        <div class="step-num" style="margin:0 auto">3</div>
+        <div class="step-title">Upload your first video</div>
+        <div class="step-desc">Landscape format, any Indian language, any topic.</div>
+      </div>
+      <div style="text-align:center">
+        <div class="step-num" style="margin:0 auto">4</div>
+        <div class="step-title">Start earning</div>
+        <div class="step-desc">Monetisation begins on view 1. Withdraw at ₹100.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured creators -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">Featured MeTubers · 6-card grid</div>
+    <div style="text-align:center;margin-bottom:14px">
+      <div style="font-size:15px;font-weight:600;color:#111">Meet India's rising MeTubers.</div>
+    </div>
+    <div class="grid6">
+      <div class="creator-card"><div class="creator-thumb">▶</div><div class="creator-meta"><div class="creator-ava"></div><div class="creator-info"><div class="creator-name">Priya S</div><div class="creator-stats">12K subs</div></div></div></div>
+      <div class="creator-card"><div class="creator-thumb">▶</div><div class="creator-meta"><div class="creator-ava"></div><div class="creator-info"><div class="creator-name">Rahul V</div><div class="creator-stats">8K subs</div></div></div></div>
+      <div class="creator-card"><div class="creator-thumb">▶</div><div class="creator-meta"><div class="creator-ava"></div><div class="creator-info"><div class="creator-name">Aakash M</div><div class="creator-stats">18K subs</div></div></div></div>
+      <div class="creator-card"><div class="creator-thumb">▶</div><div class="creator-meta"><div class="creator-ava"></div><div class="creator-info"><div class="creator-name">Neha K</div><div class="creator-stats">6K subs</div></div></div></div>
+      <div class="creator-card"><div class="creator-thumb">▶</div><div class="creator-meta"><div class="creator-ava"></div><div class="creator-info"><div class="creator-name">Vikas P</div><div class="creator-stats">22K subs</div></div></div></div>
+      <div class="creator-card"><div class="creator-thumb">▶</div><div class="creator-meta"><div class="creator-ava"></div><div class="creator-info"><div class="creator-name">Anjali T</div><div class="creator-stats">15K subs</div></div></div></div>
+    </div>
+  </div>
+
+  <!-- Application form -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">Sign-up form · inline or dedicated apply page</div>
+    <div class="grid2">
+      <div>
+        <div style="font-size:14px;font-weight:600;color:#111;margin-bottom:6px">Ready to become a MeTuber?</div>
+        <div style="font-size:10px;color:#666;line-height:1.6;margin-bottom:10px">Fill out this quick form and download the app. Our team will guide you through your first video setup and help you get started earning within 48 hours.</div>
+        <ul style="font-size:10px;color:#333;line-height:1.7;list-style:none;padding:0">
+          <li>✓ Zero signup fee</li>
+          <li>✓ Approved within 24 hours</li>
+          <li>✓ Free onboarding call for first 100 MeTubers</li>
+          <li>✓ Payout in as little as ₹100 balance</li>
+        </ul>
+      </div>
+      <div class="form-block">
+        <div class="form-label">Full name</div>
+        <div class="form-input"></div>
+        <div class="form-label">Mobile number</div>
+        <div class="form-input"></div>
+        <div class="form-label">City</div>
+        <div class="form-input"></div>
+        <div class="form-label">Primary content language</div>
+        <div class="form-select">Select language ▾</div>
+        <div class="form-label">Content category</div>
+        <div class="form-select">Select category ▾</div>
+        <div class="form-btn">Submit application →</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">FAQ · accordion</div>
+    <div style="text-align:center;margin-bottom:14px">
+      <div style="font-size:15px;font-weight:600;color:#111">Common questions.</div>
+    </div>
+    <div style="max-width:520px;margin:0 auto">
+      <div class="faq-item"><div class="faq-q">How much can I earn on MeTubez?</div><div class="faq-toggle">+</div></div>
+      <div class="faq-item"><div class="faq-q">When do I get paid?</div><div class="faq-toggle">+</div></div>
+      <div class="faq-item"><div class="faq-q">Do I need a minimum subscriber count?</div><div class="faq-toggle">+</div></div>
+      <div class="faq-item"><div class="faq-q">What languages does MeTubez support?</div><div class="faq-toggle">+</div></div>
+      <div class="faq-item"><div class="faq-q">How is the tier system calculated?</div><div class="faq-toggle">+</div></div>
+      <div class="faq-item"><div class="faq-q">Can I use my existing YouTube content?</div><div class="faq-toggle">+</div></div>
+    </div>
+  </div>
+
+  <!-- Final CTA -->
+  <div class="section" style="background:#f5f5f5">
+    <div style="text-align:center;padding:14px 0">
+      <div style="font-size:15px;font-weight:600;color:#111;margin-bottom:4px">India ka apna platform. Aapka apna future.</div>
+      <div style="font-size:10px;color:#666;margin-bottom:12px">Apply now and become part of India's creator revolution.</div>
+      <div class="btn-primary" style="display:inline-block">Become a MeTuber →</div>
+    </div>
+  </div>
+</div>
+
+<!-- ============================================================ -->
+<!-- PAGE 3 — FOR BRANDS -->
+<!-- ============================================================ -->
+<div class="sec-label">04 — For Brands page (metubez.com/brands)</div>
+
+<div class="pglabel">Page 3 of 3</div>
+<div class="pgtitle">For Brands — advertise on MeTubez</div>
+<div class="pgsub">Brand and agency-facing page. Introduces ad formats, targeting, and drives brand marketers to book a demo or contact sales. Structure inspired by Hobo.video for the B2B feel.</div>
+
+<div class="wireframe">
+  <!-- Header -->
+  <div class="wf-header">
+    <div style="display:flex;align-items:center;gap:14px">
+      <div class="wf-logo">[Logo] MeTubez / Ads</div>
+      <div class="wf-nav">
+        <span class="wf-nav-item">Ad formats</span>
+        <span class="wf-nav-item">Targeting</span>
+        <span class="wf-nav-item">Case studies</span>
+        <span class="wf-nav-item">Rate card</span>
+        <span class="wf-nav-item">FAQ</span>
+      </div>
+    </div>
+    <div class="wf-cta">Book a demo</div>
+  </div>
+
+  <!-- Hero -->
+  <div class="section" style="padding:20px 14px">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:10px;border:none;background:transparent;text-align:left">Hero</div>
+    <div class="grid2">
+      <div>
+        <div style="font-size:9px;color:#666;font-weight:600;letter-spacing:.14em;margin-bottom:6px">METUBEZ FOR BRANDS</div>
+        <div style="font-size:18px;font-weight:600;color:#111;line-height:1.2;margin-bottom:6px">Reach Bharat where content is watched — not just scrolled.</div>
+        <div style="font-size:11px;color:#666;line-height:1.5;margin-bottom:10px">The only landscape-first video platform in India. Cinematic ad canvas built for real attention and real engagement.</div>
+        <div class="hero-ctas">
+          <div class="btn-primary">Book a demo →</div>
+          <div class="btn-secondary">Download rate card</div>
+        </div>
+      </div>
+      <div class="placeholder ph-large">
+        [Ad-in-app mockup]<br><span style="font-size:9px">Landscape ad preview on MeTubez UI</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- Why MeTubez for brands -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">Why brands choose MeTubez · 4 reasons</div>
+    <div class="grid4">
+      <div class="feat-card">
+        <div class="feat-icon">▭</div>
+        <div class="feat-title">Landscape canvas</div>
+        <div class="feat-desc">Cinematic 16:9 ad format. No other Indian mobile platform offers this.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📍</div>
+        <div class="feat-title">Bharat targeting</div>
+        <div class="feat-desc">Reach Tier 2, 3, and 4 India by language, city, category and age.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">📊</div>
+        <div class="feat-title">Real-time analytics</div>
+        <div class="feat-desc">Live campaign dashboard. Impressions, views, VTR, spend in one place.</div>
+      </div>
+      <div class="feat-card">
+        <div class="feat-icon">✓</div>
+        <div class="feat-title">Brand safety</div>
+        <div class="feat-desc">Category exclusions, moderated inventory, IAB-compliant metrics.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ad formats -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">Ad formats · 2 formats + inline placements</div>
+    <div class="tab-row">
+      <div class="tab active">Skippable</div>
+      <div class="tab">Non-skippable</div>
+      <div class="tab">In-feed native</div>
+      <div class="tab">Masthead</div>
+      <div class="tab">BrandSafe</div>
+    </div>
+    <div class="grid2">
+      <div class="placeholder ph-large">
+        [Skippable ad mockup]<br>
+        <span style="font-size:9px">Landscape 16:9 · Skip after 5s</span>
+      </div>
+      <div>
+        <div style="font-size:13px;font-weight:600;color:#111;margin-bottom:6px">Skippable video ad</div>
+        <div style="font-size:10px;color:#666;line-height:1.6;margin-bottom:10px">Runs before or during a video. Viewer can skip after 5 seconds. You're charged only when viewers watch to 30 seconds or complete the ad.</div>
+        <div style="border-top:1px dashed #ccc;padding-top:8px">
+          <div style="font-size:9px;color:#666;margin-bottom:2px">FORMAT</div>
+          <div style="font-size:10px;color:#111;margin-bottom:6px">Landscape 16:9 · up to 3 minutes</div>
+          <div style="font-size:9px;color:#666;margin-bottom:2px">CPM RANGE</div>
+          <div style="font-size:10px;color:#111;margin-bottom:6px">₹40 – 80</div>
+          <div style="font-size:9px;color:#666;margin-bottom:2px">BEST FOR</div>
+          <div style="font-size:10px;color:#111">Performance, app installs, e-commerce</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Targeting -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">Targeting options · 4-column grid</div>
+    <div class="grid4">
+      <div class="feat-card"><div class="feat-title">Language</div><div class="feat-desc">Hindi, Bhojpuri, Marathi, Tamil, Telugu, Bengali, English</div></div>
+      <div class="feat-card"><div class="feat-title">Geography</div><div class="feat-desc">State, city, or Tier 2/3/4 clusters</div></div>
+      <div class="feat-card"><div class="feat-title">Category</div><div class="feat-desc">Music, cooking, dance, comedy, and 8 more</div></div>
+      <div class="feat-card"><div class="feat-title">Demographics</div><div class="feat-desc">Age band, gender, interests</div></div>
+    </div>
+  </div>
+
+  <!-- How it works -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">How MeTubez Ads works · 4-step process</div>
+    <div class="grid4">
+      <div style="text-align:left">
+        <div class="step-num">1</div>
+        <div class="step-title">Sign up</div>
+        <div class="step-desc">Create your advertiser account and add funds.</div>
+      </div>
+      <div style="text-align:left">
+        <div class="step-num">2</div>
+        <div class="step-title">Set up campaign</div>
+        <div class="step-desc">Upload creative, choose format, set targeting and budget.</div>
+      </div>
+      <div style="text-align:left">
+        <div class="step-num">3</div>
+        <div class="step-title">Launch</div>
+        <div class="step-desc">Our team reviews and approves within 24 hours.</div>
+      </div>
+      <div style="text-align:left">
+        <div class="step-num">4</div>
+        <div class="step-title">Optimise</div>
+        <div class="step-desc">Track performance live and adjust anytime.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Contact form -->
+  <div class="section">
+    <div class="label-band" style="padding:3px 6px;margin-bottom:12px;border:none;background:transparent;text-align:left">Contact / book demo form</div>
+    <div class="grid2">
+      <div>
+        <div style="font-size:14px;font-weight:600;color:#111;margin-bottom:6px">Talk to our brand team.</div>
+        <div style="font-size:10px;color:#666;line-height:1.6">Book a 30-minute demo. We'll walk you through our ad formats, targeting options, and rate card. First 20 advertisers get a launch discount.</div>
+      </div>
+      <div class="form-block">
+        <div class="form-label">Your name</div>
+        <div class="form-input"></div>
+        <div class="form-label">Company / Agency</div>
+        <div class="form-input"></div>
+        <div class="form-label">Work email</div>
+        <div class="form-input"></div>
+        <div class="form-label">Estimated monthly budget</div>
+        <div class="form-select">Select range ▾</div>
+        <div class="form-btn">Book demo →</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="note-strip">
+<strong>What's next.</strong> These wireframes only cover 3 primary pages — Home, MeTubers program, and For Brands. Once these are approved, the same structural language applies to secondary pages (About, Press, Blog, Help Center, Careers, Legal). Each of those follows the same header, footer, and section conventions. Say the word and I'll wireframe the next batch, or move straight to visual design once you're happy with the architecture.
+</div>
+
+</div>

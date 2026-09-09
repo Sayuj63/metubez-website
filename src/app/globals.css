@@ -1,0 +1,74 @@
+@import "tailwindcss";
+
+:root {
+  --background: #ffffff;
+  --foreground: #111111;
+  --muted: #666666;
+  --border: #e5e5e5;
+  --brand-green: #2ecc40;
+  --brand-green-hover: #26b336;
+  --brand-black: #111111;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-brand: var(--brand-green);
+  --color-brand-hover: var(--brand-green-hover);
+  --color-ink: var(--brand-black);
+  --color-muted: var(--muted);
+  --font-sans: var(--font-lato);
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html,
+  body {
+    background: #ffffff;
+    color: var(--foreground);
+    font-family: var(--font-lato), -apple-system, BlinkMacSystemFont,
+      "Segoe UI", Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a {
+    text-decoration: none;
+  }
+
+  button {
+    font-family: inherit;
+  }
+}
+
+/* Green marquee */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.marquee-track {
+  display: flex;
+  gap: 12px;
+  width: max-content;
+  animation: marquee-scroll 32s linear infinite;
+}
+
+.marquee-track:hover {
+  animation-play-state: paused;
+}
+
+/* FAQ chevron */
+details[open] .faq-plus::before {
+  content: "−";
+}
+.faq-plus::before {
+  content: "+";
+}
