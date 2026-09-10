@@ -44,16 +44,19 @@ const categories = [
 const steps = [
   {
     n: 1,
+    icon: "/icons/step-download.png",
     title: "Download the app",
     desc: "Free on Play Store and App Store. Sign up in seconds.",
   },
   {
     n: 2,
+    icon: "/icons/step-watch.png",
     title: "Watch or create",
     desc: "Discover Indian creators or upload your first video.",
   },
   {
     n: 3,
+    icon: "/icons/step-earn.png",
     title: "Earn as you grow",
     desc: "Monetisation starts from your first video. No wait.",
   },
@@ -125,8 +128,8 @@ export default function Home() {
         <section className="max-w-[1240px] mx-auto px-5 md:px-8 pt-16 md:pt-24 pb-16 md:pb-20">
           <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-[#eaf4e8] text-[#57a554] text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-6">
-                <span className="w-1.5 h-1.5 rounded-full bg-[#57a554]" />
+              <div className="inline-flex items-center gap-2 bg-[#e8f5ec] text-[#31B24B] text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-6">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#31B24B]" />
                 India&apos;s creator platform
               </div>
               <h1 className="text-[46px] md:text-[68px] leading-[1] font-black text-[#111] tracking-tight mb-6">
@@ -137,38 +140,34 @@ export default function Home() {
               </p>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] md:aspect-[5/4] rounded-2xl bg-gradient-to-br from-[#eaf4e8] via-white to-[#d9ecd6] border border-[#cfe5cc] p-6 md:p-10 flex items-center justify-center overflow-hidden">
-                <div className="relative w-full h-full flex items-center justify-center">
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(46,204,64,0.12),transparent_65%)]" />
-                  <div className="relative w-[220px] md:w-[260px] aspect-[9/19] rounded-[32px] bg-[#111] p-2 shadow-2xl shadow-[#57a554]/20">
-                    <div className="w-full h-full rounded-[26px] bg-white overflow-hidden flex flex-col">
-                      <div className="h-6 bg-[#111]" />
-                      <div className="flex-1 bg-gradient-to-br from-[#57a554] to-[#4a9346] flex items-center justify-center p-4">
-                        <Image
-                          src="/metubez-logo.png"
-                          alt="MeTubez app"
-                          width={130}
-                          height={130}
-                          className="rounded-2xl"
-                        />
-                      </div>
-                      <div className="p-3 space-y-2 bg-white">
-                        <div className="h-2 rounded-full bg-[#eee] w-4/5" />
-                        <div className="h-2 rounded-full bg-[#eee] w-3/5" />
-                        <div className="flex gap-1.5 pt-1">
-                          <div className="h-6 flex-1 rounded bg-[#57a554]" />
-                          <div className="h-6 flex-1 rounded bg-[#eee]" />
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+              <div className="aspect-[4/3] md:aspect-[5/4] rounded-2xl overflow-hidden bg-[#e8f5ec]">
+                <Image
+                  src="/banners/banner-horizontal.png"
+                  alt="MeTubez horizontal scrolling experience"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover"
+                  priority
+                />
               </div>
             </div>
           </div>
         </section>
 
-        {/* Why MeTubez — 4-column features (kept same) */}
+        {/* Full-width creator showcase */}
+        <section className="border-t border-[#eee] overflow-hidden bg-[#f8faf8]">
+          <div className="relative w-full" style={{ aspectRatio: "1440/420" }}>
+            <Image
+              src="/banners/banner-bharat.png"
+              alt="India's creator community on MeTubez"
+              fill
+              sizes="100vw"
+              className="object-cover object-center"
+            />
+          </div>
+        </section>
+
+        {/* Why MeTubez — 4-column features */}
         <section className="border-t border-[#eee]">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
             <div className="text-center max-w-[1200px] mx-auto mb-12">
@@ -180,9 +179,9 @@ export default function Home() {
               {features.map((f) => (
                 <div
                   key={f.n}
-                  className="bg-white border border-[#eee] hover:border-[#57a554] hover:shadow-lg hover:shadow-[#57a554]/5 rounded-xl p-6 md:p-7 transition-all"
+                  className="bg-white border border-[#eee] hover:border-[#31B24B] hover:shadow-lg hover:shadow-[#31B24B]/5 rounded-xl p-6 md:p-7 transition-all"
                 >
-                  <div className="inline-flex items-center h-8 px-2.5 rounded-md bg-[#eaf4e8] text-[#57a554] font-black text-[13px] tracking-wider mb-4">
+                  <div className="inline-flex items-center h-8 px-2.5 rounded-md bg-[#e8f5ec] text-[#31B24B] font-black text-[13px] tracking-wider mb-4">
                     {f.n}
                   </div>
                   <h3 className="text-[16px] md:text-[17px] font-black text-[#111] mb-2 leading-tight">
@@ -197,31 +196,76 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Categories — marquee, green bg, black text */}
-        <section className="border-t border-[#eee] bg-white">
+        {/* Landscape video visual */}
+        <section className="border-t border-[#eee] bg-[#f8faf8]">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
+            <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "1200/450" }}>
+              <Image
+                src="/banners/banner-landscape.png"
+                alt="Landscape video experience on MeTubez"
+                fill
+                sizes="(max-width: 1240px) 100vw, 1200px"
+                className="object-cover object-center"
+              />
+            </div>
+          </div>
+        </section>
+
+        {/* Categories — solid green strip with white scrolling text */}
+        <section className="border-t border-b border-[#eee]">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 pt-16 md:pt-20 pb-6 text-center">
             <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
               Content categories
             </p>
-            <h2 className="text-[28px] md:text-[38px] font-black text-[#111] leading-tight">
+            <h2 className="text-[28px] md:text-[38px] font-black text-[#111] leading-tight mb-10">
               Explore India, one video at a time.
             </h2>
           </div>
-          <div className="pb-16 md:pb-20 overflow-hidden">
-            <div className="marquee-track py-2">
+          <div className="bg-[#31B24B] overflow-hidden py-4 mb-16 md:mb-20">
+            <div className="marquee-track">
               {[...categories, ...categories].map((c, i) => (
                 <span
                   key={`${c}-${i}`}
-                  className="inline-flex items-center whitespace-nowrap bg-[#57a554] text-black text-[14px] md:text-[15px] font-bold px-6 py-3 rounded-full"
+                  className="inline-flex items-center whitespace-nowrap text-white text-[15px] md:text-[16px] font-bold px-6"
                 >
                   {c}
+                  <span className="ml-6 text-white/40">•</span>
                 </span>
               ))}
             </div>
           </div>
         </section>
 
-        {/* How MeTubez works — 3 steps */}
+        {/* India map visual */}
+        <section className="border-t border-[#eee] bg-[#f8faf8]">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
+            <div className="grid md:grid-cols-2 gap-10 items-center">
+              <div>
+                <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
+                  From every corner of India
+                </p>
+                <h2 className="text-[28px] md:text-[38px] font-black text-[#111] leading-tight mb-4">
+                  One platform, every language.
+                </h2>
+                <p className="text-[14px] md:text-[16px] text-[#555] leading-relaxed">
+                  MeTubez supports 26+ Indian languages. Whether you speak
+                  Hindi, Tamil, Bhojpuri, or Marathi — your audience is here.
+                </p>
+              </div>
+              <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "1/1" }}>
+                <Image
+                  src="/banners/banner-map.png"
+                  alt="MeTubez across India"
+                  fill
+                  sizes="(max-width: 768px) 100vw, 50vw"
+                  className="object-cover object-center"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* How MeTubez works — 3 steps with icons */}
         <section className="border-t border-[#eee]">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
             <div className="text-center max-w-[720px] mx-auto mb-12">
@@ -234,9 +278,15 @@ export default function Home() {
             </div>
             <div className="grid md:grid-cols-3 gap-6 md:gap-10">
               {steps.map((s) => (
-                <div key={s.n} className="relative">
-                  <div className="w-12 h-12 rounded-full border-2 border-[#111] bg-white flex items-center justify-center text-[16px] font-black text-[#111] mb-5">
-                    {s.n}
+                <div key={s.n} className="relative flex flex-col items-start">
+                  <div className="relative w-20 h-20 mb-5">
+                    <Image
+                      src={s.icon}
+                      alt={s.title}
+                      fill
+                      sizes="80px"
+                      className="object-contain"
+                    />
                   </div>
                   <h3 className="text-[19px] md:text-[20px] font-black text-[#111] mb-2">
                     {s.title}
@@ -246,6 +296,21 @@ export default function Home() {
                   </p>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Create-earn visual */}
+        <section className="border-t border-[#eee] bg-[#f8faf8]">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
+            <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "1200/400" }}>
+              <Image
+                src="/banners/banner-create-earn.png"
+                alt="Create, upload, earn on MeTubez"
+                fill
+                sizes="(max-width: 1240px) 100vw, 1200px"
+                className="object-cover object-center"
+              />
             </div>
           </div>
         </section>
@@ -267,7 +332,7 @@ export default function Home() {
                 </p>
                 <Link
                   href="/metubers"
-                  className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#57a554] text-white text-[14px] font-bold px-6 py-3 rounded-md transition-colors whitespace-nowrap"
+                  className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#31B24B] text-white text-[14px] font-bold px-6 py-3 rounded-md transition-colors whitespace-nowrap"
                 >
                   Explore MeTubers program
                   <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
@@ -282,7 +347,7 @@ export default function Home() {
                 </Link>
               </div>
               <div className="bg-[#111] text-white rounded-2xl p-8 md:p-10">
-                <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#57a554] mb-3">
+                <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#31B24B] mb-3">
                   For brands
                 </p>
                 <h3 className="text-[26px] md:text-[30px] font-black mb-3 leading-tight">
@@ -294,7 +359,7 @@ export default function Home() {
                 </p>
                 <Link
                   href="/brands"
-                  className="inline-flex items-center gap-2 bg-[#57a554] hover:bg-[#4a9346] text-black text-[14px] font-bold px-6 py-3 rounded-md transition-colors whitespace-nowrap"
+                  className="inline-flex items-center gap-2 bg-[#31B24B] hover:bg-[#279940] text-white text-[14px] font-bold px-6 py-3 rounded-md transition-colors whitespace-nowrap"
                 >
                   Advertise with us
                   <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
@@ -335,7 +400,7 @@ export default function Home() {
                     &ldquo;{t.quote}&rdquo;
                   </p>
                   <div className="flex items-center gap-3">
-                    <div className="w-10 h-10 rounded-full bg-[#57a554] text-white flex items-center justify-center font-black text-[14px]">
+                    <div className="w-10 h-10 rounded-full bg-[#31B24B] text-white flex items-center justify-center font-black text-[14px]">
                       {t.initial}
                     </div>
                     <div>

@@ -11,32 +11,32 @@ const stats = [
 
 const benefits = [
   {
-    icon: "₹",
+    icon: "/icons/icon-monetization.png",
     title: "Monetisation",
     desc: "Earn from your first video. Fair per-view rate + quality multiplier.",
   },
   {
-    icon: "★",
+    icon: "/icons/icon-creator-badges.png",
     title: "Creator badges",
     desc: "Progress from Bronze to Platinum. Higher tiers, higher rewards.",
   },
   {
-    icon: "🏆",
+    icon: "/icons/icon-weekly-bonuses.png",
     title: "Weekly bonuses",
     desc: "Top-performing MeTubers win extra rewards every week.",
   },
   {
-    icon: "🎯",
+    icon: "/icons/icon-brand-deals.png",
     title: "Brand deals",
     desc: "Get discovered by brands looking to work with Indian creators.",
   },
   {
-    icon: "📚",
+    icon: "/icons/icon-learn-grow.png",
     title: "Learn & grow",
     desc: "Access to creator playbooks, tips, and best practices.",
   },
   {
-    icon: "👥",
+    icon: "/icons/icon-creator-support.png",
     title: "Creator support",
     desc: "Dedicated creator support team for verified MeTubers.",
   },
@@ -152,7 +152,7 @@ export default function MeTubersPage() {
       <main className="flex-1 bg-white">
         {/* Program Hero */}
         <section className="max-w-[1240px] mx-auto px-5 md:px-8 pt-16 md:pt-24 pb-14 md:pb-16 text-center">
-          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#57a554] mb-4">
+          <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#31B24B] mb-4">
             MeTubers · Creator program
           </p>
           <h1 className="text-[40px] md:text-[60px] leading-[1.05] font-black text-[#111] tracking-tight mb-5 max-w-[820px] mx-auto">
@@ -167,7 +167,7 @@ export default function MeTubersPage() {
           <div className="flex justify-center">
             <a
               href="#apply"
-              className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#57a554] text-white text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-md transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#31B24B] text-white text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-md transition-colors whitespace-nowrap"
             >
               Start your journey
               <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
@@ -220,10 +220,16 @@ export default function MeTubersPage() {
               {benefits.map((b) => (
                 <div
                   key={b.title}
-                  className="bg-white border border-[#eee] hover:border-[#57a554] hover:shadow-lg hover:shadow-[#57a554]/5 rounded-xl p-6 md:p-7 transition-all"
+                  className="bg-white border border-[#eee] hover:border-[#31B24B] hover:shadow-lg hover:shadow-[#31B24B]/5 rounded-xl p-6 md:p-7 transition-all"
                 >
-                  <div className="w-11 h-11 rounded-lg bg-[#eaf4e8] flex items-center justify-center text-[18px] mb-4">
-                    <span className="text-[#57a554] font-black">{b.icon}</span>
+                  <div className="relative w-14 h-14 mb-4">
+                    <Image
+                      src={b.icon}
+                      alt={b.title}
+                      fill
+                      sizes="56px"
+                      className="object-contain"
+                    />
                   </div>
                   <h3 className="text-[16px] md:text-[17px] font-black text-[#111] mb-2">
                     {b.title}
@@ -258,14 +264,14 @@ export default function MeTubersPage() {
                   className={`rounded-2xl p-6 md:p-7 border transition-all ${
                     t.highlight
                       ? "bg-[#111] text-white border-[#111] shadow-xl shadow-black/10"
-                      : "bg-white text-[#111] border-[#eee] hover:border-[#57a554] hover:shadow-lg hover:shadow-[#57a554]/5"
+                      : "bg-white text-[#111] border-[#eee] hover:border-[#31B24B] hover:shadow-lg hover:shadow-[#31B24B]/5"
                   }`}
                 >
                   <div className="flex justify-center mb-5">
                     <div
                       className={`relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ${
                         t.highlight
-                          ? "ring-2 ring-[#57a554]"
+                          ? "ring-2 ring-[#31B24B]"
                           : "ring-1 ring-[#eee]"
                       }`}
                     >
@@ -281,7 +287,7 @@ export default function MeTubersPage() {
                   <div className="text-center">
                     <div
                       className={`text-[20px] md:text-[22px] font-black mb-1 ${
-                        t.highlight ? "text-[#57a554]" : "text-[#111]"
+                        t.highlight ? "text-[#31B24B]" : "text-[#111]"
                       }`}
                     >
                       {t.name}
@@ -308,7 +314,7 @@ export default function MeTubersPage() {
                   >
                     {t.perks.map((p) => (
                       <li key={p} className="flex items-start gap-2">
-                        <span className="inline-block w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-[#57a554]" />
+                        <span className="inline-block w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-[#31B24B]" />
                         <span>{p}</span>
                       </li>
                     ))}
@@ -336,7 +342,7 @@ export default function MeTubersPage() {
             </div>
             <div className="grid md:grid-cols-2 gap-5 md:gap-6 mb-8">
               <div className="bg-white border border-[#eee] rounded-2xl p-6 md:p-8">
-                <div className="inline-flex items-center gap-2 bg-[#eaf4e8] text-[#57a554] text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4">
+                <div className="inline-flex items-center gap-2 bg-[#e8f5ec] text-[#31B24B] text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4">
                   Meshorts · up to 30s
                 </div>
                 <h3 className="text-[22px] md:text-[24px] font-black text-[#111] mb-3">
@@ -348,7 +354,7 @@ export default function MeTubersPage() {
                 </p>
               </div>
               <div className="bg-white border border-[#eee] rounded-2xl p-6 md:p-8">
-                <div className="inline-flex items-center gap-2 bg-[#eaf4e8] text-[#57a554] text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4">
+                <div className="inline-flex items-center gap-2 bg-[#e8f5ec] text-[#31B24B] text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4">
                   Videos · over 30s
                 </div>
                 <h3 className="text-[22px] md:text-[24px] font-black text-[#111] mb-3">
@@ -366,7 +372,7 @@ export default function MeTubersPage() {
               </h4>
               <ul className="grid md:grid-cols-2 gap-3 text-[14px] text-[#333]">
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 w-4 h-4 rounded-full bg-[#57a554] text-white flex items-center justify-center text-[9px] font-black shrink-0">
+                  <span className="mt-1 w-4 h-4 rounded-full bg-[#31B24B] text-white flex items-center justify-center text-[9px] font-black shrink-0">
                     ✓
                   </span>
                   <span>
@@ -375,7 +381,7 @@ export default function MeTubersPage() {
                   </span>
                 </li>
                 <li className="flex items-start gap-3">
-                  <span className="mt-1 w-4 h-4 rounded-full bg-[#57a554] text-white flex items-center justify-center text-[9px] font-black shrink-0">
+                  <span className="mt-1 w-4 h-4 rounded-full bg-[#31B24B] text-white flex items-center justify-center text-[9px] font-black shrink-0">
                     ✓
                   </span>
                   <span>
@@ -448,7 +454,7 @@ export default function MeTubersPage() {
                       key={item}
                       className="flex items-start gap-3 text-[14px] md:text-[15px] text-[#333]"
                     >
-                      <span className="mt-0.5 w-5 h-5 rounded-full bg-[#57a554] text-white flex items-center justify-center text-[11px] font-black shrink-0">
+                      <span className="mt-0.5 w-5 h-5 rounded-full bg-[#31B24B] text-white flex items-center justify-center text-[11px] font-black shrink-0">
                         ✓
                       </span>
                       {item}
@@ -495,7 +501,7 @@ export default function MeTubersPage() {
                 </Select>
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#57a554] hover:bg-[#4a9346] text-black text-[14px] font-bold px-6 py-3.5 rounded-md transition-colors"
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#31B24B] hover:bg-[#279940] text-black text-[14px] font-bold px-6 py-3.5 rounded-md transition-colors"
                 >
                   Submit application
                   <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
@@ -531,7 +537,7 @@ export default function MeTubersPage() {
                     <span className="text-[15px] md:text-[16px] font-bold text-[#111] pr-6">
                       {f.q}
                     </span>
-                    <span className="faq-plus text-[22px] text-[#666] group-open:text-[#57a554] shrink-0 w-6 text-center leading-none" />
+                    <span className="faq-plus text-[22px] text-[#666] group-open:text-[#31B24B] shrink-0 w-6 text-center leading-none" />
                   </summary>
                   <p className="text-[14px] md:text-[15px] text-[#666] leading-relaxed pt-3">
                     {f.a}
@@ -553,7 +559,7 @@ export default function MeTubersPage() {
             </p>
             <a
               href="#apply"
-              className="inline-flex items-center gap-2 bg-[#57a554] hover:bg-[#4a9346] text-black text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-md transition-colors whitespace-nowrap"
+              className="inline-flex items-center gap-2 bg-[#31B24B] hover:bg-[#279940] text-black text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-md transition-colors whitespace-nowrap"
             >
               Become a MeTuber
               <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
@@ -591,7 +597,7 @@ function Field({
       <input
         type={type}
         placeholder={placeholder}
-        className="w-full bg-white border border-[#ddd] rounded-md px-3.5 py-2.5 text-[14px] text-[#111] placeholder:text-[#aaa] focus:outline-none focus:border-[#57a554] focus:ring-2 focus:ring-[#57a554]/20"
+        className="w-full bg-white border border-[#ddd] rounded-md px-3.5 py-2.5 text-[14px] text-[#111] placeholder:text-[#aaa] focus:outline-none focus:border-[#31B24B] focus:ring-2 focus:ring-[#31B24B]/20"
       />
     </div>
   );
@@ -610,7 +616,7 @@ function Select({
         {label}
       </label>
       <select
-        className="w-full bg-white border border-[#ddd] rounded-md px-3.5 py-2.5 text-[14px] text-[#111] focus:outline-none focus:border-[#57a554] focus:ring-2 focus:ring-[#57a554]/20"
+        className="w-full bg-white border border-[#ddd] rounded-md px-3.5 py-2.5 text-[14px] text-[#111] focus:outline-none focus:border-[#31B24B] focus:ring-2 focus:ring-[#31B24B]/20"
         defaultValue=""
       >
         {children}
