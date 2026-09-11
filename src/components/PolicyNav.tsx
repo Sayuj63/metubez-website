@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 const groups = [
   {
@@ -14,7 +14,7 @@ const groups = [
     ],
   },
   {
-    title: "Support",
+    title: "Metubez Support",
     items: [
       { label: "Grievance Officer", href: "/support/grievance" },
       { label: "Contact Support", href: "/support/contact" },
@@ -25,14 +25,19 @@ const groups = [
 
 export default function PolicyNav() {
   const pathname = usePathname();
-  const [open, setOpen] = useState<Record<string, boolean>>(() =>
-    Object.fromEntries(groups.map((g) => [g.title, true])),
-  );
+  const activeTitle =
+    groups.find((g) => g.items.some((i) => i.href === pathname))?.title ??
+    groups[0].title;
+  const [openTitle, setOpenTitle] = useState(activeTitle);
+
+  useEffect(() => {
+    setOpenTitle(activeTitle);
+  }, [activeTitle]);
 
   return (
     <nav className="flex flex-col gap-3">
       {groups.map((group) => {
-        const isOpen = open[group.title];
+        const isOpen = openTitle === group.title;
         return (
           <div
             key={group.title}
@@ -41,7 +46,9 @@ export default function PolicyNav() {
             <button
               type="button"
               onClick={() =>
-                setOpen((prev) => ({ ...prev, [group.title]: !prev[group.title] }))
+                setOpenTitle((prev) =>
+                  prev === group.title ? "" : group.title,
+                )
               }
               aria-expanded={isOpen}
               className="w-full flex items-center justify-between px-3 py-2 text-left"
