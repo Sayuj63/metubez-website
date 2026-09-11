@@ -7,7 +7,7 @@ const APP_STORE_URL =
   "https://apps.apple.com/in/app/metubez-made-for-by-india/id6782786496";
 
 const platform = [
-  { label: "MeTubers program", href: "/metubers" },
+  { label: "Become a Metuber", href: "/metubers" },
   { label: "For brands", href: "/brands" },
   { label: "Download app", href: "#download" },
 ];
@@ -15,23 +15,19 @@ const platform = [
 const company = [
   { label: "About us", href: "/company" },
   { label: "Press", href: "/company#press" },
-  { label: "Careers", href: "/company#careers" },
   { label: "Contact", href: "/company#contact" },
 ];
 
 const legal = [
   { label: "Privacy policy", href: "/legal/privacy" },
   { label: "Terms of use", href: "/legal/terms" },
-  { label: "Community guidelines", href: "/legal/community" },
   { label: "CSAE standards", href: "/legal/csae" },
-  { label: "Copyright Policy", href: "/legal/copyright" },
 ];
 
 const support = [
-  { label: "Help Center", href: "/support/help" },
   { label: "Grievance Officer", href: "/support/grievance" },
-  { label: "Report Content", href: "/support/report" },
   { label: "Contact Support", href: "/support/contact" },
+  { label: "Community guidelines", href: "/legal/community" },
 ];
 
 export default function Footer() {
