@@ -42,13 +42,17 @@ export default function CompanyPage() {
                   grievance@metubez.com
                 </a>
                 <p className="text-[13px] text-[#666] mt-2 leading-relaxed">
-                  For grievances under IT (Intermediary Guidelines and Digital
-                  Media Ethics Code) Rules, 2021.
+                  Kindly send all user related grievances to the above mentioned
+                  email ID, in order for us to process and resolve the same in an
+                  expeditious manner.
                 </p>
               </div>
               <div className="bg-[#f8f8f8] border border-[#eee] rounded-xl p-6">
                 <p className="text-[11px] font-black uppercase tracking-wider text-[#666] mb-2">
-                  Nodal Contact Officer
+                  Nodal Contact Person
+                </p>
+                <p className="text-[17px] font-black text-[#111] mb-1">
+                  Mr. Utsav Solanki
                 </p>
                 <a
                   href="mailto:nodalofficer@metubez.com"
@@ -57,7 +61,16 @@ export default function CompanyPage() {
                   nodalofficer@metubez.com
                 </a>
                 <p className="text-[13px] text-[#666] mt-2 leading-relaxed">
-                  For government and law enforcement agency communications.
+                  This email is solely for use by police and investigating
+                  agencies. This is not the correct email ID for user related
+                  issues. For all user related grievances, kindly contact us at{" "}
+                  <a
+                    href="mailto:grievance@metubez.com"
+                    className="text-[#31B24B] hover:underline"
+                  >
+                    grievance@metubez.com
+                  </a>
+                  .
                 </p>
               </div>
             </div>

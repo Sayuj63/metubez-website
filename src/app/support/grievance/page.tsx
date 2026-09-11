@@ -38,6 +38,11 @@ export default function GrievancePage() {
             Acknowledgement within 24 hours, resolution within 15 days
           </p>
         </div>
+        <p className="text-[13px] text-[#666] mt-3 leading-relaxed">
+          Kindly send all user related grievances to the above mentioned email
+          ID, in order for us to process and resolve the same in an expeditious
+          manner.
+        </p>
       </div>
 
       <div className="space-y-4 text-[14px] md:text-[15px] text-[#444] leading-relaxed">
@@ -66,16 +71,29 @@ export default function GrievancePage() {
         </p>
 
         <h2 className="text-[17px] font-black text-[#111] mt-8">
-          Nodal Officer (for government/law enforcement)
+          Nodal Contact Person (for government/law enforcement)
         </h2>
         <p>
-          Government agencies and law enforcement may contact our Nodal Officer
-          at{" "}
+          <span className="font-bold text-[#111]">Mr. Utsav Solanki</span> —
+          MeTubez Nodal Contact Person. Government agencies and law enforcement
+          may contact{" "}
           <a
             href="mailto:nodalofficer@metubez.com"
             className="text-[#31B24B] hover:underline"
           >
             nodalofficer@metubez.com
+          </a>
+          .
+        </p>
+        <p>
+          This email is solely for use by police and investigating agencies.
+          This is not the correct email ID for user related issues. For all user
+          related grievances, kindly contact us at{" "}
+          <a
+            href="mailto:grievance@metubez.com"
+            className="text-[#31B24B] hover:underline"
+          >
+            grievance@metubez.com
           </a>
           .
         </p>

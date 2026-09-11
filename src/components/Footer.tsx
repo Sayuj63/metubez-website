@@ -54,10 +54,10 @@ export default function Footer() {
               aria-label="Get it on Google Play"
             >
               <Image
-                src="/badge-playstore.svg"
+                src="/badge-playstore.png"
                 alt="Get it on Google Play"
-                width={160}
-                height={48}
+                width={666}
+                height={198}
                 className="h-12 w-auto"
               />
             </a>
@@ -68,10 +68,10 @@ export default function Footer() {
               aria-label="Download on the App Store"
             >
               <Image
-                src="/badge-appstore.svg"
+                src="/badge-appstore.png"
                 alt="Download on the App Store"
-                width={160}
-                height={48}
+                width={813}
+                height={241}
                 className="h-12 w-auto"
               />
             </a>
