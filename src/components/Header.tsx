@@ -10,7 +10,6 @@ export default function Header() {
   const nav = [
     { label: "MeTubers", href: "/metubers" },
     { label: "For Brands", href: "/brands" },
-    { label: "Company", href: "/company" },
   ];
 
   return (

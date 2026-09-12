@@ -1,4 +1,4 @@
-import PolicyShell from "../policy-shell";
+import PolicyShell from "@/components/PolicyShell";
 
 export default function CopyrightPage() {
   return (

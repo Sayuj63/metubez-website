@@ -14,6 +14,15 @@ const groups = [
     ],
   },
   {
+    title: "Creator",
+    items: [
+      { label: "View Counting Policy", href: "/creator/view-counting" },
+      { label: "Creator Earnings Policy", href: "/creator/earnings" },
+      { label: "Creator Agreement", href: "/creator/agreement" },
+      { label: "In-App Help Center", href: "/creator/help" },
+    ],
+  },
+  {
     title: "Metubez Support",
     items: [
       { label: "Grievance Officer", href: "/support/grievance" },

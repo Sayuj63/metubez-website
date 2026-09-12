@@ -30,6 +30,13 @@ const support = [
   { label: "Community guidelines", href: "/legal/community" },
 ];
 
+const creator = [
+  { label: "View Counting Policy", href: "/creator/view-counting" },
+  { label: "Creator Earnings Policy", href: "/creator/earnings" },
+  { label: "Creator Agreement", href: "/creator/agreement" },
+  { label: "In-App Help Center", href: "/creator/help" },
+];
+
 export default function Footer() {
   return (
     <footer className="bg-white border-t border-[#eee]">
@@ -77,8 +84,8 @@ export default function Footer() {
 
       {/* Main footer */}
       <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-14">
-        <div className="grid grid-cols-2 md:grid-cols-6 gap-10 md:gap-8">
-          <div className="col-span-2">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-7 gap-10 md:gap-8">
+          <div className="col-span-2 md:col-span-3 lg:col-span-2">
             <div className="flex items-center gap-2.5 mb-4">
               <Image
                 src="/metubez-logo.png"
@@ -110,6 +117,7 @@ export default function Footer() {
           <FooterCol title="Company" items={company} />
           <FooterCol title="Legal" items={legal} />
           <FooterCol title="Support" items={support} />
+          <FooterCol title="Creator" items={creator} />
         </div>
 
         <div className="border-t border-[#eee] mt-12 pt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">

@@ -121,9 +121,33 @@ const brandFaqs = [
   },
 ];
 
+const BRAND_EMAIL = "hello@metubez.com";
+
 export default function BrandsPage() {
   const [activeFormat, setActiveFormat] = useState(adFormats[0].key);
+  const [submitted, setSubmitted] = useState(false);
   const format = adFormats.find((f) => f.key === activeFormat) ?? adFormats[0];
+
+  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const data = new FormData(e.currentTarget);
+    const lines = [
+      ["Name", "name"],
+      ["Company / Agency", "company"],
+      ["Work email", "email"],
+      ["Phone", "phone"],
+      ["Monthly budget", "budget"],
+      ["Campaign objective", "objective"],
+      ["Heard about us via", "source"],
+    ]
+      .map(([label, key]) => `${label}: ${data.get(key) ?? ""}`)
+      .join("\n");
+
+    window.location.href = `mailto:${BRAND_EMAIL}?subject=${encodeURIComponent(
+      "Book a demo — MeTubez for Brands",
+    )}&body=${encodeURIComponent(lines)}`;
+    setSubmitted(true);
+  }
 
   return (
     <>
@@ -374,37 +398,47 @@ export default function BrandsPage() {
                   ))}
                 </ul>
               </div>
-              <form className="bg-[#f8f8f8] border border-[#eee] rounded-2xl p-6 md:p-8 space-y-4">
-                <Field label="Your name" placeholder="Your full name" />
+              <form
+                onSubmit={handleSubmit}
+                className="bg-[#f8f8f8] border border-[#eee] rounded-2xl p-6 md:p-8 space-y-4"
+              >
+                <Field
+                  label="Your name"
+                  name="name"
+                  placeholder="Your full name"
+                />
                 <Field
                   label="Company / Agency name"
+                  name="company"
                   placeholder="Your company or agency"
                 />
                 <Field
                   label="Work email"
+                  name="email"
                   type="email"
                   placeholder="you@company.com"
                 />
                 <Field
                   label="Phone number"
+                  name="phone"
                   type="tel"
                   placeholder="+91 98765 43210"
                 />
-                <Select label="Estimated monthly budget">
+                <Select label="Estimated monthly budget" name="budget">
                   <option>Select range</option>
                   <option>Under ₹1L</option>
                   <option>₹1 – 5L</option>
                   <option>₹5 – 15L</option>
                   <option>₹15L+</option>
                 </Select>
-                <Select label="Campaign objective">
+                <Select label="Campaign objective" name="objective">
                   <option>Select objective</option>
                   <option>Brand awareness</option>
                   <option>Performance</option>
                   <option>App installs</option>
                   <option>Other</option>
                 </Select>
-                <Select label="How did you hear about us?">
+                <Select label="How did you hear about us?" name="source">
                   <option>Select source</option>
                   <option>Google</option>
                   <option>LinkedIn</option>
@@ -465,6 +499,41 @@ export default function BrandsPage() {
         </section>
       </main>
       <Footer />
+
+      {submitted && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 px-5"
+          role="dialog"
+          aria-modal="true"
+          aria-labelledby="book-demo-confirm"
+          onClick={() => setSubmitted(false)}
+        >
+          <div
+            className="bg-white rounded-2xl p-8 md:p-9 max-w-[420px] w-full text-center shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="w-14 h-14 rounded-full bg-[#31B24B] text-white flex items-center justify-center text-[26px] font-black mx-auto mb-5">
+              ✓
+            </div>
+            <p
+              id="book-demo-confirm"
+              className="text-[19px] font-black text-[#111] mb-2 leading-snug"
+            >
+              Thank you for your submission
+            </p>
+            <p className="text-[14px] text-[#666] leading-relaxed mb-6">
+              Our team will get back to you.
+            </p>
+            <button
+              type="button"
+              onClick={() => setSubmitted(false)}
+              className="w-full inline-flex items-center justify-center bg-[#31B24B] hover:bg-[#279940] text-white text-[14px] font-bold px-6 py-3 rounded-md transition-colors"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      )}
     </>
   );
 }
@@ -485,10 +554,12 @@ function SpecRow({ label, value }: { label: string; value: string }) {
 function Field({
   label,
   placeholder,
+  name,
   type = "text",
 }: {
   label: string;
   placeholder: string;
+  name: string;
   type?: string;
 }) {
   return (
@@ -498,6 +569,7 @@ function Field({
       </label>
       <input
         type={type}
+        name={name}
         placeholder={placeholder}
         className="w-full bg-white border border-[#ddd] rounded-md px-3.5 py-2.5 text-[14px] text-[#111] placeholder:text-[#aaa] focus:outline-none focus:border-[#31B24B] focus:ring-2 focus:ring-[#31B24B]/20"
       />
@@ -507,9 +579,11 @@ function Field({
 
 function Select({
   label,
+  name,
   children,
 }: {
   label: string;
+  name: string;
   children: React.ReactNode;
 }) {
   return (
@@ -518,6 +592,7 @@ function Select({
         {label}
       </label>
       <select
+        name={name}
         defaultValue=""
         className="w-full bg-white border border-[#ddd] rounded-md px-3.5 py-2.5 text-[14px] text-[#111] focus:outline-none focus:border-[#31B24B] focus:ring-2 focus:ring-[#31B24B]/20"
       >
