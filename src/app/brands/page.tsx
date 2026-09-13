@@ -125,28 +125,41 @@ const BRAND_EMAIL = "hello@metubez.com";
 
 export default function BrandsPage() {
   const [activeFormat, setActiveFormat] = useState(adFormats[0].key);
-  const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle",
+  );
+  const [errorMsg, setErrorMsg] = useState("");
   const format = adFormats.find((f) => f.key === activeFormat) ?? adFormats[0];
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    const data = new FormData(e.currentTarget);
-    const lines = [
-      ["Name", "name"],
-      ["Company / Agency", "company"],
-      ["Work email", "email"],
-      ["Phone", "phone"],
-      ["Monthly budget", "budget"],
-      ["Campaign objective", "objective"],
-      ["Heard about us via", "source"],
-    ]
-      .map(([label, key]) => `${label}: ${data.get(key) ?? ""}`)
-      .join("\n");
+    const form = e.currentTarget;
+    setStatus("sending");
+    setErrorMsg("");
 
-    window.location.href = `mailto:${BRAND_EMAIL}?subject=${encodeURIComponent(
-      "Book a demo — MeTubez for Brands",
-    )}&body=${encodeURIComponent(lines)}`;
-    setSubmitted(true);
+    try {
+      const res = await fetch("/api/book-demo", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+      const body = (await res.json().catch(() => ({}))) as {
+        ok?: boolean;
+        error?: string;
+      };
+
+      if (!res.ok || !body.ok) {
+        setErrorMsg(body.error ?? "Something went wrong. Please try again.");
+        setStatus("error");
+        return;
+      }
+
+      form.reset();
+      setStatus("sent");
+    } catch {
+      setErrorMsg("Could not reach the server. Please try again.");
+      setStatus("error");
+    }
   }
 
   return (
@@ -448,19 +461,33 @@ export default function BrandsPage() {
                 </Select>
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#31B24B] hover:bg-[#279940] text-black text-[14px] font-bold px-6 py-3.5 rounded-md transition-colors"
+                  disabled={status === "sending"}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#31B24B] hover:bg-[#279940] disabled:opacity-60 disabled:cursor-not-allowed text-black text-[14px] font-bold px-6 py-3.5 rounded-md transition-colors"
                 >
-                  Book demo
-                  <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
-                    <path
-                      d="M1 5h12M9 1l4 4-4 4"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
+                  {status === "sending" ? "Sending…" : "Book demo"}
+                  {status !== "sending" && (
+                    <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
+                      <path
+                        d="M1 5h12M9 1l4 4-4 4"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  )}
                 </button>
+                {status === "error" && (
+                  <p className="text-[13px] text-[#c0392b] text-center leading-relaxed">
+                    {errorMsg}{" "}
+                    <a
+                      href={`mailto:${BRAND_EMAIL}`}
+                      className="font-bold underline"
+                    >
+                      Email us directly
+                    </a>
+                  </p>
+                )}
                 <p className="text-[12px] text-[#999] text-center">
                   Our team responds within 24 hours.
                 </p>
@@ -500,13 +527,13 @@ export default function BrandsPage() {
       </main>
       <Footer />
 
-      {submitted && (
+      {status === "sent" && (
         <div
           className="fixed inset-0 z-[100] flex items-center justify-center bg-black/40 px-5"
           role="dialog"
           aria-modal="true"
           aria-labelledby="book-demo-confirm"
-          onClick={() => setSubmitted(false)}
+          onClick={() => setStatus("idle")}
         >
           <div
             className="bg-white rounded-2xl p-8 md:p-9 max-w-[420px] w-full text-center shadow-2xl"
@@ -526,7 +553,7 @@ export default function BrandsPage() {
             </p>
             <button
               type="button"
-              onClick={() => setSubmitted(false)}
+              onClick={() => setStatus("idle")}
               className="w-full inline-flex items-center justify-center bg-[#31B24B] hover:bg-[#279940] text-white text-[14px] font-bold px-6 py-3 rounded-md transition-colors"
             >
               Close
