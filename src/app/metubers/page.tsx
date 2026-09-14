@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -146,6 +149,42 @@ const faqs = [
 ];
 
 export default function MeTubersPage() {
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
+    "idle",
+  );
+  const [errorMsg, setErrorMsg] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    const form = e.currentTarget;
+    setStatus("sending");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/apply", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
+      });
+      const body = (await res.json().catch(() => ({}))) as {
+        ok?: boolean;
+        error?: string;
+      };
+
+      if (!res.ok || !body.ok) {
+        setErrorMsg(body.error ?? "Something went wrong. Please try again.");
+        setStatus("error");
+        return;
+      }
+
+      form.reset();
+      setStatus("sent");
+    } catch {
+      setErrorMsg("Could not reach the server. Please try again.");
+      setStatus("error");
+    }
+  }
+
   return (
     <>
       <Header />
@@ -462,16 +501,26 @@ export default function MeTubersPage() {
                   ))}
                 </ul>
               </div>
-              <form className="bg-[#f8f8f8] border border-[#eee] rounded-2xl p-6 md:p-8 space-y-4">
-                <Field label="Full name" placeholder="Your full name" />
+              <form
+                onSubmit={handleSubmit}
+                className="bg-[#f8f8f8] border border-[#eee] rounded-2xl p-6 md:p-8 space-y-4"
+              >
                 <Field
+                  name="name"
+                  label="Full name"
+                  placeholder="Your full name"
+                  required
+                />
+                <Field
+                  name="phone"
                   label="Mobile number"
                   placeholder="+91 98765 43210"
                   type="tel"
+                  required
                 />
-                <Field label="City" placeholder="Mumbai, Patna, etc." />
-                <Select label="Primary content language">
-                  <option>Select language</option>
+                <Field name="city" label="City" placeholder="Mumbai, Patna, etc." />
+                <Select name="language" label="Primary content language">
+                  <option value="">Select language</option>
                   <option>Hindi</option>
                   <option>Bhojpuri</option>
                   <option>Marathi</option>
@@ -480,8 +529,8 @@ export default function MeTubersPage() {
                   <option>Bengali</option>
                   <option>English</option>
                 </Select>
-                <Select label="Content category">
-                  <option>Select category</option>
+                <Select name="category" label="Content category">
+                  <option value="">Select category</option>
                   {[
                     "Music",
                     "Podcasts",
@@ -499,11 +548,23 @@ export default function MeTubersPage() {
                     <option key={c}>{c}</option>
                   ))}
                 </Select>
+                {status === "sent" && (
+                  <p className="text-[13px] font-semibold text-[#1e7e34] bg-[#e8f6ea] border border-[#bfe3c6] rounded-md px-3.5 py-2.5">
+                    Application received. Our team will reach out within 24
+                    hours.
+                  </p>
+                )}
+                {status === "error" && (
+                  <p className="text-[13px] font-semibold text-[#b3261e] bg-[#fdecea] border border-[#f5c6c2] rounded-md px-3.5 py-2.5">
+                    {errorMsg}
+                  </p>
+                )}
                 <button
                   type="submit"
-                  className="w-full inline-flex items-center justify-center gap-2 bg-[#31B24B] hover:bg-[#279940] text-black text-[14px] font-bold px-6 py-3.5 rounded-md transition-colors"
+                  disabled={status === "sending"}
+                  className="w-full inline-flex items-center justify-center gap-2 bg-[#31B24B] hover:bg-[#279940] disabled:opacity-60 disabled:cursor-not-allowed text-black text-[14px] font-bold px-6 py-3.5 rounded-md transition-colors"
                 >
-                  Submit application
+                  {status === "sending" ? "Submitting…" : "Submit application"}
                   <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
                     <path
                       d="M1 5h12M9 1l4 4-4 4"
@@ -581,13 +642,17 @@ export default function MeTubersPage() {
 }
 
 function Field({
+  name,
   label,
   placeholder,
   type = "text",
+  required = false,
 }: {
+  name: string;
   label: string;
   placeholder: string;
   type?: string;
+  required?: boolean;
 }) {
   return (
     <div>
@@ -595,8 +660,10 @@ function Field({
         {label}
       </label>
       <input
+        name={name}
         type={type}
         placeholder={placeholder}
+        required={required}
         className="w-full bg-white border border-[#ddd] rounded-md px-3.5 py-2.5 text-[14px] text-[#111] placeholder:text-[#aaa] focus:outline-none focus:border-[#31B24B] focus:ring-2 focus:ring-[#31B24B]/20"
       />
     </div>
@@ -604,9 +671,11 @@ function Field({
 }
 
 function Select({
+  name,
   label,
   children,
 }: {
+  name: string;
   label: string;
   children: React.ReactNode;
 }) {
@@ -616,6 +685,7 @@ function Select({
         {label}
       </label>
       <select
+        name={name}
         className="w-full bg-white border border-[#ddd] rounded-md px-3.5 py-2.5 text-[14px] text-[#111] focus:outline-none focus:border-[#31B24B] focus:ring-2 focus:ring-[#31B24B]/20"
         defaultValue=""
       >
