@@ -9,12 +9,41 @@ const lato = Lato({
   display: "swap",
 });
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://metubez-website.vercel.app";
+
+const TAGLINE = "India's First Landscape video platform";
+const SHARE_DESCRIPTION =
+  "India's First Landscape video platform. Create. Share. Monetise. Built in Bharat, for Bharat.";
+
 export const metadata: Metadata = {
-  title: "MeTubez — India's landscape-first video platform",
-  description:
-    "The way the new India is meant to watch and create. Create. Share. Monetise. Built in Bharat, for Bharat.",
+  metadataBase: new URL(SITE_URL),
+  title: `MeTubez — ${TAGLINE}`,
+  description: SHARE_DESCRIPTION,
   icons: {
     icon: "/metubez-logo.png",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "MeTubez",
+    locale: "en_IN",
+    url: SITE_URL,
+    title: `MeTubez — ${TAGLINE}`,
+    description: SHARE_DESCRIPTION,
+    images: [
+      {
+        url: "/banners/banner-horizontal.png",
+        width: 1440,
+        height: 420,
+        alt: "MeTubez — India's First Landscape video platform",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: `MeTubez — ${TAGLINE}`,
+    description: SHARE_DESCRIPTION,
+    images: ["/banners/banner-horizontal.png"],
   },
 };
 

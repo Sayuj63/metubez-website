@@ -156,7 +156,7 @@ export default function Home() {
 
         {/* Full-width creator showcase */}
         <section className="border-t border-[#eee] overflow-hidden bg-[#f8faf8]">
-          <div className="relative w-full" style={{ aspectRatio: "1440/420" }}>
+          <div className="relative w-full aspect-[3/2] md:aspect-[1440/420]">
             <Image
               src="/banners/banner-bharat.png"
               alt="India's creator community on MeTubez"
@@ -199,7 +199,7 @@ export default function Home() {
         {/* Landscape video visual */}
         <section className="border-t border-[#eee] bg-[#f8faf8]">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
-            <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "1200/450" }}>
+            <div className="relative rounded-2xl overflow-hidden aspect-[3/2] md:aspect-[1200/450]">
               <Image
                 src="/banners/banner-landscape.png"
                 alt="Landscape video experience on MeTubez"
@@ -303,7 +303,7 @@ export default function Home() {
         {/* Create-earn visual */}
         <section className="border-t border-[#eee] bg-[#f8faf8]">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
-            <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "1200/400" }}>
+            <div className="relative rounded-2xl overflow-hidden aspect-[3/2] md:aspect-[1200/400]">
               <Image
                 src="/banners/banner-create-earn.png"
                 alt="Create, upload, earn on MeTubez"

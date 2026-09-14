@@ -49,37 +49,39 @@ export default function CreatorEarningsPage() {
       </p>
 
       <h3>Per-view rates by tier</h3>
-      <table>
-        <thead>
-          <tr>
-            <th>Tier</th>
-            <th>Meshorts (per 1,000 valid views)</th>
-            <th>Videos (per 1,000 valid views)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Bronze</td>
-            <td>₹4</td>
-            <td>₹12</td>
-          </tr>
-          <tr>
-            <td>Silver</td>
-            <td>₹6</td>
-            <td>₹18</td>
-          </tr>
-          <tr>
-            <td>Gold</td>
-            <td>₹9</td>
-            <td>₹28</td>
-          </tr>
-          <tr>
-            <td>Platinum</td>
-            <td>₹14</td>
-            <td>₹45</td>
-          </tr>
-        </tbody>
-      </table>
+      <div className="overflow-x-auto">
+        <table className="min-w-[440px]">
+          <thead>
+            <tr>
+              <th>Tier</th>
+              <th>Meshorts (per 1,000 valid views)</th>
+              <th>Videos (per 1,000 valid views)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Bronze</td>
+              <td>₹4</td>
+              <td>₹12</td>
+            </tr>
+            <tr>
+              <td>Silver</td>
+              <td>₹6</td>
+              <td>₹18</td>
+            </tr>
+            <tr>
+              <td>Gold</td>
+              <td>₹9</td>
+              <td>₹28</td>
+            </tr>
+            <tr>
+              <td>Platinum</td>
+              <td>₹14</td>
+              <td>₹45</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
       <p>
         Rates are subject to periodic review based on platform-wide ad revenue
         and market conditions. Any rate changes are notified at least 30 days in
