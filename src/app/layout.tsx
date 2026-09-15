@@ -12,13 +12,14 @@ const lato = Lato({
 const SITE_URL =
   process.env.NEXT_PUBLIC_SITE_URL ?? "https://metubez-website.vercel.app";
 
-const TAGLINE = "India's First Landscape video platform";
+const TAGLINE = "World's first horizontal scrollable video platform";
+const TITLE = `MeTubez: ${TAGLINE}. Create. Share. Monetize. Made in India.`;
 const SHARE_DESCRIPTION =
   "India's First Landscape video platform. Create. Share. Monetise. Built in Bharat, for Bharat.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
-  title: `MeTubez — ${TAGLINE}`,
+  title: TITLE,
   description: SHARE_DESCRIPTION,
   icons: {
     icon: "/metubez-logo.png",
@@ -28,7 +29,7 @@ export const metadata: Metadata = {
     siteName: "MeTubez",
     locale: "en_IN",
     url: SITE_URL,
-    title: `MeTubez — ${TAGLINE}`,
+    title: TITLE,
     description: SHARE_DESCRIPTION,
     images: [
       {
@@ -41,7 +42,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: `MeTubez — ${TAGLINE}`,
+    title: TITLE,
     description: SHARE_DESCRIPTION,
     images: ["/banners/banner-horizontal.png"],
   },
