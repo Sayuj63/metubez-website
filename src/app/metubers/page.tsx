@@ -79,7 +79,6 @@ const tiers = [
       "Verified MeTuber badge",
       "Brand deal eligibility",
     ],
-    highlight: true,
   },
   {
     name: "Platinum",
@@ -190,7 +189,7 @@ export default function MeTubersPage() {
       <Header />
       <main className="flex-1 bg-white">
         {/* Program Hero */}
-        <section className="max-w-[1240px] mx-auto px-5 md:px-8 pt-16 md:pt-24 pb-14 md:pb-16 text-center">
+        <section className="max-w-[1240px] mx-auto px-5 md:px-8 pt-8 md:pt-14 pb-10 md:pb-14 text-center">
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#31B24B] mb-4">
             MeTubers · Creator program
           </p>
@@ -223,7 +222,7 @@ export default function MeTubersPage() {
         </section>
 
         {/* Stats band — 4 tile placeholder same */}
-        <section className="max-w-[1240px] mx-auto px-5 md:px-8 pb-16 md:pb-20">
+        <section className="max-w-[1240px] mx-auto px-5 md:px-8 pb-12 md:pb-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-5">
             {stats.map((s) => (
               <div
@@ -243,8 +242,8 @@ export default function MeTubersPage() {
 
         {/* Benefits — 6-benefit grid */}
         <section className="border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
-            <div className="text-center max-w-[720px] mx-auto mb-12">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
+            <div className="text-center max-w-[720px] mx-auto mb-10 md:mb-12">
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
                 What&apos;s in it for you
               </p>
@@ -259,9 +258,9 @@ export default function MeTubersPage() {
               {benefits.map((b) => (
                 <div
                   key={b.title}
-                  className="bg-white border border-[#eee] hover:border-[#31B24B] hover:shadow-lg hover:shadow-[#31B24B]/5 rounded-xl p-6 md:p-7 transition-all"
+                  className="bg-white border border-[#eee] hover:border-[#31B24B] hover:shadow-lg hover:shadow-[#31B24B]/5 rounded-xl p-6 md:p-7 transition-all text-center md:text-left"
                 >
-                  <div className="relative w-14 h-14 mb-4">
+                  <div className="relative w-14 h-14 mb-4 mx-auto md:mx-0">
                     <Image
                       src={b.icon}
                       alt={b.title}
@@ -284,8 +283,8 @@ export default function MeTubersPage() {
 
         {/* Tier progression */}
         <section className="border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
-            <div className="text-center max-w-[720px] mx-auto mb-12">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
+            <div className="text-center max-w-[720px] mx-auto mb-10 md:mb-12">
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
                 Tier progression · 4 tiers
               </p>
@@ -296,24 +295,14 @@ export default function MeTubersPage() {
                 Progress through 4 tiers. Every tier unlocks higher earnings.
               </p>
             </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 items-stretch">
               {tiers.map((t) => (
                 <div
                   key={t.name}
-                  className={`rounded-2xl p-6 md:p-7 border transition-all ${
-                    t.highlight
-                      ? "bg-[#111] text-white border-[#111] shadow-xl shadow-black/10"
-                      : "bg-white text-[#111] border-[#eee] hover:border-[#31B24B] hover:shadow-lg hover:shadow-[#31B24B]/5"
-                  }`}
+                  className="flex h-full flex-col rounded-2xl p-6 md:p-7 border border-[#eee] bg-white text-[#111] transition-all hover:border-[#31B24B] hover:shadow-lg hover:shadow-[#31B24B]/5"
                 >
                   <div className="flex justify-center mb-5">
-                    <div
-                      className={`relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ${
-                        t.highlight
-                          ? "ring-2 ring-[#31B24B]"
-                          : "ring-1 ring-[#eee]"
-                      }`}
-                    >
+                    <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-1 ring-[#eee]">
                       <Image
                         src={t.coin}
                         alt={`${t.name} coin`}
@@ -324,33 +313,17 @@ export default function MeTubersPage() {
                     </div>
                   </div>
                   <div className="text-center">
-                    <div
-                      className={`text-[20px] md:text-[22px] font-black mb-1 ${
-                        t.highlight ? "text-[#31B24B]" : "text-[#111]"
-                      }`}
-                    >
+                    <div className="text-[20px] md:text-[22px] font-black mb-1 text-[#111]">
                       {t.name}
                     </div>
-                    <div
-                      className={`text-[13px] mb-2 font-bold ${
-                        t.highlight ? "text-white/90" : "text-[#333]"
-                      }`}
-                    >
+                    <div className="text-[13px] mb-2 font-bold text-[#333]">
                       {t.tagline}
                     </div>
-                    <div
-                      className={`text-[11.5px] leading-relaxed mb-5 ${
-                        t.highlight ? "text-white/60" : "text-[#777]"
-                      }`}
-                    >
+                    <div className="text-[11.5px] leading-relaxed mb-5 text-[#777]">
                       {t.req}
                     </div>
                   </div>
-                  <ul
-                    className={`text-left text-[13px] leading-relaxed border-t pt-4 space-y-2 ${
-                      t.highlight ? "border-white/20" : "border-[#eee]"
-                    }`}
-                  >
+                  <ul className="text-left text-[13px] leading-relaxed border-t border-[#eee] pt-4 space-y-2">
                     {t.perks.map((p) => (
                       <li key={p} className="flex items-start gap-2">
                         <span className="inline-block w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-[#31B24B]" />
@@ -366,8 +339,8 @@ export default function MeTubersPage() {
 
         {/* How you earn — on Meshorts and Videos */}
         <section className="border-t border-[#eee] bg-[#fafafa]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
-            <div className="text-center max-w-[720px] mx-auto mb-12">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
+            <div className="text-center max-w-[720px] mx-auto mb-10 md:mb-12">
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
                 How you earn
               </p>
@@ -439,8 +412,8 @@ export default function MeTubersPage() {
 
         {/* How to start — 4 steps */}
         <section className="border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
-            <div className="text-center max-w-[720px] mx-auto mb-12">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
+            <div className="text-center max-w-[720px] mx-auto mb-10 md:mb-12">
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
                 How to start · 4 steps
               </p>
@@ -471,7 +444,7 @@ export default function MeTubersPage() {
 
         {/* Application form */}
         <section id="apply" className="border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 pt-12 md:pt-16 pb-10 md:pb-12">
             <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-start">
               <div>
                 <h2 className="text-[28px] md:text-[36px] font-black text-[#111] leading-tight mb-4">
@@ -582,8 +555,8 @@ export default function MeTubersPage() {
 
         {/* FAQ */}
         <section className="border-t border-[#eee]">
-          <div className="max-w-[820px] mx-auto px-5 md:px-8 py-16 md:py-20">
-            <div className="text-center mb-12">
+          <div className="max-w-[820px] mx-auto px-5 md:px-8 pt-10 md:pt-16 pb-12 md:pb-16">
+            <div className="text-center mb-10 md:mb-12">
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
                 FAQ
               </p>
@@ -611,7 +584,7 @@ export default function MeTubersPage() {
 
         {/* Final CTA */}
         <section className="bg-[#f8f8f8] border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20 text-center">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16 text-center">
             <h2 className="text-[28px] md:text-[38px] font-black text-[#111] leading-tight mb-3">
               India ka apna platform. Aapka apna future.
             </h2>

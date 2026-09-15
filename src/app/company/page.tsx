@@ -6,7 +6,7 @@ export default function CompanyPage() {
     <>
       <Header />
       <main className="flex-1 bg-white">
-        <section className="max-w-[820px] mx-auto px-5 md:px-8 pt-16 md:pt-24 pb-10 md:pb-14 text-center">
+        <section className="max-w-[820px] mx-auto px-5 md:px-8 pt-8 md:pt-14 pb-10 md:pb-14 text-center">
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#31B24B] mb-4">
             Company
           </p>

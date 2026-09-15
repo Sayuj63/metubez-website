@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FeatureGrid from "@/components/FeatureGrid";
 
 const features = [
   {
@@ -125,14 +126,14 @@ export default function Home() {
       <Header />
       <main className="flex-1 bg-white">
         {/* Hero */}
-        <section className="max-w-[1240px] mx-auto px-5 md:px-8 pt-16 md:pt-24 pb-16 md:pb-20">
-          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <section className="max-w-[1240px] mx-auto px-5 md:px-8 pt-8 md:pt-14 pb-10 md:pb-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 bg-[#e8f5ec] text-[#31B24B] text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-6">
+              <div className="inline-flex items-center gap-2 bg-[#e8f5ec] text-[#31B24B] text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-5">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#31B24B]" />
                 India&apos;s creator platform
               </div>
-              <h1 className="text-[46px] md:text-[68px] leading-[1] font-black text-[#111] tracking-tight mb-6">
+              <h1 className="text-[42px] md:text-[64px] leading-[1] font-black text-[#111] tracking-tight mb-5">
                 Create. Share. Monetize.
               </h1>
               <p className="text-[17px] md:text-[19px] text-[#555] leading-relaxed max-w-[520px]">
@@ -167,32 +168,19 @@ export default function Home() {
           </div>
         </section>
 
-        {/* Why MeTubez — 4-column features */}
-        <section className="border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
-            <div className="text-center max-w-[1200px] mx-auto mb-12">
-              <h2 className="text-[24px] md:text-[36px] font-black text-[#111] leading-tight md:whitespace-nowrap">
+        {/* Why MeTubez — animated feature grid */}
+        <section className="relative overflow-hidden border-t border-[#eee] bg-[radial-gradient(120%_120%_at_50%_-20%,#f1faf3_0%,#ffffff_55%)]">
+          <div className="relative max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
+            <div className="text-center max-w-[1200px] mx-auto mb-10 md:mb-12">
+              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
+                Why MeTubez
+              </p>
+              <h2 className="relative inline-block text-[26px] md:text-[36px] font-black text-[#111] leading-tight md:whitespace-nowrap">
                 Content ka experience, ab landscape mein.
+                <span className="absolute -bottom-2 left-1/2 h-[3px] w-14 -translate-x-1/2 rounded-full bg-[#31B24B]/70" />
               </h2>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
-              {features.map((f) => (
-                <div
-                  key={f.n}
-                  className="bg-white border border-[#eee] hover:border-[#31B24B] hover:shadow-lg hover:shadow-[#31B24B]/5 rounded-xl p-6 md:p-7 transition-all"
-                >
-                  <div className="inline-flex items-center h-8 px-2.5 rounded-md bg-[#e8f5ec] text-[#31B24B] font-black text-[13px] tracking-wider mb-4">
-                    {f.n}
-                  </div>
-                  <h3 className="text-[16px] md:text-[17px] font-black text-[#111] mb-2 leading-tight">
-                    {f.title}
-                  </h3>
-                  <p className="text-[13px] md:text-[14px] text-[#666] leading-relaxed">
-                    {f.desc}
-                  </p>
-                </div>
-              ))}
-            </div>
+            <FeatureGrid features={features} />
           </div>
         </section>
 
@@ -213,23 +201,23 @@ export default function Home() {
 
         {/* Categories — solid green strip with white scrolling text */}
         <section className="border-t border-b border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 pt-16 md:pt-20 pb-6 text-center">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 pt-12 md:pt-16 pb-6 text-center">
             <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
               Content categories
             </p>
-            <h2 className="text-[28px] md:text-[38px] font-black text-[#111] leading-tight mb-10">
+            <h2 className="text-[28px] md:text-[38px] font-black text-[#111] leading-tight mb-8">
               Explore India, one video at a time.
             </h2>
           </div>
-          <div className="bg-[#31B24B] overflow-hidden py-4 mb-16 md:mb-20">
+          <div className="bg-[#31B24B] overflow-hidden py-4 mb-12 md:mb-16">
             <div className="marquee-track">
               {[...categories, ...categories].map((c, i) => (
                 <span
                   key={`${c}-${i}`}
-                  className="inline-flex items-center whitespace-nowrap text-white text-[15px] md:text-[16px] font-bold px-6"
+                  className="inline-flex items-center whitespace-nowrap text-white text-[15px] md:text-[16px] font-bold px-4"
                 >
                   {c}
-                  <span className="ml-6 text-white/40">•</span>
+                  <span className="ml-4 text-white/40">•</span>
                 </span>
               ))}
             </div>
@@ -267,8 +255,8 @@ export default function Home() {
 
         {/* How MeTubez works — 3 steps with icons */}
         <section className="border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
-            <div className="text-center max-w-[720px] mx-auto mb-12">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
+            <div className="text-center max-w-[720px] mx-auto mb-10 md:mb-12">
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
                 How MeTubez works
               </p>
@@ -276,9 +264,12 @@ export default function Home() {
                 Get started in three simple steps.
               </h2>
             </div>
-            <div className="grid md:grid-cols-3 gap-6 md:gap-10">
+            <div className="grid md:grid-cols-3 gap-10 md:gap-10">
               {steps.map((s) => (
-                <div key={s.n} className="relative flex flex-col items-start">
+                <div
+                  key={s.n}
+                  className="relative flex flex-col items-center text-center md:items-start md:text-left"
+                >
                   <div className="relative w-20 h-20 mb-5">
                     <Image
                       src={s.icon}
@@ -317,9 +308,9 @@ export default function Home() {
 
         {/* Split CTA — For creators + For brands */}
         <section className="border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
             <div className="grid md:grid-cols-2 gap-5">
-              <div className="bg-[#f8f8f8] border border-[#eee] rounded-2xl p-8 md:p-10">
+              <div className="bg-[#f8f8f8] border border-[#eee] rounded-2xl p-7 md:p-10">
                 <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
                   For creators
                 </p>
@@ -346,7 +337,7 @@ export default function Home() {
                   </svg>
                 </Link>
               </div>
-              <div className="bg-[#111] text-white rounded-2xl p-8 md:p-10">
+              <div className="bg-[#111] text-white rounded-2xl p-7 md:p-10">
                 <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#31B24B] mb-3">
                   For brands
                 </p>
@@ -379,8 +370,8 @@ export default function Home() {
 
         {/* Testimonials — auto-scroll marquee */}
         <section className="border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 pt-16 md:pt-20 pb-6">
-            <div className="text-center max-w-[720px] mx-auto mb-12">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 pt-12 md:pt-16 pb-6">
+            <div className="text-center max-w-[720px] mx-auto mb-10 md:mb-12">
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
                 Creator testimonials
               </p>
@@ -389,7 +380,7 @@ export default function Home() {
               </h2>
             </div>
           </div>
-          <div className="pb-16 md:pb-20 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_5%,black_95%,transparent)]">
+          <div className="pb-12 md:pb-16 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_5%,black_95%,transparent)]">
             <div className="reviews-track flex gap-5 w-max">
               {[...testimonials, ...testimonials].map((t, i) => (
                 <div

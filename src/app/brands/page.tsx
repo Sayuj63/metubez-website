@@ -167,8 +167,8 @@ export default function BrandsPage() {
       <Header />
       <main className="flex-1 bg-white">
         {/* Hero */}
-        <section className="max-w-[1240px] mx-auto px-5 md:px-8 pt-16 md:pt-24 pb-16 md:pb-20">
-          <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
+        <section className="max-w-[1240px] mx-auto px-5 md:px-8 pt-8 md:pt-14 pb-10 md:pb-12">
+          <div className="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#31B24B] mb-4">
                 MeTubez for Brands
@@ -230,8 +230,8 @@ export default function BrandsPage() {
 
         {/* Why brands choose MeTubez — 4 tile placeholder same */}
         <section className="border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
-            <div className="text-center max-w-[720px] mx-auto mb-12">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 pt-12 md:pt-16 pb-10 md:pb-12">
+            <div className="text-center max-w-[720px] mx-auto mb-10 md:mb-12">
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
                 Why brands choose MeTubez · 4 reasons
               </p>
@@ -239,16 +239,16 @@ export default function BrandsPage() {
                 Advertising built for Bharat.
               </h2>
             </div>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 items-stretch">
               {reasons.map((r) => (
                 <div
                   key={r.title}
-                  className="bg-white border border-[#eee] hover:border-[#31B24B] hover:shadow-lg hover:shadow-[#31B24B]/5 rounded-xl p-6 md:p-7 transition-all"
+                  className="flex h-full flex-col bg-white border border-[#eee] hover:border-[#31B24B] hover:shadow-lg hover:shadow-[#31B24B]/5 rounded-xl p-6 md:p-7 transition-all"
                 >
                   <div className="w-10 h-10 rounded-lg bg-[#e8f5ec] flex items-center justify-center text-[#31B24B] font-black text-[16px] mb-4">
                     {r.icon}
                   </div>
-                  <h3 className="text-[16px] md:text-[17px] font-black text-[#111] mb-2">
+                  <h3 className="text-[15px] lg:text-[16px] font-black text-[#111] mb-2 leading-tight whitespace-nowrap">
                     {r.title}
                   </h3>
                   <p className="text-[13px] md:text-[14px] text-[#666] leading-relaxed">
@@ -262,7 +262,7 @@ export default function BrandsPage() {
 
         {/* Ad formats — 2 tabs */}
         <section className="border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
             <div className="text-center max-w-[720px] mx-auto mb-10">
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
                 Ad formats
@@ -298,7 +298,7 @@ export default function BrandsPage() {
                   </div>
                 </div>
               </div>
-              <div>
+              <div className="text-center md:text-left">
                 <h3 className="text-[22px] md:text-[26px] font-black text-[#111] mb-3">
                   {format.title}
                 </h3>
@@ -320,7 +320,7 @@ export default function BrandsPage() {
 
         {/* Targeting */}
         <section className="border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
             <div className="text-center max-w-[720px] mx-auto mb-12">
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
                 Targeting options
@@ -349,8 +349,8 @@ export default function BrandsPage() {
 
         {/* How it works */}
         <section className="border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
-            <div className="text-center max-w-[720px] mx-auto mb-12">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 pt-12 md:pt-16 pb-10 md:pb-12">
+            <div className="text-center max-w-[720px] mx-auto mb-10 md:mb-12">
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
                 How MeTubez Ads works · 4-step process
               </p>
@@ -358,10 +358,10 @@ export default function BrandsPage() {
                 Start advertising in a week.
               </h2>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8 md:gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-6">
               {adsSteps.map((s) => (
-                <div key={s.n}>
-                  <div className="w-12 h-12 rounded-full border-2 border-[#111] bg-white flex items-center justify-center text-[16px] font-black text-[#111] mb-5">
+                <div key={s.n} className="text-center md:text-left">
+                  <div className="w-12 h-12 mx-auto md:mx-0 rounded-full border-2 border-[#111] bg-white flex items-center justify-center text-[16px] font-black text-[#111] mb-5">
                     {s.n}
                   </div>
                   <h3 className="text-[17px] md:text-[18px] font-black text-[#111] mb-2">
@@ -378,7 +378,7 @@ export default function BrandsPage() {
 
         {/* Contact form */}
         <section id="book-demo" className="border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-16 md:py-20">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 pt-10 md:pt-16 pb-12 md:pb-16">
             <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-start">
               <div>
                 <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#31B24B] mb-3">
@@ -498,7 +498,7 @@ export default function BrandsPage() {
 
         {/* Brand FAQ */}
         <section className="border-t border-[#eee] bg-[#fafafa]">
-          <div className="max-w-[820px] mx-auto px-5 md:px-8 py-16 md:py-20">
+          <div className="max-w-[820px] mx-auto px-5 md:px-8 py-12 md:py-16">
             <div className="text-center mb-12">
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
                 FAQ · for brands
@@ -567,8 +567,8 @@ export default function BrandsPage() {
 
 function SpecRow({ label, value }: { label: string; value: string }) {
   return (
-    <div>
-      <div className="text-[11px] font-bold uppercase tracking-wider text-[#999] mb-1">
+    <div className="text-center md:text-left">
+      <div className="text-[11px] font-bold uppercase tracking-wider text-[#111] mb-1">
         {label}
       </div>
       <div className="text-[14px] md:text-[15px] text-[#111] font-medium">
