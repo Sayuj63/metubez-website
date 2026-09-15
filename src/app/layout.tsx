@@ -21,9 +21,6 @@ export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: TITLE,
   description: SHARE_DESCRIPTION,
-  icons: {
-    icon: "/metubez-logo.png",
-  },
   openGraph: {
     type: "website",
     siteName: "MeTubez",
