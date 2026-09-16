@@ -4,6 +4,7 @@ export type BlogPost = {
   title: string;
   tags: string[];
   content: string;
+  cover?: string;
 };
 
 export const blogPosts: BlogPost[] = [
@@ -13,6 +14,7 @@ export const blogPosts: BlogPost[] = [
     title:
       "A Creator in Gorakhpur Has 40,000 Views a Month and Earns Rs 400. Here Is Why That Is a Platform Problem, Not a Creator Problem.",
     tags: ["MeTubez", "Creator Economy", "India", "Vernacular"],
+    cover: "/blog-covers/gorakhpur-creator-platform-problem.png",
     content: `
 <h2>Let us start with the numbers that nobody is talking about</h2>
 <p>India has over 50 million content creators. The United States has a similar number. The US creator economy is valued at approximately $250 billion. India's creator economy is valued at approximately $0.4 billion.</p>
@@ -57,6 +59,7 @@ Hindi and regional language content on YouTube in India: CPM of roughly Rs 20 to
     title:
       "The $250 Billion Creator Economy Gap: Why India Has 50 Million Creators and Almost No Creator Economy",
     tags: ["Creator Economy", "MeTubez", "India", "Investment"],
+    cover: "/blog-covers/250-billion-creator-economy-gap.png",
     content: `
 <h2>The number that explains the opportunity</h2>
 <p>United States creator economy: approximately \$250 billion.</p>
@@ -95,6 +98,7 @@ Hindi and regional language content on YouTube in India: CPM of roughly Rs 20 to
     day: 11,
     title: "The Conversation I Have Had 15 Times: Oh, Like YouTube?",
     tags: ["MeTubez", "Creator Economy", "India Startup", "Funny"],
+    cover: "/blog-covers/oh-like-youtube-conversation.png",
     content: `
 <h2>A transcript of a very common conversation</h2>
 <p>Me: "We are building a video platform for Indian vernacular creators that pays from the first video."</p>
@@ -173,6 +177,7 @@ Hindi and regional language content on YouTube in India: CPM of roughly Rs 20 to
     title:
       "Dear Creator Making Videos Every Week and Earning Almost Nothing: This Is Not Your Fault",
     tags: ["MeTubez", "Creators India", "Earn Online", "Creator Economy"],
+    cover: "/blog-covers/creator-earning-nothing-not-your-fault.png",
     content: `
 <h2>First, the numbers so you know you are not imagining it</h2>
 <p>If your content gets 100,000 views per month on YouTube and your audience is primarily Hindi or another regional Indian language, your monthly earnings are roughly Rs 1,500 to Rs 5,000.</p>
@@ -211,6 +216,7 @@ Hindi and regional language content on YouTube in India: CPM of roughly Rs 20 to
     title:
       "The Next 100 Million YouTube Creators Will Not Speak English. And That Is the Biggest Opportunity in the Global Creator Economy Right Now.",
     tags: ["MeTubez", "Creator Economy Global", "India Tech", "International"],
+    cover: "/blog-covers/next-100-million-creators-not-english.png",
     content: `
 <h2>The geography of the next creator economy wave</h2>
 <p>The global creator economy conversation takes place almost entirely in English, about creators who primarily create in English, for audiences whose purchasing power is of interest to global advertisers.</p>
@@ -252,6 +258,7 @@ Hindi and regional language content on YouTube in India: CPM of roughly Rs 20 to
     title:
       "The MeTubez Monetisation Architecture: How We Are Designing Creator Income from Video One",
     tags: ["MeTubez", "Creator Economy", "Build in Public", "India Startup"],
+    cover: "/blog-covers/metubez-monetisation-architecture.png",
     content: `
 <h2>The problem with most creator platform monetisation</h2>
 <p>The standard creator platform monetisation model works like this: platform attracts creators with the promise of audience. Creators build audience. Platform monetises audience attention through advertising. Platform shares a portion of advertising revenue with creators. Creators who have built large English-language premium audiences earn well. Everyone else earns poorly or not at all.</p>
@@ -293,6 +300,7 @@ Hindi and regional language content on YouTube in India: CPM of roughly Rs 20 to
     title:
       "Why We Are Building MeTubez from Ahmedabad and Not From Mumbai: The Intentional Geography of a Vernacular Creator Platform",
     tags: ["MeTubez", "Ahmedabad", "Build in Public", "India Startup"],
+    cover: "/blog-covers/building-metubez-from-ahmedabad.png",
     content: `
 <h2>The question we get asked most often</h2>
 <p>When investors and ecosystem people learn that MeTubez is being built from Ahmedabad, the question that follows is usually some version of: why not Mumbai or Bengaluru? Is it a funding issue? A personal preference? Do you plan to relocate as the company scales?</p>

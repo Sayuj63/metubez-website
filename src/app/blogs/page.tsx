@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -45,39 +46,52 @@ export default async function BlogsIndex() {
                 <Link
                   key={post.slug}
                   href={`/blogs/${post.slug}`}
-                  className="group block bg-white border border-[#eee] rounded-2xl p-6 md:p-7 hover:border-[#31B24B] hover:shadow-[0_10px_30px_-15px_rgba(49,178,75,0.35)] transition-all"
+                  className="group flex flex-col bg-white border border-[#eee] rounded-2xl overflow-hidden hover:border-[#31B24B] hover:shadow-[0_10px_30px_-15px_rgba(49,178,75,0.35)] transition-all"
                 >
-                  <div className="flex items-center gap-2 mb-4">
-                    <span className="text-[10px] font-black uppercase tracking-wider text-[#31B24B] bg-[#e8f5ec] px-2 py-1 rounded-full">
-                      {t("blogs.day")} {post.day}
-                    </span>
-                    {post.tags.slice(0, 2).map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-[10px] font-bold uppercase tracking-wider text-[#666]"
-                      >
-                        · {tag}
-                      </span>
-                    ))}
-                  </div>
-                  <h2 className="text-[18px] md:text-[20px] font-black text-[#111] leading-tight mb-3 group-hover:text-[#31B24B] transition-colors">
-                    {post.title}
-                  </h2>
-                  <p className="text-[13px] md:text-[14px] text-[#555] leading-relaxed">
-                    {excerpt(post.content)}
-                  </p>
-                  <span className="inline-flex items-center gap-1.5 text-[12px] font-bold text-[#31B24B] mt-5">
-                    {t("blogs.readArticle")}
-                    <svg width="12" height="10" viewBox="0 0 14 10" fill="none">
-                      <path
-                        d="M1 5h12M9 1l4 4-4 4"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
+                  {post.cover && (
+                    <div className="relative w-full aspect-[1200/630] bg-[#f5f4f0] overflow-hidden">
+                      <Image
+                        src={post.cover}
+                        alt={post.title}
+                        fill
+                        sizes="(max-width: 768px) 100vw, 540px"
+                        className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
                       />
-                    </svg>
-                  </span>
+                    </div>
+                  )}
+                  <div className="p-6 md:p-7 flex-1 flex flex-col">
+                    <div className="flex items-center gap-2 mb-4">
+                      <span className="text-[10px] font-black uppercase tracking-wider text-[#31B24B] bg-[#e8f5ec] px-2 py-1 rounded-full">
+                        {t("blogs.day")} {post.day}
+                      </span>
+                      {post.tags.slice(0, 2).map((tag) => (
+                        <span
+                          key={tag}
+                          className="text-[10px] font-bold uppercase tracking-wider text-[#666]"
+                        >
+                          · {tag}
+                        </span>
+                      ))}
+                    </div>
+                    <h2 className="text-[18px] md:text-[20px] font-black text-[#111] leading-tight mb-3 group-hover:text-[#31B24B] transition-colors">
+                      {post.title}
+                    </h2>
+                    <p className="text-[13px] md:text-[14px] text-[#555] leading-relaxed">
+                      {excerpt(post.content)}
+                    </p>
+                    <span className="inline-flex items-center gap-1.5 text-[12px] font-bold text-[#31B24B] mt-5">
+                      {t("blogs.readArticle")}
+                      <svg width="12" height="10" viewBox="0 0 14 10" fill="none">
+                        <path
+                          d="M1 5h12M9 1l4 4-4 4"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        />
+                      </svg>
+                    </span>
+                  </div>
                 </Link>
               ))}
             </div>

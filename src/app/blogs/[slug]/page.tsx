@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "@/components/Header";
@@ -27,6 +28,22 @@ export async function generateMetadata({
   return {
     title: `${post.title} · MeTubez Blog`,
     description,
+    openGraph: post.cover
+      ? {
+          title: post.title,
+          description,
+          images: [{ url: post.cover, width: 1200, height: 630, alt: post.title }],
+          type: "article",
+        }
+      : { title: post.title, description, type: "article" },
+    twitter: post.cover
+      ? {
+          card: "summary_large_image",
+          title: post.title,
+          description,
+          images: [post.cover],
+        }
+      : { card: "summary_large_image", title: post.title, description },
   };
 }
 
@@ -85,6 +102,19 @@ export default async function BlogPost({
             {post.title}
           </h1>
 
+          {post.cover && (
+            <div className="relative w-full aspect-[1200/630] rounded-2xl overflow-hidden bg-[#f5f4f0] mb-10 border border-[#eee]">
+              <Image
+                src={post.cover}
+                alt={post.title}
+                fill
+                sizes="(max-width: 768px) 100vw, 760px"
+                className="object-cover"
+                priority
+              />
+            </div>
+          )}
+
           <div
             className="blog-content"
             dangerouslySetInnerHTML={{ __html: post.content }}
@@ -102,14 +132,27 @@ export default async function BlogPost({
                   <Link
                     key={p.slug}
                     href={`/blogs/${p.slug}`}
-                    className="block bg-white border border-[#eee] rounded-xl p-5 hover:border-[#31B24B] transition-colors"
+                    className="group flex flex-col bg-white border border-[#eee] rounded-xl overflow-hidden hover:border-[#31B24B] transition-colors"
                   >
-                    <span className="text-[10px] font-black uppercase tracking-wider text-[#31B24B]">
-                      {t("blogs.day")} {p.day}
-                    </span>
-                    <p className="text-[14px] font-black text-[#111] leading-snug mt-2">
-                      {p.title}
-                    </p>
+                    {p.cover && (
+                      <div className="relative w-full aspect-[1200/630] bg-[#f5f4f0]">
+                        <Image
+                          src={p.cover}
+                          alt={p.title}
+                          fill
+                          sizes="(max-width: 768px) 100vw, 340px"
+                          className="object-cover group-hover:scale-[1.02] transition-transform duration-500"
+                        />
+                      </div>
+                    )}
+                    <div className="p-5">
+                      <span className="text-[10px] font-black uppercase tracking-wider text-[#31B24B]">
+                        {t("blogs.day")} {p.day}
+                      </span>
+                      <p className="text-[14px] font-black text-[#111] leading-snug mt-2">
+                        {p.title}
+                      </p>
+                    </div>
                   </Link>
                 ))}
               </div>
