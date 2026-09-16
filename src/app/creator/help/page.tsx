@@ -51,7 +51,7 @@ export default function CreatorHelpPage() {
       </p>
       <p>Bronze tier pe (jaha se sab start karte hain):</p>
       <ul>
-        <li>Meshorts (30 second tak): ₹4 per 1,000 valid views</li>
+        <li>MeShorts (30 second tak): ₹4 per 1,000 valid views</li>
         <li>Videos (30 second se zyada): ₹12 per 1,000 valid views</li>
       </ul>
       <p>
@@ -74,7 +74,7 @@ export default function CreatorHelpPage() {
 
       <h2>Article 3: &ldquo;Valid view&rdquo; kya hoti hai?</h2>
       <p>Ye important hai. Saare views paise nahi banate.</p>
-      <p>Meshorts (30 second tak videos) ke liye:</p>
+      <p>MeShorts (30 second tak videos) ke liye:</p>
       <p>
         Koi viewer teri video ko 3 second ya 50% dekhe, tab valid view count
         hoti hai.
@@ -154,7 +154,7 @@ export default function CreatorHelpPage() {
       <ol>
         <li>
           Sirf valid views count hoti hain. Agar koi viewer sirf 1 second dekhe
-          aur scroll kar de, woh count nahi hoti (Meshorts mein 3 second, Videos
+          aur scroll kar de, woh count nahi hoti (MeShorts mein 3 second, Videos
           mein 30 second minimum).
         </li>
         <li>

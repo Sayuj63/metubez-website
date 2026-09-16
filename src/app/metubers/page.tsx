@@ -114,7 +114,7 @@ const startSteps = [
 const faqs = [
   {
     q: "How much can I earn on MeTubez?",
-    a: "Your earnings depend on how many valid views your content gets, your tier, and content format (Meshorts vs Videos). Bronze creators start at the base per-view rate. Rates multiply as you progress: Silver (1.3×), Gold (1.7×), Platinum (2.5×). Videos over 30 seconds earn 2-3× more per view than Meshorts because ad attention is deeper. Consistent uploaders can reach ₹100 payout in their first 2-4 weeks.",
+    a: "Your earnings depend on how many valid views your content gets, your tier, and content format (MeShorts vs Videos). Bronze creators start at the base per-view rate. Rates multiply as you progress: Silver (1.3×), Gold (1.7×), Platinum (2.5×). Videos over 30 seconds earn 2-3× more per view than MeShorts because ad attention is deeper. Consistent uploaders can reach ₹100 payout in their first 2-4 weeks.",
   },
   {
     q: "When do I get paid?",
@@ -138,7 +138,7 @@ const faqs = [
   },
   {
     q: "What counts as a valid view?",
-    a: "For Meshorts (up to 30 seconds), a valid view means someone watched at least 3 seconds or 50% of your video — whichever is shorter. For Videos (over 30 seconds), a valid view means someone watched at least 30 seconds or 25% of your video — whichever is shorter. Same user max 2 views per video per 24 hours. Views from your own account don't count. These rules ensure your earnings reflect real, engaged viewers.",
+    a: "For MeShorts (up to 30 seconds), a valid view means someone watched at least 3 seconds or 50% of your video — whichever is shorter. For Videos (over 30 seconds), a valid view means someone watched at least 30 seconds or 25% of your video — whichever is shorter. Same user max 2 views per video per 24 hours. Views from your own account don't count. These rules ensure your earnings reflect real, engaged viewers.",
   },
 ];
 
@@ -339,7 +339,7 @@ export default function MeTubersPage() {
           </div>
         </section>
 
-        {/* How you earn — on Meshorts and Videos */}
+        {/* How you earn — on MeShorts and Videos */}
         <section className="border-t border-[#eee] bg-[#fafafa]">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
             <div className="text-center max-w-[720px] mx-auto mb-10 md:mb-12">
@@ -347,7 +347,7 @@ export default function MeTubersPage() {
                 How you earn
               </p>
               <h2 className="text-[28px] md:text-[38px] font-black text-[#111] leading-tight mb-3">
-                Meshorts and Videos. Same feed, different rates.
+                MeShorts and Videos. Same feed, different rates.
               </h2>
               <p className="text-[15px] md:text-[16px] text-[#666]">
                 Both content formats live in the same feed. Different lengths,
@@ -357,13 +357,13 @@ export default function MeTubersPage() {
             <div className="grid md:grid-cols-2 gap-5 md:gap-6 mb-8">
               <div className="bg-white border border-[#eee] rounded-2xl p-6 md:p-8">
                 <div className="inline-flex items-center gap-2 bg-[#e8f5ec] text-[#31B24B] text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4">
-                  Meshorts · up to 30s
+                  MeShorts · up to 30s
                 </div>
                 <h3 className="text-[22px] md:text-[24px] font-black text-[#111] mb-3">
                   ₹4 – ₹14 per 1,000 views
                 </h3>
                 <p className="text-[14px] text-[#555] leading-relaxed">
-                  Fast, casual content. Ads run natively between Meshorts. Rate
+                  Fast, casual content. Ads run natively between MeShorts. Rate
                   based on your tier.
                 </p>
               </div>
@@ -390,7 +390,7 @@ export default function MeTubersPage() {
                     ✓
                   </span>
                   <span>
-                    <strong className="font-black">Meshorts:</strong> viewer
+                    <strong className="font-black">MeShorts:</strong> viewer
                     watches at least 3 seconds or 50% of the video.
                   </span>
                 </li>

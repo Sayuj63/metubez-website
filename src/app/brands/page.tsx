@@ -19,7 +19,7 @@ const reasons = [
   {
     icon: "✓",
     title: "Real views only",
-    desc: "Strict view-counting standards. 3 seconds minimum for Meshorts, 30 seconds for Videos. Same user max 2 views per day. Every impression is a genuine engaged viewer.",
+    desc: "Strict view-counting standards. 3 seconds minimum for MeShorts, 30 seconds for Videos. Same user max 2 views per day. Every impression is a genuine engaged viewer.",
   },
   {
     icon: "★",
@@ -76,7 +76,7 @@ const adFormats = [
     tab: "Skippable video ad",
     title: "Skippable video ad",
     intro:
-      "In-feed for Meshorts, pre-roll/mid-roll for Videos. Landscape 16:9. Up to 3 minutes. Skippable after 5 seconds.",
+      "In-feed for MeShorts, pre-roll/mid-roll for Videos. Landscape 16:9. Up to 3 minutes. Skippable after 5 seconds.",
     charged: "Viewer watches 30 seconds or completes the ad.",
     cpm: "₹50 – ₹80",
     best: "Performance, app installs, e-commerce, brand awareness at scale.",
@@ -98,7 +98,7 @@ const adFormats = [
 const brandFaqs = [
   {
     q: "How does MeTubez count views vs YouTube and Instagram?",
-    a: "MeTubez uses strict view-counting standards. For Meshorts (≤30 sec), a viewer must watch at least 3 seconds or 50% of the video. For Videos (>30 sec), 30 seconds or 25%. Same user counts max 2 views per video per 24 hours. Every impression you're charged for is a genuinely engaged viewer.",
+    a: "MeTubez uses strict view-counting standards. For MeShorts (≤30 sec), a viewer must watch at least 3 seconds or 50% of the video. For Videos (>30 sec), 30 seconds or 25%. Same user counts max 2 views per video per 24 hours. Every impression you're charged for is a genuinely engaged viewer.",
   },
   {
     q: "What's your minimum budget?",

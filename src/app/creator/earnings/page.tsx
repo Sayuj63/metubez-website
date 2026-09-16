@@ -35,9 +35,9 @@ export default function CreatorEarningsPage() {
 
       <h3>Content formats</h3>
       <p>
-        Meshorts are videos up to 30 seconds long. They appear in the
+        MeShorts are videos up to 30 seconds long. They appear in the
         horizontal-scroll feed with native in-feed ads placed between every 5 to
-        7 Meshorts.
+        7 MeShorts.
       </p>
       <p>
         Videos are longer than 30 seconds. They carry pre-roll ads before
@@ -54,7 +54,7 @@ export default function CreatorEarningsPage() {
           <thead>
             <tr>
               <th>Tier</th>
-              <th>Meshorts (per 1,000 valid views)</th>
+              <th>MeShorts (per 1,000 valid views)</th>
               <th>Videos (per 1,000 valid views)</th>
             </tr>
           </thead>
@@ -166,7 +166,7 @@ export default function CreatorEarningsPage() {
       </p>
       <ul>
         <li>
-          Meshorts: viewer watches at least 3 seconds OR 50% of the video,
+          MeShorts: viewer watches at least 3 seconds OR 50% of the video,
           whichever is shorter
         </li>
         <li>

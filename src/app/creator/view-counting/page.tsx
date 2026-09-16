@@ -22,7 +22,7 @@ export default function CreatorViewCountingPage() {
         engagement metrics but do not contribute to your earnings.
       </p>
 
-      <h3>For Meshorts (videos up to 30 seconds)</h3>
+      <h3>For MeShorts (videos up to 30 seconds)</h3>
       <p>
         A view is counted as valid when a viewer watches at least 3 seconds of
         your content OR 50% of the total video length, whichever comes first.
@@ -144,7 +144,7 @@ export default function CreatorViewCountingPage() {
           <thead>
             <tr>
               <th>Tier</th>
-              <th>Meshorts (per 1,000 valid views)</th>
+              <th>MeShorts (per 1,000 valid views)</th>
               <th>Videos (per 1,000 valid views)</th>
             </tr>
           </thead>
