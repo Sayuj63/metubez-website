@@ -4,13 +4,8 @@ import { useState } from "react";
 import Image from "next/image";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useT } from "@/i18n/context";
 
-const stats = [
-  { num: "10K+", label: "Active MeTubers" },
-  { num: "₹100", label: "Minimum payout" },
-  { num: "13+", label: "Languages supported" },
-  { num: "Day 1", label: "Monetisation starts" },
-];
 
 const benefits = [
   {
@@ -148,10 +143,18 @@ const faqs = [
 ];
 
 export default function MeTubersPage() {
+  const { t } = useT();
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle",
   );
   const [errorMsg, setErrorMsg] = useState("");
+
+  const stats = [
+    { num: "10K+", label: t("metubers.statActiveMetubers") },
+    { num: "₹100", label: t("metubers.statMinPayout") },
+    { num: "13+", label: t("metubers.statLanguages") },
+    { num: "Day 1", label: t("metubers.statMonetisation") },
+  ];
 
   async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -191,23 +194,22 @@ export default function MeTubersPage() {
         {/* Program Hero */}
         <section className="max-w-[1240px] mx-auto px-5 md:px-8 pt-8 md:pt-14 pb-10 md:pb-14 text-center">
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#31B24B] mb-4">
-            MeTubers · Creator program
+            {t("metubers.kicker")}
           </p>
           <h1 className="text-[40px] md:text-[60px] leading-[1.05] font-black text-[#111] tracking-tight mb-5 max-w-[820px] mx-auto">
-            Become a MeTuber.
+            {t("metubers.heroTitleLine1")}
             <br />
-            Earn from your first video.
+            {t("metubers.heroTitleLine2")}
           </h1>
           <p className="text-[16px] md:text-[17px] text-[#666] max-w-[560px] mx-auto mb-8 leading-relaxed">
-            Join the fastest-growing creator community in India. Fair
-            monetisation, transparent tiers, real rewards.
+            {t("metubers.heroSub")}
           </p>
           <div className="flex justify-center">
             <a
               href="#apply"
               className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#31B24B] text-white text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-md transition-colors whitespace-nowrap"
             >
-              Start your journey
+              {t("metubers.heroCta")}
               <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
                 <path
                   d="M1 5h12M9 1l4 4-4 4"
@@ -586,16 +588,16 @@ export default function MeTubersPage() {
         <section className="bg-[#f8f8f8] border-t border-[#eee]">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16 text-center">
             <h2 className="text-[28px] md:text-[38px] font-black text-[#111] leading-tight mb-3">
-              India ka apna platform. Aapka apna future.
+              {t("metubers.finalTitle")}
             </h2>
             <p className="text-[15px] md:text-[16px] text-[#666] mb-8">
-              Apply now and become part of India&apos;s creator revolution.
+              {t("metubers.finalSub")}
             </p>
             <a
               href="#apply"
               className="inline-flex items-center gap-2 bg-[#31B24B] hover:bg-[#279940] text-black text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-md transition-colors whitespace-nowrap"
             >
-              Become a MeTuber
+              {t("metubers.finalCta")}
               <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
                 <path
                   d="M1 5h12M9 1l4 4-4 4"

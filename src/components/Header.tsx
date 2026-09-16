@@ -3,13 +3,15 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
+import { useT } from "@/i18n/context";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
+  const { t } = useT();
 
   const nav = [
-    { label: "MeTubers", href: "/metubers" },
-    { label: "For Brands", href: "/brands" },
+    { label: t("nav.metubers"), href: "/metubers" },
+    { label: t("nav.forBrands"), href: "/brands" },
   ];
 
   return (
@@ -46,7 +48,7 @@ export default function Header() {
             href="/metubers"
             className="inline-flex items-center gap-2 bg-[#31B24B] hover:bg-[#279940] text-white text-[13px] font-bold px-5 py-2.5 rounded-md transition-colors whitespace-nowrap"
           >
-            Become a Metuber
+            {t("nav.becomeMetuber")}
           </Link>
         </div>
 
@@ -84,7 +86,7 @@ export default function Header() {
               onClick={() => setOpen(false)}
               className="mt-2 inline-flex items-center justify-center bg-[#31B24B] text-white text-[14px] font-bold px-5 py-3 rounded-md"
             >
-              Become a Metuber
+              {t("nav.becomeMetuber")}
             </Link>
           </div>
         </div>

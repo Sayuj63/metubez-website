@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { useT } from "@/i18n/context";
 
 const reasons = [
   {
@@ -124,6 +125,7 @@ const brandFaqs = [
 const BRAND_EMAIL = "hello@metubez.com";
 
 export default function BrandsPage() {
+  const { t } = useT();
   const [activeFormat, setActiveFormat] = useState(adFormats[0].key);
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">(
     "idle",
@@ -171,20 +173,21 @@ export default function BrandsPage() {
           <div className="grid md:grid-cols-2 gap-8 md:gap-14 items-center">
             <div>
               <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#31B24B] mb-4">
-                MeTubez for Brands
+                {t("brands.kicker")}
               </p>
               <h1 className="text-[36px] md:text-[52px] leading-[1.05] font-black text-[#111] tracking-tight mb-6">
-                Reach Bharat where content is watched — not just scrolled.
+                {t("brands.heroTitleLine1")}
+                <br />
+                {t("brands.heroTitleLine2")}
               </h1>
               <p className="text-[16px] md:text-[17px] text-[#555] leading-relaxed mb-8 max-w-[520px]">
-                The only landscape-first video platform in India. Cinematic ad
-                canvas built for real attention and real engagement.
+                {t("brands.heroSub")}
               </p>
               <a
                 href="#book-demo"
                 className="inline-flex items-center gap-2 bg-[#111] hover:bg-[#31B24B] text-white text-[14px] md:text-[15px] font-bold px-7 py-3.5 rounded-md transition-colors whitespace-nowrap"
               >
-                Talk to sales
+                {t("brands.heroCta")}
                 <svg width="14" height="10" viewBox="0 0 14 10" fill="none">
                   <path
                     d="M1 5h12M9 1l4 4-4 4"

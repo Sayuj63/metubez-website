@@ -1,29 +1,28 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { getT } from "@/i18n/server";
 
-export default function CompanyPage() {
+export default async function CompanyPage() {
+  const { t } = await getT();
   return (
     <>
       <Header />
       <main className="flex-1 bg-white">
-        <section className="max-w-[820px] mx-auto px-5 md:px-8 pt-8 md:pt-14 pb-10 md:pb-14 text-center">
+        <section className="max-w-[820px] mx-auto px-5 md:px-8 pt-8 md:pt-14 pb-4 md:pb-14 text-center">
           <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#31B24B] mb-4">
-            Company
+            {t("company.kicker")}
           </p>
           <h1 className="text-[40px] md:text-[54px] leading-[1.05] font-black text-[#111] tracking-tight mb-6">
-            Built in Bharat, for Bharat.
+            {t("company.heroTitle")}
           </h1>
           <p className="text-[16px] md:text-[17px] text-[#666] leading-relaxed">
-            MeTubez is a product of Twenties Entertainment Pvt Ltd — an
-            India-first video platform where creators earn from day one, brands
-            reach real audiences, and content is finally watched the way it
-            deserves: in landscape.
+            {t("company.heroSub")}
           </p>
         </section>
 
         {/* Contact & Grievance */}
         <section id="contact" className="border-t border-[#eee]">
-          <div className="max-w-[820px] mx-auto px-5 md:px-8 py-14 md:py-16">
+          <div className="max-w-[820px] mx-auto px-5 md:px-8 py-8 md:py-16">
             <h2 className="text-[24px] md:text-[30px] font-black text-[#111] mb-8">
               Contact &amp; Grievance
             </h2>

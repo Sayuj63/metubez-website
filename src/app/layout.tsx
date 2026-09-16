@@ -1,6 +1,15 @@
 import type { Metadata } from "next";
 import { Lato } from "next/font/google";
+import { cookies } from "next/headers";
 import "./globals.css";
+import { I18nProvider } from "@/i18n/context";
+import {
+  DEFAULT_LOCALE,
+  LOCALE_COOKIE,
+  LOCALE_META,
+  LOCALES,
+  type Locale,
+} from "@/i18n/types";
 
 const lato = Lato({
   variable: "--font-lato",
@@ -45,11 +54,21 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({ children }: LayoutProps<"/">) {
+export default async function RootLayout({ children }: LayoutProps<"/">) {
+  const cookieStore = await cookies();
+  const raw = cookieStore.get(LOCALE_COOKIE)?.value;
+  const locale: Locale = (LOCALES as readonly string[]).includes(raw ?? "")
+    ? (raw as Locale)
+    : DEFAULT_LOCALE;
+  const dir = LOCALE_META[locale].rtl ? "rtl" : "ltr";
   return (
-    <html lang="en" className={`${lato.variable} h-full antialiased`}>
+    <html
+      lang={locale}
+      dir={dir}
+      className={`${lato.variable} h-full antialiased`}
+    >
       <body className="min-h-full flex flex-col bg-white text-[#111]">
-        {children}
+        <I18nProvider initial={locale}>{children}</I18nProvider>
       </body>
     </html>
   );

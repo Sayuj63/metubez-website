@@ -1,53 +1,96 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useT } from "@/i18n/context";
+import { LOCALES, LOCALE_META, type Locale } from "@/i18n/types";
 
 const PLAY_STORE_URL =
   "https://play.google.com/store/search?q=metubez&c=apps&hl=en_IN";
 const APP_STORE_URL =
   "https://apps.apple.com/in/app/metubez-made-for-by-india/id6782786496";
+const ANDROID_INTENT =
+  "intent://feed#Intent;scheme=metubez;package=com.twenties.metubez;S.browser_fallback_url=https%3A%2F%2Fplay.google.com%2Fstore%2Fsearch%3Fq%3Dmetubez%26c%3Dapps%26hl%3Den_IN;end";
+const IOS_SCHEME = "metubez://feed";
+const MAPS_URL =
+  "https://www.google.com/maps/search/?api=1&query=602%2C+6th+Floor%2C+Anam+2%2C+Ambli%2C+Ahmedabad%2C+Gujarat+380058";
 
-const platform = [
-  { label: "Become a Metuber", href: "/metubers" },
-  { label: "For brands", href: "/brands" },
-  { label: "Download app", href: "#download" },
-];
+function openMeTubez() {
+  if (typeof window === "undefined") return;
+  const ua = window.navigator.userAgent || "";
+  const isAndroid = /Android/i.test(ua);
+  const isIOS = /iPhone|iPad|iPod/i.test(ua);
 
-const company = [
-  { label: "About us", href: "/company" },
-  { label: "Press", href: "/company#press" },
-  { label: "Contact", href: "/company#contact" },
-];
+  if (isAndroid) {
+    window.location.href = ANDROID_INTENT;
+    return;
+  }
 
-const legal = [
-  { label: "Privacy policy", href: "/legal/privacy" },
-  { label: "Terms of use", href: "/legal/terms" },
-  { label: "CSAE standards", href: "/legal/csae" },
-];
+  if (isIOS) {
+    const start = Date.now();
+    const timer = window.setTimeout(() => {
+      if (!document.hidden && Date.now() - start < 2000) {
+        window.location.href = APP_STORE_URL;
+      }
+    }, 1200);
+    const onVisibilityChange = () => {
+      if (document.hidden) {
+        window.clearTimeout(timer);
+        document.removeEventListener("visibilitychange", onVisibilityChange);
+      }
+    };
+    document.addEventListener("visibilitychange", onVisibilityChange);
+    window.location.href = IOS_SCHEME;
+    return;
+  }
 
-const support = [
-  { label: "Grievance Officer", href: "/support/grievance" },
-  { label: "Contact Support", href: "/support/contact" },
-  { label: "Community guidelines", href: "/legal/community" },
-];
-
-const creator = [
-  { label: "View Counting Policy", href: "/creator/view-counting" },
-  { label: "Creator Earnings Policy", href: "/creator/earnings" },
-  { label: "Creator Agreement", href: "/creator/agreement" },
-  { label: "In-App Help Center", href: "/creator/help" },
-];
+  window.open(PLAY_STORE_URL, "_blank", "noopener,noreferrer");
+}
 
 export default function Footer() {
+  const { t } = useT();
+
+  const platform = [
+    { label: t("footer.becomeMetuber"), href: "/metubers" },
+    { label: t("footer.forBrands"), href: "/brands" },
+    { label: t("footer.downloadApp"), href: "#download" },
+  ];
+
+  const company = [
+    { label: t("footer.aboutUs"), href: "/company" },
+    { label: t("footer.blogs"), href: "/blogs" },
+    { label: t("footer.contact"), href: "/company#contact" },
+  ];
+
+  const legal = [
+    { label: t("footer.privacyPolicy"), href: "/legal/privacy" },
+    { label: t("footer.termsOfUse"), href: "/legal/terms" },
+    { label: t("footer.csaeStandards"), href: "/legal/csae" },
+  ];
+
+  const support = [
+    { label: t("footer.grievanceOfficer"), href: "/support/grievance" },
+    { label: t("footer.contactSupport"), href: "/support/contact" },
+    { label: t("footer.communityGuidelines"), href: "/legal/community" },
+  ];
+
+  const creator = [
+    { label: t("footer.viewCountingPolicy"), href: "/creator/view-counting" },
+    { label: t("footer.creatorEarningsPolicy"), href: "/creator/earnings" },
+    { label: t("footer.creatorAgreement"), href: "/creator/agreement" },
+    { label: t("footer.inAppHelpCenter"), href: "/creator/help" },
+  ];
+
   return (
     <footer className="bg-white border-t border-[#eee]">
       {/* Download banner */}
       <div id="download" className="bg-[#f8f8f8] border-b border-[#eee]">
         <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-14 text-center">
           <h2 className="text-[26px] md:text-[32px] font-black text-[#111] mb-2">
-            Download MeTubez today.
+            {t("footer.downloadTitle")}
           </h2>
           <p className="text-[14px] text-[#666] mb-6">
-            Free · Made in India · Available on Android and iOS
+            {t("footer.downloadSub")}
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
             <a
@@ -98,31 +141,43 @@ export default function Footer() {
                 MeTubez
               </span>
             </div>
-            <p className="text-[13px] text-[#555] leading-relaxed mb-3 max-w-[380px]">
-              MeTubez is a Made-in-India video platform with a unique horizontal
-              video scrolling experience. MeTubez brings short and long-form
-              content together across categories and languages.
-            </p>
-            <p className="text-[12px] text-[#999] mb-1">
-              A product of Twenties Entertainment Pvt Ltd
-            </p>
-            <p className="text-[12px] text-[#999] leading-relaxed">
+            <button
+              type="button"
+              onClick={openMeTubez}
+              className="inline-flex items-center gap-2 bg-[#31B24B] hover:bg-[#279940] text-white text-[13px] font-black px-5 py-2.5 rounded-md transition-colors mb-5"
+              aria-label={t("footer.watchMetubez")}
+            >
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M8 5v14l11-7z" />
+              </svg>
+              {t("footer.watchMetubez")}
+            </button>
+            <p className="text-[12px] text-[#999] mb-1">{t("footer.productOf")}</p>
+            <a
+              href={MAPS_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[12px] text-[#999] leading-relaxed hover:text-[#31B24B] transition-colors inline-block"
+            >
               602, 6th Floor, Anam 2, Ambli,
               <br />
               Ahmedabad, Gujarat 380058
-            </p>
+            </a>
+            <div className="mt-5">
+              <LanguageSwitcher />
+            </div>
           </div>
 
-          <FooterCol title="Platform" items={platform} />
-          <FooterCol title="Company" items={company} />
-          <FooterCol title="Legal" items={legal} />
-          <FooterCol title="Support" items={support} />
-          <FooterCol title="Creator" items={creator} />
+          <FooterCol title={t("footer.colPlatform")} items={platform} />
+          <FooterCol title={t("footer.colCompany")} items={company} />
+          <FooterCol title={t("footer.colLegal")} items={legal} />
+          <FooterCol title={t("footer.colSupport")} items={support} />
+          <FooterCol title={t("footer.colCreator")} items={creator} />
         </div>
 
         <div className="border-t border-[#eee] mt-12 pt-6 flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
           <p className="text-[12px] text-[#999]">
-            © 2026 Twenties Entertainment Pvt Ltd. All rights reserved.
+            © 2026 Twenties Entertainment Pvt Ltd. {t("footer.rightsReserved")}
           </p>
           <div className="flex gap-3">
             <Social
@@ -147,6 +202,66 @@ export default function Footer() {
         </div>
       </div>
     </footer>
+  );
+}
+
+function LanguageSwitcher() {
+  const { locale, setLocale, t } = useT();
+
+  const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    setLocale(e.target.value as Locale);
+  };
+
+  return (
+    <div>
+      <label
+        htmlFor="footer-lang"
+        className="text-[11px] font-black uppercase tracking-wider text-[#111] mb-2 flex items-center gap-1.5"
+      >
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+          <path
+            d="M12 21a9 9 0 100-18 9 9 0 000 18zm0 0c2.5-2.5 4-6 4-9s-1.5-6.5-4-9m0 18c-2.5-2.5-4-6-4-9s1.5-6.5 4-9M3.5 9h17M3.5 15h17"
+            stroke="currentColor"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+          />
+        </svg>
+        {t("footer.language")}
+      </label>
+      <div className="relative">
+        <select
+          id="footer-lang"
+          value={locale}
+          onChange={onChange}
+          className="appearance-none w-full max-w-[220px] text-[13px] font-medium text-[#111] bg-white border border-[#ddd] rounded-md pl-3 pr-9 py-2 hover:border-[#31B24B] focus:border-[#31B24B] focus:outline-none cursor-pointer"
+        >
+          {LOCALES.map((code) => {
+            const meta = LOCALE_META[code];
+            return (
+              <option key={code} value={code}>
+                {meta.native}
+                {code !== "en" ? ` · ${meta.label}` : ""}
+              </option>
+            );
+          })}
+        </select>
+        <svg
+          width="10"
+          height="6"
+          viewBox="0 0 10 6"
+          fill="none"
+          className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"
+        >
+          <path
+            d="M1 1l4 4 4-4"
+            stroke="#666"
+            strokeWidth="1.6"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+    </div>
   );
 }
 
