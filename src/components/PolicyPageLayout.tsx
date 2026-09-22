@@ -3,6 +3,11 @@ import Footer from "@/components/Footer";
 import PolicyNav from "@/components/PolicyNav";
 import PolicyTranslate from "@/components/PolicyTranslate";
 
+// Runs before first paint: if a translation is pending, hide the page so
+// untranslated English never flashes. The timeout guarantees the page is
+// revealed even if Google never responds or JS later fails.
+const HOLD_PAINT = `(function(){try{var m=document.cookie.match(/(?:^|; )googtrans=([^;]*)/);var c=m?decodeURIComponent(m[1]).split('/')[2]:'';if(c&&c!=='en'){var d=document.documentElement;d.classList.add('gt-pending');setTimeout(function(){d.classList.remove('gt-pending')},2500);}}catch(e){}})();`;
+
 export default function PolicyPageLayout({
   children,
 }: {
@@ -10,6 +15,7 @@ export default function PolicyPageLayout({
 }) {
   return (
     <>
+      <script dangerouslySetInnerHTML={{ __html: HOLD_PAINT }} />
       <Header />
       <main className="flex-1 bg-white">
         <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-14 md:py-16">

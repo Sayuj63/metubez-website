@@ -6,6 +6,11 @@ import { LOCALES, LOCALE_META, type Locale } from "@/i18n/types";
 const GOOGLE_COOKIE = "googtrans";
 const SCRIPT_ID = "google-translate-script";
 
+// Translation is confined to these sections. The cookie is written once per
+// path so it is simply not visible to Google anywhere else on the site.
+const POLICY_PATHS = ["/legal", "/creator", "/support"];
+const POLICY_PATH_RE = /^\/(legal|creator|support)(\/|$)/;
+
 type TranslateElementOptions = {
   pageLanguage: string;
   includedLanguages: string;
@@ -43,11 +48,14 @@ function readLocale(): Locale {
 function clearCookie() {
   const past = "Thu, 01 Jan 1970 00:00:00 GMT";
   const host = window.location.hostname;
-  document.cookie = `${GOOGLE_COOKIE}=; path=/; expires=${past}`;
-  document.cookie = `${GOOGLE_COOKIE}=; path=/; domain=${host}; expires=${past}`;
   const parent = parentDomain(host);
-  if (parent) {
-    document.cookie = `${GOOGLE_COOKIE}=; path=/; domain=${parent}; expires=${past}`;
+  // "/" is included to retire the site-wide cookie written by earlier builds.
+  for (const path of ["/", ...POLICY_PATHS]) {
+    document.cookie = `${GOOGLE_COOKIE}=; path=${path}; expires=${past}`;
+    document.cookie = `${GOOGLE_COOKIE}=; path=${path}; domain=${host}; expires=${past}`;
+    if (parent) {
+      document.cookie = `${GOOGLE_COOKIE}=; path=${path}; domain=${parent}; expires=${past}`;
+    }
   }
 }
 
@@ -56,46 +64,94 @@ function writeLocale(locale: Locale) {
   if (locale === "en") return;
   const value = `/en/${locale}`;
   const expires = new Date(Date.now() + 31536000000).toUTCString();
-  document.cookie = `${GOOGLE_COOKIE}=${value}; path=/; expires=${expires}`;
-  // Shared across metubez.com and www.metubez.com so the choice survives either host.
   const parent = parentDomain(window.location.hostname);
-  if (parent) {
-    document.cookie = `${GOOGLE_COOKIE}=${value}; path=/; domain=${parent}; expires=${expires}`;
+  for (const path of POLICY_PATHS) {
+    document.cookie = `${GOOGLE_COOKIE}=${value}; path=${path}; expires=${expires}`;
+    // Shared across metubez.com and www.metubez.com so the choice survives either host.
+    if (parent) {
+      document.cookie = `${GOOGLE_COOKIE}=${value}; path=${path}; domain=${parent}; expires=${expires}`;
+    }
   }
+}
+
+function reveal() {
+  document.documentElement.classList.remove("gt-pending");
 }
 
 export default function PolicyTranslate() {
   const [locale, setLocale] = useState<Locale>("en");
 
   useEffect(() => {
-    setLocale(readLocale());
+    const active = readLocale();
+    setLocale(active);
 
-    if (document.getElementById(SCRIPT_ID)) return;
+    if (active === "en") {
+      reveal();
+      return;
+    }
 
-    window.googleTranslateElementInit = () => {
-      const factory = window.google?.translate?.TranslateElement;
-      if (!factory) return;
-      new factory(
-        {
-          pageLanguage: "en",
-          includedLanguages: LOCALES.filter((l) => l !== "en").join(","),
-          autoDisplay: false,
-        },
-        "google_translate_element",
-      );
+    // Re-write in the path-scoped form, retiring any site-wide cookie.
+    writeLocale(active);
+
+    // Google flags the document once the first pass has landed; until then the
+    // page is held hidden so untranslated English never paints.
+    const observer = new MutationObserver(() => {
+      if (/translated-(ltr|rtl)/.test(document.documentElement.className)) {
+        reveal();
+        observer.disconnect();
+      }
+    });
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ["class"],
+    });
+
+    const leavingPolicySection = (event: MouseEvent) => {
+      if (event.defaultPrevented || event.button !== 0) return;
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+      const anchor = (event.target as Element | null)?.closest?.("a");
+      if (!anchor) return;
+      const href = anchor.getAttribute("href");
+      if (!href || !href.startsWith("/") || POLICY_PATH_RE.test(href)) return;
+      // Full load, so Google's in-memory engine cannot follow us out of the
+      // policy section and translate the rest of the site.
+      event.preventDefault();
+      event.stopPropagation();
+      window.location.href = href;
     };
+    document.addEventListener("click", leavingPolicySection, true);
 
-    const script = document.createElement("script");
-    script.id = SCRIPT_ID;
-    script.src =
-      "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
-    script.async = true;
-    document.body.appendChild(script);
+    if (!document.getElementById(SCRIPT_ID)) {
+      window.googleTranslateElementInit = () => {
+        const factory = window.google?.translate?.TranslateElement;
+        if (!factory) return reveal();
+        new factory(
+          {
+            pageLanguage: "en",
+            includedLanguages: LOCALES.filter((l) => l !== "en").join(","),
+            autoDisplay: false,
+          },
+          "google_translate_element",
+        );
+      };
+
+      const script = document.createElement("script");
+      script.id = SCRIPT_ID;
+      script.src =
+        "https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit";
+      script.async = true;
+      script.onerror = reveal;
+      document.body.appendChild(script);
+    }
+
+    return () => {
+      observer.disconnect();
+      document.removeEventListener("click", leavingPolicySection, true);
+    };
   }, []);
 
   const onChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
-    const next = event.target.value as Locale;
-    writeLocale(next);
+    writeLocale(event.target.value as Locale);
     window.location.reload();
   };
 

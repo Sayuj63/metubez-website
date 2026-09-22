@@ -198,3 +198,12 @@ body {
   background: none !important;
   box-shadow: none !important;
 }
+
+/* Hold the page until the first translation pass lands, so English never flashes. */
+body {
+  transition: opacity 0.12s ease-in;
+}
+
+html.gt-pending body {
+  opacity: 0;
+}
