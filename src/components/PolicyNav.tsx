@@ -1,6 +1,5 @@
 "use client";
 
-import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
@@ -86,7 +85,7 @@ export default function PolicyNav() {
                 {group.items.map((item) => {
                   const active = pathname === item.href;
                   return (
-                    <Link
+                    <a
                       key={item.href}
                       href={item.href}
                       aria-current={active ? "page" : undefined}
@@ -97,7 +96,7 @@ export default function PolicyNav() {
                       }`}
                     >
                       {item.label}
-                    </Link>
+                    </a>
                   );
                 })}
               </div>

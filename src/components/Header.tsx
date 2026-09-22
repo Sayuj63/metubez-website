@@ -26,7 +26,10 @@ export default function Header() {
             className="rounded-md"
             priority
           />
-          <span className="text-[18px] font-black tracking-tight text-[#31B24B]">
+          <span
+            translate="no"
+            className="notranslate text-[18px] font-black tracking-tight text-[#31B24B]"
+          >
             MeTubez
           </span>
         </Link>

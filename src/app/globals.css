@@ -178,3 +178,23 @@ details[open] .faq-plus::before {
     transition-duration: 0.001ms !important;
   }
 }
+
+/* Google Translate: keep the engine, hide Google's injected banner and tooltips.
+   The language is driven by the googtrans cookie from the policy sidebar. */
+.skiptranslate {
+  display: none !important;
+}
+
+body {
+  top: 0 !important;
+}
+
+#goog-gt-tt,
+.goog-te-balloon-frame {
+  display: none !important;
+}
+
+.goog-text-highlight {
+  background: none !important;
+  box-shadow: none !important;
+}

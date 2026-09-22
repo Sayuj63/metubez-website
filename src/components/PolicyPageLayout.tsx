@@ -1,6 +1,7 @@
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import PolicyNav from "@/components/PolicyNav";
+import PolicyTranslate from "@/components/PolicyTranslate";
 
 export default function PolicyPageLayout({
   children,
@@ -15,6 +16,9 @@ export default function PolicyPageLayout({
           <div className="flex flex-col md:flex-row gap-10 md:gap-16">
             <aside className="md:w-[260px] shrink-0">
               <PolicyNav />
+              <div className="mt-3">
+                <PolicyTranslate />
+              </div>
             </aside>
             <div className="flex-1 min-w-0">{children}</div>
           </div>

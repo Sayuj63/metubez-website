@@ -3,7 +3,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { useT } from "@/i18n/context";
-import { LOCALES, LOCALE_META, type Locale } from "@/i18n/types";
 
 const PLAY_STORE_URL =
   "https://play.google.com/store/search?q=metubez&c=apps&hl=en_IN";
@@ -137,7 +136,10 @@ export default function Footer() {
                 height={44}
                 className="rounded-md"
               />
-              <span className="text-[20px] font-black text-[#31B24B]">
+              <span
+                translate="no"
+                className="notranslate text-[20px] font-black text-[#31B24B]"
+              >
                 MeTubez
               </span>
             </div>
@@ -163,9 +165,6 @@ export default function Footer() {
               <br />
               Ahmedabad, Gujarat 380058
             </a>
-            <div className="mt-5">
-              <LanguageSwitcher />
-            </div>
           </div>
 
           <FooterCol title={t("footer.colPlatform")} items={platform} />
@@ -205,65 +204,6 @@ export default function Footer() {
   );
 }
 
-function LanguageSwitcher() {
-  const { locale, setLocale, t } = useT();
-
-  const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    setLocale(e.target.value as Locale);
-  };
-
-  return (
-    <div>
-      <label
-        htmlFor="footer-lang"
-        className="text-[11px] font-black uppercase tracking-wider text-[#111] mb-2 flex items-center gap-1.5"
-      >
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
-          <path
-            d="M12 21a9 9 0 100-18 9 9 0 000 18zm0 0c2.5-2.5 4-6 4-9s-1.5-6.5-4-9m0 18c-2.5-2.5-4-6-4-9s1.5-6.5 4-9M3.5 9h17M3.5 15h17"
-            stroke="currentColor"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-          />
-        </svg>
-        {t("footer.language")}
-      </label>
-      <div className="relative">
-        <select
-          id="footer-lang"
-          value={locale}
-          onChange={onChange}
-          className="appearance-none w-full max-w-[220px] text-[13px] font-medium text-[#111] bg-white border border-[#ddd] rounded-md pl-3 pr-9 py-2 hover:border-[#31B24B] focus:border-[#31B24B] focus:outline-none cursor-pointer"
-        >
-          {LOCALES.map((code) => {
-            const meta = LOCALE_META[code];
-            return (
-              <option key={code} value={code}>
-                {meta.native}
-                {code !== "en" ? ` · ${meta.label}` : ""}
-              </option>
-            );
-          })}
-        </select>
-        <svg
-          width="10"
-          height="6"
-          viewBox="0 0 10 6"
-          fill="none"
-          className="absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none"
-        >
-          <path
-            d="M1 1l4 4 4-4"
-            stroke="#666"
-            strokeWidth="1.6"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-      </div>
-    </div>
-  );
-}
 
 function FooterCol({
   title,
