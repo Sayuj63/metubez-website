@@ -10,23 +10,18 @@ import { useT } from "@/i18n/context";
 const benefits = [
   {
     icon: "/icons/icon-monetization.png",
-    title: "Monetisation",
-    desc: "Earn from your first video. Fair per-view rate + quality multiplier.",
+    title: "Same rate for everyone",
+    desc: "₹30 per 1,000 MeShort views. ₹100 per 1,000 Video views. Every creator, from Day 1.",
   },
   {
     icon: "/icons/icon-creator-badges.png",
-    title: "Creator badges",
-    desc: "Progress from Bronze to Platinum. Higher tiers, higher rewards.",
-  },
-  {
-    icon: "/icons/icon-weekly-bonuses.png",
-    title: "Weekly bonuses",
-    desc: "Top-performing MeTubers win extra rewards every week.",
+    title: "No thresholds",
+    desc: "No 1,000 subscribers. No 4,000 watch-hours. No tier system. Earn from your first view.",
   },
   {
     icon: "/icons/icon-brand-deals.png",
     title: "Brand deals",
-    desc: "Get discovered by brands looking to work with Indian creators.",
+    desc: "Get discovered by brands looking to work with Indian creators. Zero commission in year one.",
   },
   {
     icon: "/icons/icon-learn-grow.png",
@@ -36,55 +31,12 @@ const benefits = [
   {
     icon: "/icons/icon-creator-support.png",
     title: "Creator support",
-    desc: "Dedicated creator support team for verified MeTubers.",
-  },
-];
-
-const tiers = [
-  {
-    name: "Bronze",
-    tagline: "All new MeTubers",
-    coin: "/coin-bronze.jpg",
-    req: "Sign up + upload 1 video",
-    perks: [
-      "Earn from Day 1",
-      "Base per-view rate",
-      "Payout at ₹100",
-      "Instant onboarding (no waiting)",
-    ],
+    desc: "Real humans on WhatsApp during business hours. Dedicated creator team.",
   },
   {
-    name: "Silver",
-    tagline: "Growing creator",
-    coin: "/coin-silver.jpg",
-    req: "10 videos published + 5,000 total views",
-    perks: [
-      "1.3× base earning rate",
-      "Priority creator support",
-      "Weekly leaderboard visibility",
-    ],
-  },
-  {
-    name: "Gold",
-    tagline: "Established creator",
-    coin: "/coin-gold.jpg",
-    req: "500 subscribers + 50,000 total views",
-    perks: [
-      "1.7× base earning rate",
-      "Verified MeTuber badge",
-      "Brand deal eligibility",
-    ],
-  },
-  {
-    name: "Platinum",
-    tagline: "Elite MeTuber",
-    coin: "/coin-platinum.jpg",
-    req: "Top 5% of creators (invite only)",
-    perks: [
-      "2.5× base earning rate",
-      "Dedicated creator manager",
-      "Exclusive brand campaigns",
-    ],
+    icon: "/icons/icon-weekly-bonuses.png",
+    title: "80% revenue share",
+    desc: "MeTubez commits to sharing 80% of gross ad revenue with creators over the long term.",
   },
 ];
 
@@ -114,23 +66,23 @@ const startSteps = [
 const faqs = [
   {
     q: "How much can I earn on MeTubez?",
-    a: "Your earnings depend on how many valid views your content gets, your tier, and content format (MeShorts vs Videos). Bronze creators start at the base per-view rate. Rates multiply as you progress: Silver (1.3×), Gold (1.7×), Platinum (2.5×). Videos over 30 seconds earn 2-3× more per view than MeShorts because ad attention is deeper. Consistent uploaders can reach ₹100 payout in their first 2-4 weeks.",
+    a: "MeShorts earn ₹30 per 1,000 valid views. Videos earn ₹100 per 1,000 valid views. Same rate for every creator, from your first video — no tiers, no multipliers, no thresholds. 1 lakh MeShort views = ₹3,000. 1 lakh Video views = ₹10,000. 1 million Video views = ₹1,00,000.",
   },
   {
     q: "When do I get paid?",
-    a: "You can request a payout the moment your balance hits ₹100. Our team processes payments via UPI or bank transfer within 3-5 working days of your request. There's no upper limit on how much you can withdraw at once, and no cap on how often you can request payouts.",
+    a: "Monetization goes live between Diwali and Christmas 2026. All views accumulated from your signup date count toward your earnings balance. Once monetization is live and your balance reaches ₹100, you can request a payout — processed via UPI or bank transfer in 3-5 working days. No upper limit, no cap on payout frequency, no processing fees.",
   },
   {
     q: "Do I need a minimum subscriber count?",
-    a: "No. Unlike other platforms, MeTubez has zero subscriber requirement to start earning. You earn from view 1 of your very first video. Subscriber counts only matter for tier progression (500 subs unlocks Gold tier, for example), but not for basic monetisation.",
+    a: "No. MeTubez has zero subscriber requirement to start earning. No 1,000 subscribers. No 4,000 watch-hours. No tier system. You earn from view 1 of your very first video at the same per-view rate as any other MeTuber.",
   },
   {
     q: "What languages does MeTubez support?",
     a: "MeTubez supports Hindi, Bhojpuri, Marathi, Tamil, Telugu, Bengali, Gujarati, Kannada, Punjabi, Malayalam, Odia, Assamese, and English — with more Indian languages coming soon. Upload in the language your audience speaks. Content is discovered by language preference, so regional creators reach the right audiences.",
   },
   {
-    q: "How is the tier system calculated?",
-    a: "Tier progression is automatic. Bronze is where every MeTuber starts. Silver unlocks after 10 videos published + 5,000 total views. Gold unlocks at 500 subscribers + 50,000 total views. Platinum is invite-only for our top 5% of performers based on consistent uploads, quality metrics, and audience engagement. No manual application needed for Bronze, Silver, or Gold — you progress automatically as you meet each tier's criteria.",
+    q: "Why one flat rate for everyone?",
+    a: "Traditional platforms punish new creators with subscriber gates and tier systems. MeTubez rewards content, not follower count. A first-time creator uploading their first MeShort earns the same rate as an established creator uploading their thousandth. Views are the currency. Content is the product. Everyone plays by the same rules.",
   },
   {
     q: "Can I use my existing YouTube content?",
@@ -138,7 +90,7 @@ const faqs = [
   },
   {
     q: "What counts as a valid view?",
-    a: "For MeShorts (up to 30 seconds), a valid view means someone watched at least 3 seconds or 50% of your video — whichever is shorter. For Videos (over 30 seconds), a valid view means someone watched at least 30 seconds or 25% of your video — whichever is shorter. Same user max 2 views per video per 24 hours. Views from your own account don't count. These rules ensure your earnings reflect real, engaged viewers.",
+    a: "For MeShorts (up to 60 seconds), a valid view means someone watched at least 10 seconds or 50% of your video — whichever comes first. For Videos (over 60 seconds), a valid view means someone watched at least 30 seconds or 25% of your video. Same user max 2 views per video per 24 hours. Views from your own account don't count. These rules ensure your earnings reflect real, engaged viewers.",
   },
 ];
 
@@ -283,62 +235,6 @@ export default function MeTubersPage() {
           </div>
         </section>
 
-        {/* Tier progression */}
-        <section className="border-t border-[#eee]">
-          <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
-            <div className="text-center max-w-[720px] mx-auto mb-10 md:mb-12">
-              <p className="text-[11px] font-bold uppercase tracking-[0.14em] text-[#666] mb-3">
-                Tier progression · 4 tiers
-              </p>
-              <h2 className="text-[28px] md:text-[38px] font-black text-[#111] leading-tight mb-3">
-                Your MeTuber journey.
-              </h2>
-              <p className="text-[15px] md:text-[16px] text-[#666]">
-                Progress through 4 tiers. Every tier unlocks higher earnings.
-              </p>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-5 md:gap-6 items-stretch">
-              {tiers.map((t) => (
-                <div
-                  key={t.name}
-                  className="flex h-full flex-col rounded-2xl p-6 md:p-7 border border-[#eee] bg-white text-[#111] transition-all hover:border-[#31B24B] hover:shadow-lg hover:shadow-[#31B24B]/5"
-                >
-                  <div className="flex justify-center mb-5">
-                    <div className="relative w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden ring-1 ring-[#eee]">
-                      <Image
-                        src={t.coin}
-                        alt={`${t.name} coin`}
-                        fill
-                        sizes="112px"
-                        className="object-cover"
-                      />
-                    </div>
-                  </div>
-                  <div className="text-center">
-                    <div className="text-[20px] md:text-[22px] font-black mb-1 text-[#111]">
-                      {t.name}
-                    </div>
-                    <div className="text-[13px] mb-2 font-bold text-[#333]">
-                      {t.tagline}
-                    </div>
-                    <div className="text-[11.5px] leading-relaxed mb-5 text-[#777]">
-                      {t.req}
-                    </div>
-                  </div>
-                  <ul className="text-left text-[13px] leading-relaxed border-t border-[#eee] pt-4 space-y-2">
-                    {t.perks.map((p) => (
-                      <li key={p} className="flex items-start gap-2">
-                        <span className="inline-block w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 bg-[#31B24B]" />
-                        <span>{p}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
         {/* How you earn — on MeShorts and Videos */}
         <section className="border-t border-[#eee] bg-[#fafafa]">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
@@ -347,36 +243,37 @@ export default function MeTubersPage() {
                 How you earn
               </p>
               <h2 className="text-[28px] md:text-[38px] font-black text-[#111] leading-tight mb-3">
-                MeShorts and Videos. Same feed, different rates.
+                Same rate. Every creator. From your first video.
               </h2>
               <p className="text-[15px] md:text-[16px] text-[#666]">
-                Both content formats live in the same feed. Different lengths,
-                different earnings.
+                No 1,000 subscribers. No 4,000 watch-hours. No tier system.
+                Every MeTuber earns the same per-view rate — first video or
+                thousandth.
               </p>
             </div>
             <div className="grid md:grid-cols-2 gap-5 md:gap-6 mb-8">
               <div className="bg-white border border-[#eee] rounded-2xl p-6 md:p-8">
                 <div className="inline-flex items-center gap-2 bg-[#e8f5ec] text-[#31B24B] text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4">
-                  MeShorts · up to 30s
+                  MeShorts · up to 60s
                 </div>
                 <h3 className="text-[22px] md:text-[24px] font-black text-[#111] mb-3">
-                  ₹4 – ₹14 per 1,000 views
+                  ₹30 per 1,000 valid views
                 </h3>
                 <p className="text-[14px] text-[#555] leading-relaxed">
-                  Fast, casual content. Ads run natively between MeShorts. Rate
-                  based on your tier.
+                  Fast, casual content. In-feed ads placed between every 5-7
+                  MeShorts. Flat rate, applied from Day 1.
                 </p>
               </div>
               <div className="bg-white border border-[#eee] rounded-2xl p-6 md:p-8">
                 <div className="inline-flex items-center gap-2 bg-[#e8f5ec] text-[#31B24B] text-[11px] font-bold uppercase tracking-wider px-3 py-1.5 rounded-full mb-4">
-                  Videos · over 30s
+                  Videos · over 60s
                 </div>
                 <h3 className="text-[22px] md:text-[24px] font-black text-[#111] mb-3">
-                  ₹12 – ₹45 per 1,000 views
+                  ₹100 per 1,000 valid views
                 </h3>
                 <p className="text-[14px] text-[#555] leading-relaxed">
-                  Long-form with pre-roll and mid-roll ads. Higher earning rates
-                  because attention is deeper.
+                  Long-form with pre-roll ads. Mid-roll ads on content over 3
+                  minutes. Same flat rate for every creator.
                 </p>
               </div>
             </div>
@@ -391,7 +288,7 @@ export default function MeTubersPage() {
                   </span>
                   <span>
                     <strong className="font-black">MeShorts:</strong> viewer
-                    watches at least 3 seconds or 50% of the video.
+                    watches at least 10 seconds or 50% of the video.
                   </span>
                 </li>
                 <li className="flex items-start gap-3">

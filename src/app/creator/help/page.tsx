@@ -36,8 +36,8 @@ export default function CreatorHelpPage() {
       <p>Har valid view = paise. Same rate, sabke liye. Tier system nahi hai.</p>
       <p>Rate card:</p>
       <ul>
-        <li>MeShorts (30 sec tak): ₹30 per 1,000 valid views</li>
-        <li>Videos (30 sec se upar): ₹100 per 1,000 valid views</li>
+        <li>MeShorts (60 sec tak): ₹30 per 1,000 valid views</li>
+        <li>Videos (60 sec se upar): ₹100 per 1,000 valid views</li>
       </ul>
       <p>
         Ye same rate — first day se hi, kisi bhi creator ke liye. No bronze
@@ -89,11 +89,11 @@ export default function CreatorHelpPage() {
       <p>Ye common concern hai. Samjhaate hai.</p>
       <p>Sirf VALID views count hoti hai:</p>
       <p>
-        MeShorts (30 sec tak): Viewer ko 10 second ya 50% dekhna hai (jo pehle
+        MeShorts (60 sec tak): Viewer ko 10 second ya 50% dekhna hai (jo pehle
         ho).
       </p>
       <p>
-        Videos (30 sec se upar): Viewer ko 30 second ya 25% dekhna hai (jo pehle
+        Videos (60 sec se upar): Viewer ko 30 second ya 25% dekhna hai (jo pehle
         ho).
       </p>
       <p>Aur bhi rules:</p>
@@ -136,8 +136,8 @@ export default function CreatorHelpPage() {
       <p>Video review mein 5-10 min lagte hain, phir live.</p>
       <p>Formats:</p>
       <ul>
-        <li>30 second tak = MeShort (₹30/1,000 valid views)</li>
-        <li>30 second se upar = Video (₹100/1,000 valid views)</li>
+        <li>60 second tak = MeShort (₹30/1,000 valid views)</li>
+        <li>60 second se upar = Video (₹100/1,000 valid views)</li>
       </ul>
       <p>
         Tip: Videos zyada earn karti hai. Long-form content banao jab bhi

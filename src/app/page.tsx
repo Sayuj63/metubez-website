@@ -27,7 +27,7 @@ const testimonials = [
   },
   {
     quote:
-      "Ek hafte mein Silver tier unlock ho gaya. Payout bhi seedha UPI pe.",
+      "Pehli video se hi earning shuru. Same rate sabke liye. Payout seedha UPI pe.",
     name: "Neha Kulkarni",
     role: "Dance creator, Pune",
     initial: "N",
@@ -130,7 +130,7 @@ export default async function Home() {
     },
     {
       quote:
-        "Ek hafte mein Silver tier unlock ho gaya. Payout bhi seedha UPI pe.",
+        "Pehli video se hi earning shuru. Same rate sabke liye. Payout seedha UPI pe.",
       name: "Neha Kulkarni",
       role: "Dance creator, Pune",
       initial: "N",

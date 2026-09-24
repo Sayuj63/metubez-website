@@ -21,27 +21,27 @@ export default function CreatorViewCountingPage() {
         engagement metrics but do not contribute to your earnings.
       </p>
 
-      <h3>MeShorts (videos up to 30 seconds)</h3>
+      <h3>MeShorts (videos up to 60 seconds)</h3>
       <p>
         A view is counted as valid when a viewer watches at least 10 seconds of
         your content OR 50% of the video length, whichever comes first.
       </p>
       <p>Examples:</p>
       <ul>
+        <li>60-sec MeShort → valid view at 10 seconds</li>
         <li>30-sec MeShort → valid view at 10 seconds (33% of the video)</li>
-        <li>20-sec MeShort → valid view at 10 seconds (50% of the video)</li>
         <li>15-sec MeShort → valid view at 7.5 seconds (50% first)</li>
       </ul>
 
-      <h3>Videos (videos over 30 seconds)</h3>
+      <h3>Videos (videos over 60 seconds)</h3>
       <p>
         A view is counted as valid when a viewer watches at least 30 seconds of
         your content OR 25% of the video length, whichever comes first.
       </p>
       <p>Examples:</p>
       <ul>
-        <li>60-sec Video → valid view at 15 seconds (25% first)</li>
         <li>3-min Video → valid view at 30 seconds</li>
+        <li>90-sec Video → valid view at 22.5 seconds (25% first)</li>
         <li>20-min Video → valid view at 30 seconds</li>
       </ul>
 

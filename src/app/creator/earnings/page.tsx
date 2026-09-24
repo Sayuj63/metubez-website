@@ -24,11 +24,11 @@ export default function CreatorEarningsPage() {
 
       <h3>Content formats</h3>
       <p>
-        MeShorts — videos up to 30 seconds. They appear in the landscape scroll
+        MeShorts — videos up to 60 seconds. They appear in the landscape scroll
         feed with in-feed ads placed between every 5-7 MeShorts.
       </p>
       <p>
-        Videos — videos longer than 30 seconds. They carry pre-roll ads before
+        Videos — videos longer than 60 seconds. They carry pre-roll ads before
         playback, and mid-roll ads for content over 3 minutes.
       </p>
 
@@ -44,12 +44,12 @@ export default function CreatorEarningsPage() {
           </thead>
           <tbody>
             <tr>
-              <td>MeShorts (≤30 sec)</td>
+              <td>MeShorts (≤60 sec)</td>
               <td>₹30</td>
               <td>₹30,000</td>
             </tr>
             <tr>
-              <td>Videos (&gt;30 sec)</td>
+              <td>Videos (&gt;60 sec)</td>
               <td>₹100</td>
               <td>₹1,00,000</td>
             </tr>
