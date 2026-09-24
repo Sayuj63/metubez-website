@@ -2,17 +2,16 @@ import PolicyShell from "@/components/PolicyShell";
 
 export default function CreatorViewCountingPage() {
   return (
-    <PolicyShell title="View Counting Policy" updated="01 September 2026">
+    <PolicyShell title="View Counting Policy" updated="23 September 2026">
       <h2>Overview</h2>
       <p>
         This policy explains how MeTubez counts views on your content and how
-        those views translate into earnings. Our goal is simple: every view you
-        see in your dashboard should be a real, engaged viewer. No inflated
-        numbers. No surprise deductions later.
+        those views translate into earnings. Every view you see in your
+        dashboard is a real, engaged viewer. No inflated numbers. No surprise
+        deductions later.
       </p>
       <p>
-        This policy applies to all content on MeTubez, whether uploaded as a
-        Meshort (up to 30 seconds) or a Video (over 30 seconds).
+        This policy applies to all content on MeTubez — MeShorts and Videos.
       </p>
 
       <h2>What counts as a valid view</h2>
@@ -22,222 +21,152 @@ export default function CreatorViewCountingPage() {
         engagement metrics but do not contribute to your earnings.
       </p>
 
-      <h3>For MeShorts (videos up to 30 seconds)</h3>
+      <h3>MeShorts (videos up to 30 seconds)</h3>
       <p>
-        A view is counted as valid when a viewer watches at least 3 seconds of
-        your content OR 50% of the total video length, whichever comes first.
+        A view is counted as valid when a viewer watches at least 10 seconds of
+        your content OR 50% of the video length, whichever comes first.
       </p>
-      <p>Example:</p>
+      <p>Examples:</p>
       <ul>
-        <li>
-          A 15-second Meshort earns a valid view when someone watches 3 seconds
-        </li>
-        <li>
-          A 6-second Meshort earns a valid view when someone watches 3 seconds
-          (which is 50% of the video)
-        </li>
-        <li>
-          A 30-second Meshort earns a valid view when someone watches 3 seconds
-        </li>
+        <li>30-sec MeShort → valid view at 10 seconds (33% of the video)</li>
+        <li>20-sec MeShort → valid view at 10 seconds (50% of the video)</li>
+        <li>15-sec MeShort → valid view at 7.5 seconds (50% first)</li>
       </ul>
 
-      <h3>For Videos (videos over 30 seconds)</h3>
+      <h3>Videos (videos over 30 seconds)</h3>
       <p>
         A view is counted as valid when a viewer watches at least 30 seconds of
-        your content OR 25% of the total video length, whichever comes first.
+        your content OR 25% of the video length, whichever comes first.
       </p>
-      <p>Example:</p>
+      <p>Examples:</p>
       <ul>
-        <li>
-          A 45-second Video earns a valid view when someone watches 11 seconds
-          (which is 25% of the video)
-        </li>
-        <li>
-          A 3-minute Video earns a valid view when someone watches 30 seconds
-        </li>
-        <li>
-          A 20-minute podcast earns a valid view when someone watches 30 seconds
-        </li>
+        <li>60-sec Video → valid view at 15 seconds (25% first)</li>
+        <li>3-min Video → valid view at 30 seconds</li>
+        <li>20-min Video → valid view at 30 seconds</li>
       </ul>
 
       <h2>Same-user view limits</h2>
-      <p>
-        To ensure fair earnings and prevent view manipulation, we apply these
-        limits:
-      </p>
       <ul>
-        <li>
-          Maximum 2 valid views per user per video per 24 hours. If the same
-          user watches your video 5 times in a day, only 2 views count toward
-          your earnings.
-        </li>
-        <li>
-          Same device fingerprinting. Multiple accounts logged in from the same
-          device count as one user. A viewer cannot create multiple accounts on
-          one phone to inflate view counts.
-        </li>
-        <li>
-          Views from your own account do not count. Watching your own content
-          from your logged-in account, verified devices, or family accounts
-          registered to the same phone number contributes zero to your earnings.
-        </li>
+        <li>Maximum 2 valid views per user per video per 24 hours</li>
+        <li>Same device fingerprint counts as one user</li>
+        <li>Views from your own account do not count</li>
+        <li>Multiple accounts on the same device count as one user</li>
       </ul>
 
       <h2>Anti-fraud protections</h2>
-      <p>
-        We continuously monitor for view manipulation to protect both creators
-        and advertisers. The following triggers are flagged:
-      </p>
       <ul>
         <li>
-          IP velocity check. If more than 50 views come from the same IP address
-          within an hour, those views enter pending review status. Legitimate
-          viral moments pass this check. Bot farms do not.
+          IP velocity check: more than 50 views from the same IP within an hour
+          triggers review
         </li>
         <li>
-          Autoplay-only detection. Views generated only through autoplay queues,
-          without any user interaction, receive 50% credit weight. Views with
-          genuine engagement (likes, comments, shares, follows) receive full
-          credit.
+          Autoplay-only detection: views without interaction are credited at 50%
+          weight
         </li>
         <li>
-          Behavioral pattern analysis. Machine-perfect watch behavior — such as
-          100% completion rate, zero pauses, or mechanical timing patterns — is
-          flagged for human review. Real viewers behave imperfectly. Bots behave
-          predictably.
+          Behavioral pattern analysis: machine-perfect completion is flagged
         </li>
         <li>
-          Real-time bot detection. Our system checks watch patterns continuously
-          and filters bot activity before it enters your view count. Unlike other
-          platforms that remove views weeks after the fact, MeTubez shows you
-          only clean, valid views from the start.
+          Real-time bot detection: filters before views enter your view count
+        </li>
+        <li>
+          Virality review: any video crossing 1 million views in 24 hours is
+          flagged for manual verification
+        </li>
+        <li>
+          Content moderation: videos must pass moderation before becoming
+          monetization-eligible
         </li>
       </ul>
 
       <h2>What you see on your dashboard</h2>
-      <p>Your creator dashboard shows three view categories:</p>
+      <p>Three view categories:</p>
       <ul>
-        <li>
-          Valid views — Views that meet all criteria above. These count toward
-          your earnings.
-        </li>
-        <li>
-          Pending views — Views currently under review by our fraud systems.
-          Usually resolved within 24 hours.
-        </li>
-        <li>
-          Invalid views — Views that did not meet criteria (bot activity,
-          self-views, over-limit repeat views). These are excluded from earnings.
-        </li>
+        <li>Valid views — meet all criteria, count toward earnings</li>
+        <li>Pending views — under review, usually resolved in 24 hours</li>
+        <li>Invalid views — excluded from earnings</li>
       </ul>
       <p>Your dashboard updates in real-time. What you see is what you earn.</p>
 
       <h2>How views translate to earnings</h2>
-      <p>
-        Your earning rate depends on your tier and content format. Full rates are
-        published in our{" "}
-        <a href="/creator/earnings">Creator Earnings Policy</a>.
-      </p>
-      <p>Base rates by tier:</p>
+      <p>Same rate for every creator. No tiers. No favouritism.</p>
       <div className="overflow-x-auto">
         <table className="min-w-[440px]">
           <thead>
             <tr>
-              <th>Tier</th>
-              <th>MeShorts (per 1,000 valid views)</th>
-              <th>Videos (per 1,000 valid views)</th>
+              <th>Format</th>
+              <th>Rate per 1,000 valid views</th>
+              <th>Per 1 million views</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td>Bronze</td>
-              <td>₹4</td>
-              <td>₹12</td>
+              <td>MeShorts</td>
+              <td>₹30</td>
+              <td>₹30,000</td>
             </tr>
             <tr>
-              <td>Silver</td>
-              <td>₹6</td>
-              <td>₹18</td>
-            </tr>
-            <tr>
-              <td>Gold</td>
-              <td>₹9</td>
-              <td>₹28</td>
-            </tr>
-            <tr>
-              <td>Platinum</td>
-              <td>₹14</td>
-              <td>₹45</td>
+              <td>Videos</td>
+              <td>₹100</td>
+              <td>₹1,00,000</td>
             </tr>
           </tbody>
         </table>
       </div>
       <p>
         Views generate earnings the moment they are validated. Withdraw when
-        your balance reaches ₹100.
+        your balance reaches ₹100 via UPI. Full rates are published in our{" "}
+        <a href="/creator/earnings">Creator Earnings Policy</a>.
       </p>
 
       <h2>Repeat views and rewatches</h2>
       <p>
-        MeTubez recognizes that some content is designed to be rewatched (music,
-        dance, comedy). Same-user views are permitted up to 2 per video per 24
-        hours because genuine rewatching is common creator behavior. Beyond 2 per
-        day, additional views are counted for engagement metrics but not for
-        earnings.
-      </p>
-      <p>
-        If you notice legitimate viewers watching your content more frequently,
-        this is factored into your tier progression and content quality signals.
+        MeTubez permits up to 2 same-user views per video per 24 hours because
+        genuine rewatching is common creator behaviour. Beyond 2 per day,
+        additional views count for engagement metrics but not earnings.
       </p>
 
       <h2>Advertiser-facing view standards</h2>
       <p>
-        The same view standards apply when we report impressions to advertisers.
-        When we tell a brand their ad played 100,000 times on MeTubez, we mean
-        100,000 actual human viewers who met our valid view criteria. This
-        transparency is why brands trust MeTubez inventory and why our
-        advertising rates command premium CPMs.
+        The same view standards apply to advertiser impression reporting. When
+        we tell a brand their ad played 1,00,000 times on MeTubez, we mean
+        1,00,000 actual human viewers who met valid view criteria. This
+        transparency drives premium advertising rates — which fund your
+        earnings.
       </p>
-      <p>Higher premium CPMs mean higher earnings for you.</p>
 
       <h2>If you notice a discrepancy</h2>
       <p>
-        If you believe a valid view was incorrectly excluded from your count,
-        contact us at{" "}
+        Contact us at{" "}
         <a href="mailto:creators@metubez.com">creators@metubez.com</a> with:
       </p>
       <ul>
         <li>Your MeTuber username</li>
         <li>The specific video URL</li>
-        <li>The approximate time the missing view occurred</li>
-        <li>Any details that support your report</li>
+        <li>The approximate time of the missing view</li>
+        <li>Any supporting details</li>
       </ul>
       <p>
-        Our team reviews all reports manually within 3-5 working days. If we
-        confirm an error, your view count and earnings are updated
-        retroactively.
+        Our team reviews reports manually within 3-5 working days. If we confirm
+        an error, your view count and earnings are updated retroactively.
       </p>
 
       <h2>Policy updates</h2>
       <p>
-        We may update this policy from time to time to reflect improvements to
-        our fraud detection systems or changes in the creator economy. Any
-        changes to view thresholds or earning rates will be notified to all
+        Any changes to view thresholds or earning rates will be notified to all
         MeTubers at least 30 days in advance via email and in-app notification.
       </p>
       <p>
-        Your current view counts and earnings are always calculated using the
-        policy version in effect at the time the view occurred. Retroactive
-        changes do not apply.
+        Your existing content earnings are always calculated using the policy
+        version in effect at the time of upload for 30 days after any change.
       </p>
 
       <h2>Contact</h2>
-      <p>Questions about this policy?</p>
       <p>
         Email: <a href="mailto:creators@metubez.com">creators@metubez.com</a>
       </p>
       <p>
-        Grievance Officer: Utsav Solanki —{" "}
+        Grievance Officer:{" "}
         <a href="mailto:grievance@metubez.com">grievance@metubez.com</a>
       </p>
       <p>
