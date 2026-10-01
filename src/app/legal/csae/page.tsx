@@ -20,7 +20,7 @@ export default function CsaePage() {
       </p>
       <h2>Age safety</h2>
       <p>
-        Users under 13 are not permitted to create accounts on MeTubez. Content
+        Users under 18 are not permitted to create accounts on MeTubez. Content
         that targets minors in a sexualised manner is prohibited regardless of
         the age of the creator.
       </p>
@@ -37,9 +37,6 @@ export default function CsaePage() {
         it immediately using the in-app report function or email{" "}
         <a href="mailto:grievance@metubez.com">grievance@metubez.com</a>. We
         treat all such reports with urgency.
-      </p>
-      <p className="text-[13px] text-[#999] italic">
-        Full standards content will be updated. This is a placeholder summary.
       </p>
     </PolicyShell>
   );

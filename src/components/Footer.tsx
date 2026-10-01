@@ -58,7 +58,7 @@ export default function Footer() {
   const company = [
     { label: t("footer.aboutUs"), href: "/company" },
     { label: t("footer.blogs"), href: "/blogs" },
-    { label: t("footer.contact"), href: "/company#contact" },
+    { label: t("footer.contact"), href: "/support/contact" },
   ];
 
   const legal = [

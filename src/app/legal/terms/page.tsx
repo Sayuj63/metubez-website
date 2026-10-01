@@ -49,9 +49,6 @@ export default function TermsPage() {
         These terms are governed by the laws of India. Disputes shall be
         subject to the exclusive jurisdiction of courts in Ahmedabad, Gujarat.
       </p>
-      <p className="text-[13px] text-[#999] italic">
-        Full terms content will be updated. This is a placeholder summary.
-      </p>
     </PolicyShell>
   );
 }

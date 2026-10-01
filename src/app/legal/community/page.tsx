@@ -39,9 +39,6 @@ export default function CommunityPage() {
         guidelines. You may also email{" "}
         <a href="mailto:grievance@metubez.com">grievance@metubez.com</a>.
       </p>
-      <p className="text-[13px] text-[#999] italic">
-        Full guidelines content will be updated. This is a placeholder summary.
-      </p>
     </PolicyShell>
   );
 }

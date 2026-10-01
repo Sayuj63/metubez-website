@@ -2,18 +2,17 @@ import PolicyShell from "@/components/PolicyShell";
 
 export default function CreatorAgreementPage() {
   return (
-    <PolicyShell title="Creator Agreement" updated="23 September 2026">
+    <PolicyShell title="Creator Agreement" updated="October 2026">
       <p>
         This Creator Agreement is a binding contract between you
         (&ldquo;Creator&rdquo;, &ldquo;MeTuber&rdquo;, &ldquo;you&rdquo;) and
         Twenties Entertainment Private Limited, operator of the MeTubez platform
         (&ldquo;MeTubez&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;). By
         uploading content or requesting payouts, you agree to be bound by this
-        Agreement.
-      </p>
-      <p>
-        Read it alongside our Terms of Use, Privacy Policy, Community
-        Guidelines, <a href="/creator/earnings">Creator Earnings Policy</a>, and{" "}
+        Agreement. Read alongside our <a href="/legal/terms">Terms of Use</a>,{" "}
+        <a href="/legal/privacy">Privacy Policy</a>,{" "}
+        <a href="/legal/community">Community Guidelines</a>,{" "}
+        <a href="/creator/earnings">Creator Earnings Policy</a>, and{" "}
         <a href="/creator/view-counting">View Counting Policy</a>.
       </p>
 
@@ -36,7 +35,7 @@ export default function CreatorAgreementPage() {
       </ul>
       <p>Users under 13 are not permitted to create MeTuber accounts.</p>
 
-      <h2>2. Content ownership and license</h2>
+      <h2>2. Content Ownership And License</h2>
       <p>
         You retain full ownership of all content you upload. By uploading, you
         grant MeTubez a worldwide, non-exclusive, royalty-free, sublicensable
@@ -55,11 +54,11 @@ export default function CreatorAgreementPage() {
         </li>
       </ul>
       <p>
-        The license terminates when you delete content or your account, with a
-        reasonable technical delay for cache and backup removal.
+        License terminates when you delete content or your account, with
+        reasonable technical delay for cache/backup removal.
       </p>
 
-      <h2>3. Your representations</h2>
+      <h2>3. Your Representations</h2>
       <p>You represent and warrant that:</p>
       <ul>
         <li>You own all necessary rights to upload and distribute the content</li>
@@ -76,7 +75,7 @@ export default function CreatorAgreementPage() {
         termination.
       </p>
 
-      <h2>4. Content standards</h2>
+      <h2>4. Content Standards</h2>
       <p>
         All content must comply with our Community Guidelines. Prohibited
         content includes:
@@ -89,9 +88,7 @@ export default function CreatorAgreementPage() {
         <li>Content violating Indian law</li>
         <li>Copyright-infringing content</li>
         <li>Content depicting minors unsafely</li>
-        <li>
-          Content promoting illegal drugs, weapons, or controlled substances
-        </li>
+        <li>Content promoting illegal drugs, weapons, controlled substances</li>
         <li>Spam, clickbait, misleading titles or thumbnails</li>
       </ul>
       <p>
@@ -99,7 +96,7 @@ export default function CreatorAgreementPage() {
         terminate repeat violators.
       </p>
 
-      <h2>5. Music library — Hoopr.ai</h2>
+      <h2>5. Music Library &mdash; Hoopr.ai</h2>
       <p>
         MeTubez provides free access to a licensed music library powered by
         Hoopr.ai. Terms of use:
@@ -109,7 +106,7 @@ export default function CreatorAgreementPage() {
         <li>You may not download or extract music files outside the app</li>
         <li>You may not claim ownership of any music from the library</li>
         <li>Music usage does not affect your view or earning calculations</li>
-        <li>The music library is available to all creators at no cost</li>
+        <li>Music library is available to all creators at no cost</li>
       </ul>
       <p>
         Attempted misuse of the music library results in content removal and
@@ -123,30 +120,35 @@ export default function CreatorAgreementPage() {
       </p>
       <ul>
         <li>
-          Single-rate model — every MeTuber earns the same per-view rate
+          <strong>Single-rate model</strong> &mdash; every MeTuber earns the
+          same per-view rate
         </li>
-        <li>MeShorts: ₹30 per 1,000 valid views</li>
-        <li>Videos: ₹100 per 1,000 valid views</li>
-        <li>No subscriber threshold</li>
-        <li>No watch-hour gate</li>
-        <li>No tier system</li>
+        <li>
+          <strong>MeShorts:</strong> ₹6 per 1,000 valid views (₹6,000 per
+          million)
+        </li>
+        <li>
+          <strong>Videos:</strong> ₹100 per 1,000 valid views (₹1,00,000 per
+          million)
+        </li>
+        <li>No subscriber threshold. No watch-hour gate. No tier system.</li>
         <li>Earn from your first video</li>
         <li>Minimum payout: ₹100</li>
         <li>Payouts: UPI, 3-5 working days</li>
         <li>You are responsible for taxes on earnings</li>
       </ul>
       <p>
-        Monetization goes live between Diwali and Christmas 2026. Views
-        accumulated from your signup date count toward earnings. Withdrawal
-        opens when monetization goes live and your balance reaches ₹100.
+        <strong>View Credit Bank:</strong> Views accumulated from your signup
+        date count toward earnings. Balance grows live on your dashboard.{" "}
+        <strong>Withdrawal opens soon</strong> &mdash; you will be notified when
+        monetization goes live.
       </p>
       <p>
         MeTubez may withhold payouts pending investigation of suspected fraud.
-        Confirmed fraud results in forfeit. If no fraud is found, withheld
-        earnings are released promptly.
+        Confirmed fraud results in forfeit. No fraud found = prompt release.
       </p>
 
-      <h2>7. Anti-fraud provisions</h2>
+      <h2>7. Anti-Fraud Provisions</h2>
       <p>You agree not to:</p>
       <ul>
         <li>Purchase views, followers, or engagement</li>
@@ -156,12 +158,12 @@ export default function CreatorAgreementPage() {
         <li>Engage in coordinated inauthentic behaviour</li>
       </ul>
       <p>
-        Violations result in immediate earnings forfeit and permanent account
+        Violations result in immediate earnings forfeit, and permanent account
         termination. Repeat or severe violations may be reported to law
         enforcement.
       </p>
 
-      <h2>8. Platform rights</h2>
+      <h2>8. Platform Rights</h2>
       <p>MeTubez reserves the right to:</p>
       <ul>
         <li>Modify or discontinue features with reasonable notice</li>
@@ -171,24 +173,25 @@ export default function CreatorAgreementPage() {
         <li>Refuse onboarding at our discretion</li>
         <li>Update valid-view methodology to combat evolving fraud</li>
       </ul>
-      <p>Material changes to this Agreement are notified 30 days in advance.</p>
+      <p>Material changes to this Agreement notified 30 days in advance.</p>
 
       <h2>9. Termination</h2>
       <p>
-        By you: delete your account at any time. Content is removed. Pending
-        earnings above ₹100 are paid out. Earnings below ₹100 are forfeit.
+        <strong>By you:</strong> Delete your account at any time. Content is
+        removed. Pending View Credit Bank balance above ₹100 is paid out when
+        withdrawal is live. Balance below ₹100 is forfeit.
       </p>
       <p>
-        By MeTubez: we may terminate for policy violations, fraud, 12 months of
-        inactivity, applicable law requirements, or program discontinuation (90
-        days notice).
+        <strong>By MeTubez:</strong> We may terminate for policy violations,
+        fraud, 12 months of inactivity, applicable law requirements, or program
+        discontinuation (90 days notice).
       </p>
       <p>
         Upon termination for policy violations, pending earnings may be forfeit
         at our discretion.
       </p>
 
-      <h2>10. Limitation of liability</h2>
+      <h2>10. Limitation Of Liability</h2>
       <p>
         MeTubez provides the platform &ldquo;as is&rdquo;. We do not guarantee:
       </p>
@@ -198,29 +201,24 @@ export default function CreatorAgreementPage() {
         <li>Discovery by brands or editorial featuring</li>
       </ul>
       <p>
-        MeTubez&apos;s total liability is limited to your unpaid earnings, if
-        any.
-      </p>
-      <p>
-        We are not liable for indirect, incidental, or consequential damages.
+        MeTubez&apos;s total liability is limited to your unpaid View Credit
+        Bank balance, if any. We are not liable for indirect, incidental, or
+        consequential damages.
       </p>
 
-      <h2>11. Governing law</h2>
+      <h2>11. Governing Law</h2>
       <p>
-        Governed by the laws of India. Disputes are subject to the exclusive
-        jurisdiction of Ahmedabad, Gujarat courts.
-      </p>
-      <p>
-        Before legal proceedings, attempt good-faith resolution through our
-        Grievance Officer at{" "}
+        Governed by the laws of India. Disputes subject to exclusive
+        jurisdiction of Ahmedabad, Gujarat courts. Before legal proceedings,
+        attempt good-faith resolution through our Grievance Officer at{" "}
         <a href="mailto:grievance@metubez.com">grievance@metubez.com</a>.
       </p>
 
-      <h2>12. Changes to this Agreement</h2>
+      <h2>12. Changes To This Agreement</h2>
       <p>
-        Material changes are notified 7 days in advance. Continued use after
-        changes take effect constitutes acceptance. If you disagree, terminate
-        your account before the changes take effect.
+        Material changes notified 30 days in advance. Continued use after
+        changes = acceptance. Disagreement = terminate account before changes
+        take effect.
       </p>
 
       <h2>13. Contact</h2>
@@ -236,6 +234,10 @@ export default function CreatorAgreementPage() {
           Address: 602, 6th Floor, Anam 2, Ambli, Ahmedabad, Gujarat 380058
         </li>
       </ul>
+      <p>
+        <strong>MeTubez. Create. Share. Monetise.</strong> · Bharat ka apna
+        platform.
+      </p>
     </PolicyShell>
   );
 }

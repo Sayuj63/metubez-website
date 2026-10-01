@@ -40,9 +40,6 @@ export default function CopyrightPage() {
         By uploading, you grant MeTubez a licence to display and distribute
         your content on the platform only.
       </p>
-      <p className="text-[13px] text-[#999] italic">
-        Full policy content will be updated. This is a placeholder summary.
-      </p>
     </PolicyShell>
   );
 }

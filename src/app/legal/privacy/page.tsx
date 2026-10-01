@@ -51,9 +51,6 @@ export default function PrivacyPage() {
         For privacy-related queries, contact our Grievance Officer: Mr. Utsav
         Solanki at <a href="mailto:grievance@metubez.com">grievance@metubez.com</a>.
       </p>
-      <p className="text-[13px] text-[#999] italic">
-        Full policy content will be updated. This is a placeholder summary.
-      </p>
     </PolicyShell>
   );
 }
