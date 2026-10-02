@@ -37,6 +37,7 @@ export default async function CompanyPage() {
                 poster="/app-intro-poster.jpg"
                 autoPlay
                 muted
+                loop
                 controls
                 playsInline
                 aria-label="MeTubez app intro video"
