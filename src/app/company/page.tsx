@@ -35,9 +35,10 @@ export default async function CompanyPage() {
               <video
                 src="/app-intro.mp4"
                 poster="/app-intro-poster.jpg"
+                autoPlay
+                muted
                 controls
                 playsInline
-                preload="metadata"
                 aria-label="MeTubez app intro video"
                 className="w-full h-full object-cover"
               />
