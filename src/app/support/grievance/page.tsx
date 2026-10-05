@@ -14,7 +14,7 @@ export default function GrievancePage() {
           Resident Grievance Officer
         </p>
         <p className="text-[20px] font-black text-[#111] mb-1">
-          Mr. Utsav Solanki
+          Mr. Thakor Sunil
         </p>
         <p className="text-[14px] text-[#555] mb-4">
           Twenties Entertainment Pvt Ltd
