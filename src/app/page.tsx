@@ -185,10 +185,10 @@ export default async function Home() {
               </p>
             </div>
             <div className="relative">
-              <div className="aspect-[4/3] md:aspect-[5/4] rounded-2xl overflow-hidden bg-[#e8f5ec]">
+              <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-[#e8f5ec]">
                 <Image
-                  src="/banners/banner-horizontal.png"
-                  alt="MeTubez horizontal scrolling experience"
+                  src="/banners/home-categories.jpg"
+                  alt="MeTubez content categories: music, travel, food, technology, sports, fashion, entertainment and podcasts"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover"
@@ -201,10 +201,10 @@ export default async function Home() {
 
         {/* Full-width creator showcase */}
         <section className="border-t border-[#eee] overflow-hidden bg-[#f8faf8]">
-          <div className="relative w-full aspect-[3/2] md:aspect-[1440/420]">
+          <div className="relative w-full aspect-[7/3]">
             <Image
-              src="/banners/banner-bharat.png"
-              alt="India's creator community on MeTubez"
+              src="/banners/home-india-full-frame.jpg"
+              alt="India, in full frame: creators from across India on MeTubez"
               fill
               sizes="100vw"
               className="object-cover object-center"
@@ -231,10 +231,10 @@ export default async function Home() {
         {/* Landscape video visual */}
         <section className="border-t border-[#eee] bg-[#f8faf8]">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-12 md:py-16">
-            <div className="relative rounded-2xl overflow-hidden aspect-[3/2] md:aspect-[1200/450]">
+            <div className="relative rounded-2xl overflow-hidden aspect-[7/3]">
               <Image
-                src="/banners/banner-landscape.png"
-                alt="Landscape video experience on MeTubez"
+                src="/banners/home-wide.jpg"
+                alt="Wide video, reimagined: landscape video on MeTubez"
                 fill
                 sizes="(max-width: 1240px) 100vw, 1200px"
                 className="object-cover object-center"
@@ -285,8 +285,8 @@ export default async function Home() {
               </div>
               <div className="relative rounded-2xl overflow-hidden" style={{ aspectRatio: "1/1" }}>
                 <Image
-                  src="/banners/banner-map.png"
-                  alt="MeTubez across India"
+                  src="/banners/home-one-platform.jpg"
+                  alt="One platform, many stories: creators of every kind on MeTubez"
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
                   className="object-cover object-center"
@@ -337,10 +337,10 @@ export default async function Home() {
         {/* Create-earn visual */}
         <section className="border-t border-[#eee] bg-[#f8faf8]">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 py-4 md:py-16">
-            <div className="relative rounded-2xl overflow-hidden aspect-[3/2] md:aspect-[1200/400]">
+            <div className="relative rounded-2xl overflow-hidden aspect-[7/3]">
               <Image
-                src="/banners/banner-create-earn.png"
-                alt="Create, upload, earn on MeTubez"
+                src="/banners/home-create-share-monetise.jpg"
+                alt="Create, share, monetise on MeTubez"
                 fill
                 sizes="(max-width: 1240px) 100vw, 1200px"
                 className="object-cover object-center"
