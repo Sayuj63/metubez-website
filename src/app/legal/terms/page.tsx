@@ -355,7 +355,7 @@ export default function TermsPage() {
         the Platform:
       </p>
       <p>
-        Name: SUNIL THAKOR KANTIJI
+        Name: THAKOR SUNIL
         <br />
         Designation: Grievance Officer
         <br />

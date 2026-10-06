@@ -268,7 +268,7 @@ export default function PrivacyPage() {
         Policy or the processing of your personal data, please contact:
       </p>
       <p>
-        Grievance Officer: SUNIL THAKOR KANTIJI
+        Grievance Officer: THAKOR SUNIL
         <br />
         Email: <a href="mailto:grievance@metubez.com">grievance@metubez.com</a>
         <br />
