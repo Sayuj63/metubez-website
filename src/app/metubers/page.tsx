@@ -11,7 +11,7 @@ const benefits = [
   {
     icon: "/icons/icon-monetization.png",
     title: "Same rate for everyone",
-    desc: "₹30 per 1,000 MeShort views. ₹100 per 1,000 Video views. Every creator, from Day 1.",
+    desc: "₹6 per 1,000 MeShort views. ₹100 per 1,000 Video views. Every creator, from Day 1.",
   },
   {
     icon: "/icons/icon-creator-badges.png",
@@ -66,11 +66,11 @@ const startSteps = [
 const faqs = [
   {
     q: "How much can I earn on MeTubez?",
-    a: "MeShorts earn ₹30 per 1,000 valid views. Videos earn ₹100 per 1,000 valid views. Same rate for every creator, from your first video — no tiers, no multipliers, no thresholds. 1 lakh MeShort views = ₹3,000. 1 lakh Video views = ₹10,000. 1 million Video views = ₹1,00,000.",
+    a: "MeShorts earn ₹6 per 1,000 valid views. Videos earn ₹100 per 1,000 valid views. Same rate for every creator, from your first video — no tiers, no multipliers, no thresholds. 1 lakh MeShort views = ₹600. 1 lakh Video views = ₹10,000. 1 million Video views = ₹1,00,000.",
   },
   {
     q: "When do I get paid?",
-    a: "Monetization goes live between Diwali and Christmas 2026. All views accumulated from your signup date count toward your earnings balance. Once monetization is live and your balance reaches ₹100, you can request a payout — processed via UPI or bank transfer in 3-5 working days. No upper limit, no cap on payout frequency, no processing fees.",
+    a: "Monetization will open soon. All views accumulated from your signup date count toward your View Credit Bank balance. You'll receive an in-app notification the moment withdrawal is live. Once your balance crosses ₹100, request payout via UPI — 3-5 working days to your bank.",
   },
   {
     q: "Do I need a minimum subscriber count?",
@@ -257,10 +257,10 @@ export default function MeTubersPage() {
                   MeShorts · up to 60s
                 </div>
                 <h3 className="text-[22px] md:text-[24px] font-black text-[#111] mb-3">
-                  ₹30 per 1,000 valid views
+                  ₹6 per 1,000 valid views
                 </h3>
                 <p className="text-[14px] text-[#555] leading-relaxed">
-                  Fast, casual content. In-feed ads placed between every 5-7
+                  Fast, casual content. In-feed ads placed once every 8
                   MeShorts. Flat rate, applied from Day 1.
                 </p>
               </div>
