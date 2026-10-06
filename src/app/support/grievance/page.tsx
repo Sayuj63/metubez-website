@@ -74,7 +74,7 @@ export default function GrievancePage() {
           Nodal Contact Person (for government/law enforcement)
         </h2>
         <p>
-          <span className="font-bold text-[#111]">Mr. Utsav Solanki</span> —
+          <span className="font-bold text-[#111]">Mr. Thakor Sunil</span> —
           MeTubez Nodal Contact Person. Government agencies and law enforcement
           may contact{" "}
           <a
