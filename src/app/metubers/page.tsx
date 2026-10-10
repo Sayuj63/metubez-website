@@ -260,8 +260,7 @@ export default function MeTubersPage() {
                   ₹6 per 1,000 valid views
                 </h3>
                 <p className="text-[14px] text-[#555] leading-relaxed">
-                  Fast, casual content. In-feed ads placed once every 8
-                  MeShorts. Flat rate, applied from Day 1.
+                  Fast, casual content. Flat rate, applied from Day 1.
                 </p>
               </div>
               <div className="bg-white border border-[#eee] rounded-2xl p-6 md:p-8">
@@ -272,8 +271,7 @@ export default function MeTubersPage() {
                   ₹100 per 1,000 valid views
                 </h3>
                 <p className="text-[14px] text-[#555] leading-relaxed">
-                  Long-form with pre-roll ads. Mid-roll ads on content over 3
-                  minutes. Same flat rate for every creator.
+                  Same flat rate for every creator.
                 </p>
               </div>
             </div>
