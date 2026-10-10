@@ -11,7 +11,7 @@ const benefits = [
   {
     icon: "/icons/icon-monetization.png",
     title: "Same rate for everyone",
-    desc: "",
+    desc: "₹6 per 1,000 MeShort views. ₹100 per 1,000 Video views. Every creator, from Day 1.",
   },
   {
     icon: "/icons/icon-creator-badges.png",
@@ -226,11 +226,9 @@ export default function MeTubersPage() {
                   <h3 className="text-[16px] md:text-[17px] font-black text-[#111] mb-2">
                     {b.title}
                   </h3>
-                  {b.desc && (
-                    <p className="text-[13px] md:text-[14px] text-[#666] leading-relaxed">
-                      {b.desc}
-                    </p>
-                  )}
+                  <p className="text-[13px] md:text-[14px] text-[#666] leading-relaxed">
+                    {b.desc}
+                  </p>
                 </div>
               ))}
             </div>
