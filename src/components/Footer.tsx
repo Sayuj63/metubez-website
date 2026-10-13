@@ -50,7 +50,7 @@ export default function Footer() {
   const { t } = useT();
 
   const platform = [
-    { label: t("footer.becomeMetuber"), href: "/metubers" },
+    { label: t("footer.becomeMetuber"), href: "/metubers#apply" },
     { label: t("footer.forBrands"), href: "/brands" },
     { label: t("footer.downloadApp"), href: "#download" },
   ];

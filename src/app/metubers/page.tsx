@@ -100,6 +100,7 @@ export default function MeTubersPage() {
     "idle",
   );
   const [errorMsg, setErrorMsg] = useState("");
+  const [fieldErrors, setFieldErrors] = useState<Record<string, string>>({});
 
   const stats = [
     { num: "10K+", label: t("metubers.statActiveMetubers") },
@@ -113,6 +114,7 @@ export default function MeTubersPage() {
     const form = e.currentTarget;
     setStatus("sending");
     setErrorMsg("");
+    setFieldErrors({});
 
     try {
       const res = await fetch("/api/apply", {
@@ -123,10 +125,12 @@ export default function MeTubersPage() {
       const body = (await res.json().catch(() => ({}))) as {
         ok?: boolean;
         error?: string;
+        errors?: Record<string, string>;
       };
 
       if (!res.ok || !body.ok) {
         setErrorMsg(body.error ?? "Something went wrong. Please try again.");
+        setFieldErrors(body.errors ?? {});
         setStatus("error");
         return;
       }
@@ -340,7 +344,7 @@ export default function MeTubersPage() {
         </section>
 
         {/* Application form */}
-        <section id="apply" className="border-t border-[#eee]">
+        <section id="apply" className="border-t border-[#eee] scroll-mt-20">
           <div className="max-w-[1240px] mx-auto px-5 md:px-8 pt-12 md:pt-16 pb-10 md:pb-12">
             <div className="grid md:grid-cols-2 gap-10 md:gap-14 items-start">
               <div>
@@ -380,44 +384,49 @@ export default function MeTubersPage() {
                   label="Full name"
                   placeholder="Your full name"
                   required
+                  error={fieldErrors.name}
                 />
                 <Field
-                  name="phone"
+                  name="email"
+                  label="Email"
+                  placeholder="you@example.com"
+                  type="email"
+                  required
+                  error={fieldErrors.email}
+                />
+                <Field
+                  name="contact_number"
                   label="Mobile number"
-                  placeholder="+91 98765 43210"
+                  placeholder="98765 43210"
                   type="tel"
                   required
+                  error={fieldErrors.contact_number}
                 />
-                <Field name="city" label="City" placeholder="Mumbai, Patna, etc." />
-                <Select name="language" label="Primary content language">
-                  <option value="">Select language</option>
-                  <option>Hindi</option>
-                  <option>Bhojpuri</option>
-                  <option>Marathi</option>
-                  <option>Tamil</option>
-                  <option>Telugu</option>
-                  <option>Bengali</option>
-                  <option>English</option>
-                </Select>
-                <Select name="category" label="Content category">
-                  <option value="">Select category</option>
-                  {[
-                    "Music",
-                    "Podcasts",
-                    "Cooking",
-                    "Dance",
-                    "Comedy",
-                    "Education",
-                    "Vlogs",
-                    "Technology",
-                    "Religious",
-                    "Sports",
-                    "Entertainment",
-                    "Everyday India",
-                  ].map((c) => (
-                    <option key={c}>{c}</option>
+                <Field
+                  name="social_media_profile"
+                  label="Social media profile"
+                  placeholder="https://instagram.com/yourname"
+                  required
+                  error={fieldErrors.social_media_profile}
+                />
+                <Select
+                  name="state"
+                  label="State"
+                  required
+                  error={fieldErrors.state}
+                >
+                  <option value="">Select state</option>
+                  {INDIAN_STATES.map((s) => (
+                    <option key={s}>{s}</option>
                   ))}
                 </Select>
+                <Field
+                  name="city"
+                  label="City"
+                  placeholder="Mumbai, Patna, etc."
+                  required
+                  error={fieldErrors.city}
+                />
                 {status === "sent" && (
                   <p className="text-[13px] font-semibold text-[#1e7e34] bg-[#e8f6ea] border border-[#bfe3c6] rounded-md px-3.5 py-2.5">
                     Application received. Our team will reach out within 24
@@ -517,25 +526,33 @@ function Field({
   placeholder,
   type = "text",
   required = false,
+  error,
 }: {
   name: string;
   label: string;
   placeholder: string;
   type?: string;
   required?: boolean;
+  error?: string;
 }) {
   return (
     <div>
-      <label className="block text-[12px] font-bold text-[#333] mb-1.5">
+      <label
+        htmlFor={name}
+        className="block text-[12px] font-bold text-[#333] mb-1.5"
+      >
         {label}
       </label>
       <input
+        id={name}
         name={name}
         type={type}
         placeholder={placeholder}
         required={required}
-        className="w-full bg-white border border-[#ddd] rounded-md px-3.5 py-2.5 text-[14px] text-[#111] placeholder:text-[#aaa] focus:outline-none focus:border-[#31B24B] focus:ring-2 focus:ring-[#31B24B]/20"
+        aria-invalid={error ? true : undefined}
+        className={`w-full bg-white border rounded-md px-3.5 py-2.5 text-[14px] text-[#111] placeholder:text-[#aaa] focus:outline-none focus:border-[#31B24B] focus:ring-2 focus:ring-[#31B24B]/20 ${error ? "border-[#b3261e]" : "border-[#ddd]"}`}
       />
+      {error && <p className="mt-1 text-[12px] text-[#b3261e]">{error}</p>}
     </div>
   );
 }
@@ -543,24 +560,74 @@ function Field({
 function Select({
   name,
   label,
+  required = false,
+  error,
   children,
 }: {
   name: string;
   label: string;
+  required?: boolean;
+  error?: string;
   children: React.ReactNode;
 }) {
   return (
     <div>
-      <label className="block text-[12px] font-bold text-[#333] mb-1.5">
+      <label
+        htmlFor={name}
+        className="block text-[12px] font-bold text-[#333] mb-1.5"
+      >
         {label}
       </label>
       <select
+        id={name}
         name={name}
-        className="w-full bg-white border border-[#ddd] rounded-md px-3.5 py-2.5 text-[14px] text-[#111] focus:outline-none focus:border-[#31B24B] focus:ring-2 focus:ring-[#31B24B]/20"
+        required={required}
+        aria-invalid={error ? true : undefined}
+        className={`w-full bg-white border rounded-md px-3.5 py-2.5 text-[14px] text-[#111] focus:outline-none focus:border-[#31B24B] focus:ring-2 focus:ring-[#31B24B]/20 ${error ? "border-[#b3261e]" : "border-[#ddd]"}`}
         defaultValue=""
       >
         {children}
       </select>
+      {error && <p className="mt-1 text-[12px] text-[#b3261e]">{error}</p>}
     </div>
   );
 }
+
+const INDIAN_STATES = [
+  "Andhra Pradesh",
+  "Arunachal Pradesh",
+  "Assam",
+  "Bihar",
+  "Chhattisgarh",
+  "Goa",
+  "Gujarat",
+  "Haryana",
+  "Himachal Pradesh",
+  "Jharkhand",
+  "Karnataka",
+  "Kerala",
+  "Madhya Pradesh",
+  "Maharashtra",
+  "Manipur",
+  "Meghalaya",
+  "Mizoram",
+  "Nagaland",
+  "Odisha",
+  "Punjab",
+  "Rajasthan",
+  "Sikkim",
+  "Tamil Nadu",
+  "Telangana",
+  "Tripura",
+  "Uttar Pradesh",
+  "Uttarakhand",
+  "West Bengal",
+  "Andaman and Nicobar Islands",
+  "Chandigarh",
+  "Dadra and Nagar Haveli and Daman and Diu",
+  "Delhi",
+  "Jammu and Kashmir",
+  "Ladakh",
+  "Lakshadweep",
+  "Puducherry",
+];
