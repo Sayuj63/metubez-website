@@ -52,7 +52,6 @@ export default function Footer() {
   const platform = [
     { label: t("footer.becomeMetuber"), href: "/metubers#apply" },
     { label: t("footer.forBrands"), href: "/brands" },
-    { label: t("footer.downloadApp"), href: "#download" },
   ];
 
   const company = [

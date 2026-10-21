@@ -7,13 +7,6 @@ import { getT } from "@/i18n/server";
 
 const testimonials = [
   {
-    quote:
-      "Pehli hi video pe earning shuru ho gayi. MeTubez pe wait nahi karna padta.",
-    name: "Priya Sharma",
-    role: "Food creator, Ahmedabad",
-    initial: "P",
-  },
-  {
     quote: "Landscape mein content dekhna feels like watching cinema on phone.",
     name: "Rahul Verma",
     role: "Viewer, Patna",
@@ -24,13 +17,6 @@ const testimonials = [
     name: "Aakash Mehta",
     role: "Comedy creator, Indore",
     initial: "A",
-  },
-  {
-    quote:
-      "Pehli video se hi earning shuru. Same rate sabke liye. Payout seedha UPI pe.",
-    name: "Neha Kulkarni",
-    role: "Dance creator, Pune",
-    initial: "N",
   },
   {
     quote:
@@ -45,20 +31,6 @@ const testimonials = [
     name: "Anjali Thakur",
     role: "Vlogger, Dehradun",
     initial: "A",
-  },
-  {
-    quote:
-      "First-time creator hoon, aur pehle mahine mein hi ₹1,200 kama liye. Amazing feeling.",
-    name: "Ravi Kumar",
-    role: "Comedy creator, Lucknow",
-    initial: "R",
-  },
-  {
-    quote:
-      "Ads bhi seamlessly integrate hote hain, viewer experience never breaks.",
-    name: "Sneha Iyer",
-    role: "Viewer, Chennai",
-    initial: "S",
   },
 ];
 
@@ -110,13 +82,6 @@ export default async function Home() {
 
   const testimonials = [
     {
-      quote:
-        "Pehli hi video pe earning shuru ho gayi. MeTubez pe wait nahi karna padta.",
-      name: "Priya Sharma",
-      role: "Food creator, Ahmedabad",
-      initial: "P",
-    },
-    {
       quote: "Landscape mein content dekhna feels like watching cinema on phone.",
       name: "Rahul Verma",
       role: "Viewer, Patna",
@@ -127,13 +92,6 @@ export default async function Home() {
       name: "Aakash Mehta",
       role: "Comedy creator, Indore",
       initial: "A",
-    },
-    {
-      quote:
-        "Pehli video se hi earning shuru. Same rate sabke liye. Payout seedha UPI pe.",
-      name: "Neha Kulkarni",
-      role: "Dance creator, Pune",
-      initial: "N",
     },
     {
       quote:
@@ -148,20 +106,6 @@ export default async function Home() {
       name: "Anjali Thakur",
       role: "Vlogger, Dehradun",
       initial: "A",
-    },
-    {
-      quote:
-        "First-time creator hoon, aur pehle mahine mein hi ₹1,200 kama liye. Amazing feeling.",
-      name: "Ravi Kumar",
-      role: "Comedy creator, Lucknow",
-      initial: "R",
-    },
-    {
-      quote:
-        "Ads bhi seamlessly integrate hote hain, viewer experience never breaks.",
-      name: "Sneha Iyer",
-      role: "Viewer, Chennai",
-      initial: "S",
     },
   ];
 
