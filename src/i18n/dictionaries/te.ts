@@ -26,6 +26,7 @@ export const te: Dictionary = {
     privacyPolicy: "గోప్యతా విధానం",
     termsOfUse: "వినియోగ నిబంధనలు",
     csaeStandards: "CSAE ప్రమాణాలు",
+    disclaimer: "నిరాకరణ",
     grievanceOfficer: "ఫిర్యాదుల అధికారి",
     contactSupport: "సపోర్ట్‌ను సంప్రదించండి",
     communityGuidelines: "కమ్యూనిటీ మార్గదర్శకాలు",

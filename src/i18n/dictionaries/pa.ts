@@ -26,6 +26,7 @@ export const pa: Dictionary = {
     privacyPolicy: "ਪ੍ਰਾਈਵੇਸੀ ਪਾਲਿਸੀ",
     termsOfUse: "ਵਰਤੋਂ ਦੀਆਂ ਸ਼ਰਤਾਂ",
     csaeStandards: "CSAE ਮਿਆਰ",
+    disclaimer: "ਬੇਦਾਅਵਾ",
     grievanceOfficer: "ਸ਼ਿਕਾਇਤ ਅਧਿਕਾਰੀ",
     contactSupport: "ਸਹਾਇਤਾ ਨਾਲ ਸੰਪਰਕ ਕਰੋ",
     communityGuidelines: "ਕਮਿਊਨਿਟੀ ਦਿਸ਼ਾ-ਨਿਰਦੇਸ਼",

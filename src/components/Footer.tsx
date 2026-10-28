@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useRef, useState } from "react";
 import { useT } from "@/i18n/context";
 
 const PLAY_STORE_URL =
@@ -48,6 +49,7 @@ function openMeTubez() {
 
 export default function Footer() {
   const { t } = useT();
+  const [disclaimerOpen, setDisclaimerOpen] = useState(false);
 
   const platform = [
     { label: t("footer.becomeMetuber"), href: "/metubers#apply" },
@@ -64,6 +66,7 @@ export default function Footer() {
     { label: t("footer.privacyPolicy"), href: "/legal/privacy" },
     { label: t("footer.termsOfUse"), href: "/legal/terms" },
     { label: t("footer.csaeStandards"), href: "/legal/csae" },
+    { label: t("footer.disclaimer"), onClick: () => setDisclaimerOpen(true) },
   ];
 
   const support = [
@@ -199,7 +202,72 @@ export default function Footer() {
           </div>
         </div>
       </div>
+      {disclaimerOpen && (
+        <DisclaimerModal
+          title={t("footer.disclaimer")}
+          onClose={() => setDisclaimerOpen(false)}
+        />
+      )}
     </footer>
+  );
+}
+
+function DisclaimerModal({
+  title,
+  onClose,
+}: {
+  title: string;
+  onClose: () => void;
+}) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") onClose();
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    // Opened from a click, so the browser allows playback with sound.
+    videoRef.current?.play().catch(() => {});
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [onClose]);
+
+  return (
+    <div
+      role="dialog"
+      aria-modal="true"
+      aria-label={title}
+      className="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 px-4"
+      onClick={onClose}
+    >
+      <div
+        className="relative w-full max-w-[960px]"
+        onClick={(e) => e.stopPropagation()}
+      >
+        <button
+          type="button"
+          onClick={onClose}
+          aria-label="Close"
+          className="absolute -top-11 right-0 w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center transition-colors"
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round">
+            <path d="M6 6l12 12M18 6L6 18" />
+          </svg>
+        </button>
+        <video
+          ref={videoRef}
+          src="/disclaimer.mp4"
+          controls
+          autoPlay
+          playsInline
+          className="w-full aspect-video rounded-lg bg-black"
+        />
+      </div>
+    </div>
   );
 }
 
@@ -209,7 +277,7 @@ function FooterCol({
   items,
 }: {
   title: string;
-  items: { label: string; href: string }[];
+  items: { label: string; href?: string; onClick?: () => void }[];
 }) {
   return (
     <div>
@@ -219,12 +287,22 @@ function FooterCol({
       <ul className="flex flex-col gap-2.5">
         {items.map((item) => (
           <li key={item.label}>
-            <Link
-              href={item.href}
-              className="text-[13px] text-[#666] hover:text-[#31B24B] transition-colors"
-            >
-              {item.label}
-            </Link>
+            {item.onClick ? (
+              <button
+                type="button"
+                onClick={item.onClick}
+                className="text-[13px] text-[#666] hover:text-[#31B24B] transition-colors text-left"
+              >
+                {item.label}
+              </button>
+            ) : (
+              <Link
+                href={item.href ?? "#"}
+                className="text-[13px] text-[#666] hover:text-[#31B24B] transition-colors"
+              >
+                {item.label}
+              </Link>
+            )}
           </li>
         ))}
       </ul>

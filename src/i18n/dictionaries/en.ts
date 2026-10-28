@@ -24,6 +24,7 @@ export const en = {
     privacyPolicy: "Privacy policy",
     termsOfUse: "Terms of use",
     csaeStandards: "CSAE standards",
+    disclaimer: "Disclaimer",
     grievanceOfficer: "Grievance Officer",
     contactSupport: "Contact Support",
     communityGuidelines: "Community guidelines",

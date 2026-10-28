@@ -26,6 +26,7 @@ export const kn: Dictionary = {
     privacyPolicy: "ಗೌಪ್ಯತಾ ನೀತಿ",
     termsOfUse: "ಬಳಕೆಯ ನಿಯಮಗಳು",
     csaeStandards: "CSAE ಮಾನದಂಡಗಳು",
+    disclaimer: "ಹಕ್ಕು ನಿರಾಕರಣೆ",
     grievanceOfficer: "ಕುಂದುಕೊರತೆ ಅಧಿಕಾರಿ",
     contactSupport: "ಬೆಂಬಲವನ್ನು ಸಂಪರ್ಕಿಸಿ",
     communityGuidelines: "ಸಮುದಾಯ ಮಾರ್ಗಸೂಚಿಗಳು",

@@ -26,6 +26,7 @@ export const bn: Dictionary = {
     privacyPolicy: "গোপনীয়তা নীতি",
     termsOfUse: "ব্যবহারের শর্তাবলী",
     csaeStandards: "CSAE মানদণ্ড",
+    disclaimer: "দাবিত্যাগ",
     grievanceOfficer: "অভিযোগ কর্মকর্তা",
     contactSupport: "সহায়তার সাথে যোগাযোগ",
     communityGuidelines: "কমিউনিটি নির্দেশিকা",

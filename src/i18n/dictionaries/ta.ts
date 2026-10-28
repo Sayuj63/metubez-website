@@ -26,6 +26,7 @@ export const ta: Dictionary = {
     privacyPolicy: "தனியுரிமைக் கொள்கை",
     termsOfUse: "பயன்பாட்டு விதிமுறைகள்",
     csaeStandards: "CSAE தரநிலைகள்",
+    disclaimer: "பொறுப்புத் துறப்பு",
     grievanceOfficer: "குறை தீர்ப்பு அதிகாரி",
     contactSupport: "ஆதரவைத் தொடர்பு கொள்ளுங்கள்",
     communityGuidelines: "சமூக வழிகாட்டுதல்கள்",

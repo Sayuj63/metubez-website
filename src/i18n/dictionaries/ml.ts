@@ -26,6 +26,7 @@ export const ml: Dictionary = {
     privacyPolicy: "സ്വകാര്യതാ നയം",
     termsOfUse: "ഉപയോഗ നിബന്ധനകൾ",
     csaeStandards: "CSAE മാനദണ്ഡങ്ങൾ",
+    disclaimer: "നിരാകരണം",
     grievanceOfficer: "പരാതി പരിഹാര ഉദ്യോഗസ്ഥൻ",
     contactSupport: "പിന്തുണയുമായി ബന്ധപ്പെടുക",
     communityGuidelines: "കമ്മ്യൂണിറ്റി മാർഗ്ഗനിർദ്ദേശങ്ങൾ",

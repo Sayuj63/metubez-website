@@ -26,6 +26,7 @@ export const gu: Dictionary = {
     privacyPolicy: "ગોપનીયતા નીતિ",
     termsOfUse: "ઉપયોગની શરતો",
     csaeStandards: "CSAE ધોરણો",
+    disclaimer: "અસ્વીકરણ",
     grievanceOfficer: "ફરિયાદ અધિકારી",
     contactSupport: "સપોર્ટનો સંપર્ક કરો",
     communityGuidelines: "કોમ્યુનિટી માર્ગદર્શિકા",

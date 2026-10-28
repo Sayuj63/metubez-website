@@ -26,6 +26,7 @@ export const hi: Dictionary = {
     privacyPolicy: "गोपनीयता नीति",
     termsOfUse: "उपयोग की शर्तें",
     csaeStandards: "CSAE मानक",
+    disclaimer: "अस्वीकरण",
     grievanceOfficer: "शिकायत अधिकारी",
     contactSupport: "सहायता से संपर्क",
     communityGuidelines: "कम्युनिटी दिशानिर्देश",
