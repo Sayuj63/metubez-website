@@ -403,6 +403,13 @@ export default function MeTubersPage() {
                   error={fieldErrors.contact_number}
                 />
                 <Field
+                  name="metubez_id"
+                  label="MeTubez ID"
+                  placeholder="Your MeTubez ID"
+                  required
+                  error={fieldErrors.metubez_id}
+                />
+                <Field
                   name="social_media_profile"
                   label="Social media profile"
                   placeholder="https://instagram.com/yourname"

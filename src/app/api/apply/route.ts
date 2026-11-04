@@ -18,6 +18,7 @@ type Key =
   | "name"
   | "email"
   | "contact_number"
+  | "metubez_id"
   | "social_media_profile"
   | "state"
   | "city";
@@ -26,6 +27,7 @@ const FIELDS: [label: string, key: Key][] = [
   ["Full name", "name"],
   ["Email", "email"],
   ["Mobile number", "contact_number"],
+  ["MeTubez ID", "metubez_id"],
   ["Social media profile", "social_media_profile"],
   ["State", "state"],
   ["City", "city"],
@@ -71,6 +73,7 @@ function validate(payload: Record<string, unknown>) {
   if (!EMAIL_RE.test(values.email)) errors.email = "Enter a valid email address.";
   if (!/^[6-9]\d{9}$/.test(values.contact_number))
     errors.contact_number = "Enter a valid 10-digit mobile number.";
+  if (!values.metubez_id) errors.metubez_id = "Enter your MeTubez ID.";
   if (!values.social_media_profile)
     errors.social_media_profile = profile
       ? "Enter a link to your profile, e.g. https://instagram.com/yourname."

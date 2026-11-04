@@ -2,7 +2,7 @@ export const en = {
   nav: {
     metubers: "MeTubers",
     forBrands: "For Brands",
-    becomeMetuber: "Become a Metuber",
+    becomeMetuber: "Become a MeTuber",
     watchMetubez: "Watch MeTubez",
   },
   footer: {
@@ -32,7 +32,7 @@ export const en = {
     creatorEarningsPolicy: "Creator Earnings Policy",
     creatorAgreement: "Creator Agreement",
     inAppHelpCenter: "In-App Help Center",
-    becomeMetuber: "Become a Metuber",
+    becomeMetuber: "Become a MeTuber",
     forBrands: "For brands",
   },
   home: {
