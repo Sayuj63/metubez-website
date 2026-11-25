@@ -430,16 +430,21 @@ export default async function Home() {
                     aria-hidden={i >= seenOn.length ? true : undefined}
                     tabIndex={i >= seenOn.length ? -1 : undefined}
                     aria-label={i < seenOn.length ? `MeTubez on ${p.name}` : undefined}
-                    className="w-[240px] md:w-[260px] shrink-0 bg-white border border-[#eee] hover:border-[#31B24B] rounded-xl px-6 py-5 flex items-center gap-4 transition-colors"
+                    className="w-[280px] h-[84px] shrink-0 bg-white border border-[#eee] hover:border-[#31B24B] rounded-xl px-5 flex items-center gap-3 transition-colors"
                   >
-                    <Image
-                      src={p.logo}
-                      alt=""
-                      width={44}
-                      height={44}
-                      className="w-11 h-11 rounded-lg shrink-0"
-                    />
-                    <div className="text-[15px] font-black text-[#111] leading-snug">
+                    {/* Small static logos: skip the optimizer and lazy-loading so they appear with the text. */}
+                    <span className="w-11 h-11 rounded-lg border border-[#eee] bg-white overflow-hidden flex items-center justify-center shrink-0">
+                      <Image
+                        src={p.logo}
+                        alt=""
+                        width={44}
+                        height={44}
+                        unoptimized
+                        loading="eager"
+                        className="w-full h-full object-contain"
+                      />
+                    </span>
+                    <div className="text-[15px] font-black text-[#111] whitespace-nowrap">
                       {p.name}
                     </div>
                   </a>
