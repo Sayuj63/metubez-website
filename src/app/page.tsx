@@ -34,6 +34,11 @@ const testimonials = [
   },
 ];
 
+const seenOn = [
+  { name: "Peerlist", label: "peerlist.io/metubez", href: "https://peerlist.io/metubez" },
+  { name: "StackShare", label: "stackshare.io/info9616", href: "https://stackshare.io/info9616" },
+];
+
 export default async function Home() {
   const { t } = await getT();
 
@@ -388,6 +393,45 @@ export default async function Home() {
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* As seen on — third-party profiles, auto-scroll marquee */}
+        <section className="border-t border-[#eee] bg-[#f8faf8]">
+          <div className="max-w-[1240px] mx-auto px-5 md:px-8 pt-12 md:pt-16 pb-8">
+            <h2 className="text-center text-[28px] md:text-[38px] font-black text-[#111] leading-tight">
+              As seen on
+            </h2>
+          </div>
+          <div className="pb-12 md:pb-16 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_5%,black_95%,transparent)]">
+            <div className="seen-on-track flex gap-5 w-max">
+              {/* Repeat the short list so each half of the track is wider than the viewport. */}
+              {Array.from({ length: 12 }, (_, i) => seenOn[i % seenOn.length]).map(
+                (p, i) => (
+                  <a
+                    key={`${p.name}-${i}`}
+                    href={p.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-hidden={i >= seenOn.length ? true : undefined}
+                    tabIndex={i >= seenOn.length ? -1 : undefined}
+                    className="w-[240px] md:w-[260px] shrink-0 bg-white border border-[#eee] hover:border-[#31B24B] rounded-xl px-6 py-5 flex items-center gap-4 transition-colors"
+                  >
+                    <div className="w-11 h-11 rounded-lg bg-[#31B24B] text-white flex items-center justify-center font-black text-[18px] shrink-0">
+                      {p.name[0]}
+                    </div>
+                    <div className="min-w-0">
+                      <div className="text-[16px] font-black text-[#111]">
+                        {p.name}
+                      </div>
+                      <div className="text-[12px] text-[#666] truncate">
+                        {p.label}
+                      </div>
+                    </div>
+                  </a>
+                ),
+              )}
             </div>
           </div>
         </section>

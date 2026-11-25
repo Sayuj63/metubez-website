@@ -82,6 +82,14 @@
   animation-play-state: paused;
 }
 
+.seen-on-track {
+  animation: reviews-scroll 40s linear infinite;
+}
+
+.seen-on-track:hover {
+  animation-play-state: paused;
+}
+
 /* FAQ chevron */
 details[open] .faq-plus::before {
   content: "−";
@@ -166,7 +174,8 @@ details[open] .faq-plus::before {
 
 @media (prefers-reduced-motion: reduce) {
   .marquee-track,
-  .reviews-track {
+  .reviews-track,
+  .seen-on-track {
     animation: none;
   }
 
