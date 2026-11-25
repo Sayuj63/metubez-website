@@ -83,7 +83,7 @@
 }
 
 .seen-on-track {
-  animation: reviews-scroll 40s linear infinite;
+  animation: reviews-scroll 70s linear infinite;
 }
 
 .seen-on-track:hover {

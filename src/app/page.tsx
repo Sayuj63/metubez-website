@@ -35,8 +35,22 @@ const testimonials = [
 ];
 
 const seenOn = [
-  { name: "Peerlist", label: "peerlist.io/metubez", href: "https://peerlist.io/metubez" },
-  { name: "StackShare", label: "stackshare.io/info9616", href: "https://stackshare.io/info9616" },
+  { name: "Product Hunt", logo: "/seen-on/producthunt.png", href: "https://www.producthunt.com/@info_metubez" },
+  { name: "Peerlist", logo: "/seen-on/peerlist.png", href: "https://peerlist.io/metubez" },
+  { name: "Indie Hackers", logo: "/seen-on/indiehackers.png", href: "https://www.indiehackers.com/Metubez" },
+  { name: "Figma", logo: "/seen-on/figma.png", href: "https://www.figma.com/@metubez" },
+  { name: "DEV Community", logo: "/seen-on/dev.png", href: "https://dev.to/metubez" },
+  { name: "Hashnode", logo: "/seen-on/hashnode.png", href: "https://hashnode.com/@metubez" },
+  { name: "Substack", logo: "/seen-on/substack.jpg", href: "https://substack.com/@metubez" },
+  { name: "Reddit", logo: "/seen-on/reddit.png", href: "https://www.reddit.com/user/Metubez/" },
+  { name: "There's An AI For That", logo: "/seen-on/theresanaiforthat.png", href: "https://theresanaiforthat.com/@info-metubez/" },
+  { name: "AlternativeTo", logo: "/seen-on/alternativeto.png", href: "https://alternativeto.net/user/info-metubez/" },
+  { name: "StackShare", logo: "/seen-on/stackshare.png", href: "https://stackshare.io/info9616" },
+  { name: "Uneed", logo: "/seen-on/uneed.png", href: "https://www.uneed.best/profile/MeTubez" },
+  { name: "StartupBase", logo: "/seen-on/startupbase.png", href: "https://startupbase.io/@metubez" },
+  { name: "Fazier", logo: "/seen-on/fazier.png", href: "https://fazier.com/p/info-metubez" },
+  { name: "SideProjectors", logo: "/seen-on/sideprojectors.png", href: "https://www.sideprojectors.com/user/profile/270000/projects" },
+  { name: "Serchen", logo: "/seen-on/serchen.png", href: "https://www.serchen.com/reviewer/185064" },
 ];
 
 export default async function Home() {
@@ -406,8 +420,7 @@ export default async function Home() {
           </div>
           <div className="pb-12 md:pb-16 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_5%,black_95%,transparent)]">
             <div className="seen-on-track flex gap-5 w-max">
-              {/* Repeat the short list so each half of the track is wider than the viewport. */}
-              {Array.from({ length: 12 }, (_, i) => seenOn[i % seenOn.length]).map(
+              {[...seenOn, ...seenOn].map(
                 (p, i) => (
                   <a
                     key={`${p.name}-${i}`}
@@ -416,18 +429,18 @@ export default async function Home() {
                     rel="noopener noreferrer"
                     aria-hidden={i >= seenOn.length ? true : undefined}
                     tabIndex={i >= seenOn.length ? -1 : undefined}
+                    aria-label={i < seenOn.length ? `MeTubez on ${p.name}` : undefined}
                     className="w-[240px] md:w-[260px] shrink-0 bg-white border border-[#eee] hover:border-[#31B24B] rounded-xl px-6 py-5 flex items-center gap-4 transition-colors"
                   >
-                    <div className="w-11 h-11 rounded-lg bg-[#31B24B] text-white flex items-center justify-center font-black text-[18px] shrink-0">
-                      {p.name[0]}
-                    </div>
-                    <div className="min-w-0">
-                      <div className="text-[16px] font-black text-[#111]">
-                        {p.name}
-                      </div>
-                      <div className="text-[12px] text-[#666] truncate">
-                        {p.label}
-                      </div>
+                    <Image
+                      src={p.logo}
+                      alt=""
+                      width={44}
+                      height={44}
+                      className="w-11 h-11 rounded-lg shrink-0"
+                    />
+                    <div className="text-[15px] font-black text-[#111] leading-snug">
+                      {p.name}
                     </div>
                   </a>
                 ),
